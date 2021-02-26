@@ -1,0 +1,296 @@
+﻿@model IEnumerable<CCI_Homii.Models.DAL.SP_GetAllProvinceAndCity_Result>
+@{
+    ViewBag.Title = "No Contractor - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var UserPro = HomiiSession.CurrentUser;
+    var CategoryName = Request["CategoryName"];
+    var CityNames = Request["CitieName"];
+    var i = 0;
+    var CategoriesName = ViewBag.Categories;
+    var CompanyName = Request["CompanyName"];
+}
+
+
+
+@*<div class="banerdesign text-center mb-5" style="height: 460px; background-image: url(assets/images/Not-Available.jpg)">
+        <div class="container">
+            <h1>Cabinetry  and built - ins to Oshawa</h1>
+            <h1>No Contractor available on your selected location</h1>
+        </div>
+    </div>*@
+<div class="container zain">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="search-contractor sub-content-wide">
+
+                <div class="left-sec for-not-found">
+                    <div class="banner">
+
+                        <div class="contractor-search">
+                            @if (CategoryName != null && CityNames != null && CompanyName == null)
+                            {
+                                if (CategoryName != "" && CityNames != "")
+                                {
+                                    <h1>Sorry, no contractors specializing in<span id="sreachbyCateg"> @CategoryName </span> In <span id="sreachbyCit"> @CityNames </span></h1>
+                                }
+
+                                else
+                                {
+                                    <h1>Sorry, no contractors specializing in<span id="sreachbyidcont">Contractors</span></h1>
+                                }
+                            }
+                            else if (CategoryName == null && CityNames != null && CompanyName != null)
+                            {
+                                if (CompanyName != "" && CityNames != "")
+                                {
+                                    <h1>Sorry, no Companies with the name<span id="sreachbyCateg"> @CompanyName </span> In <span id="sreachbyCit"> @CityNames </span></h1>
+                                }
+
+                                else
+                                {
+                                    <h1>Sorry, no contractors specializing in<span id="sreachbyidcont">Contractors</span></h1>
+                                }
+                            }
+                            else if (CityNames != null)
+                            {
+                                if (CityNames != "")
+                                {
+                                    <h1>Sorry, no Contractors In <span id="sreachbyCit"> @CityNames </span></h1>
+                                }
+                            }
+                            else if (CategoryName != null)
+                            {
+                                if (CategoryName != "")
+                                {
+                                    <h1>Sorry, no contractors specializing in <span id="sreachbyCit"> @CategoryName </span></h1>
+                                }
+                            }
+                            else if (CompanyName != null)
+                            {
+                                if (CompanyName != "")
+                                {
+                                    <h1>Sorry, no Companies with the name <span id="sreachbyCit"> @CompanyName </span></h1>
+                                }
+                            }
+                            @*<h1>No Contractor available on <br /> your selected location</h1>*@
+                            @*<h1></h1>*@
+
+                            <a href="javascript: history.go(-1)" class="btn btn-cstm btn-block btn-orange back-search">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>Back to Search Contractor
+                            </a>
+
+                        </div>
+                        @*<img class="sub-banner mb-none" src="https://trustedpros.ca/images/cover-search.jpg" alt="Contractor Search">*@
+                        <img class="sub-banner mb-none" src="~/Content/assets/img/banner5.png" alt="Contractor Search">
+
+                    </div>
+                    <br>
+                    <div class="clear"></div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="main-banner-cls">
+        <div class="inner-content-text">
+
+        </div>
+    </div>*@
+
+<div class="container">
+
+    @*<ul class="cstm_li_brdcrm">
+            <li><a href="/">Home</a></li>
+            <li>Search</li>
+        </ul>
+
+        <div class="row mb-3">
+            <div class="col-md-7">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<br><br> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img class="w-100" src="assets/images/Not-Available">
+            </div>
+        </div>*@
+    <h2 class="mb-3 mt-50">Categories</h2>
+
+    <div class="">
+        <ul class="ul_licities">
+            @for (int j = 0; j < @CategoriesName.Count; j++)
+            {
+                @*<div class="col-md-3 mt-10">
+                    <a href="~/SearchContractor/Index?CategoryName=@CategoriesName[j].CategoryName" class="btn btn-cstm btn-block btn-orange">@CategoriesName[j].CategoryName</a>
+                </div>*@
+
+
+                <li>
+                    <a href="~/SearchContractor/Index?CategoryName=@CategoriesName[j].CategoryName" class="">@CategoriesName[j].CategoryName</a>
+                </li>
+
+
+
+
+            }
+        </ul>
+        </div>
+    <br />
+
+
+    <h2 class="mb-3 mt-50">Cities</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12">
+                <button class="btn btn-cstm btn-block btn-orange">@item.ProvinceName</button>
+                <ul class="ul_licities">
+                    @{
+                        if (item.CityName != null)
+                        {
+                            string[] CityNamesData = item.CityName.Split(',');
+                            foreach (var Citynameitem in CityNamesData)
+                            {
+                                string[] ProvCityNames = Citynameitem.Split('-');
+                                <li><a href="~/SearchContractor/Index?CitieName=@ProvCityNames[1]">@ProvCityNames[1]</a></li>
+                                i++;
+                                //if (i == 10)
+                                //{
+                                //    break;
+                                //}
+                            }
+                        }
+
+
+                    }
+
+                </ul>
+
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model IEnumerable<CCI_Homii.Models.DAL.SP_GetAllProvinceAndCity_Result>
+    @using CCI_Homii.Models.DAL;
+    @{
+        ViewBag.Title = "NoContractorResult - Homii";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var UserPro = HomiiSession.CurrentUser;
+        var CategoryName = Request["CategoryName"];
+        var CityNames = Request["CitieName"];
+        var i = 0;
+        var CategoriesName = ViewBag.Categories;
+    }
+
+    <div class="banerdesign text-center" style="height: 460px; background-image: url('../../Content/assets/img/Not-Available.jpg')">
+        <div class="container">
+
+            @if (CategoryName != null && CityNames != null)
+            {
+                if (CategoryName != "" && CityNames != "")
+                {
+                    <h1><span id="sreachbyCateg"> @CategoryName </span> To <span id="sreachbyCit"> @CityNames </span></h1>
+                }
+                else
+                {
+                    <h1><span id="sreachbyidcont">Contractors</span></h1>
+                }
+            }
+            <h1>No Contractor available on your selected location</h1>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-50">
+        <h2 class="mb-3">Categories</h2>
+
+        <div class="row">
+            @for (int j = 0; j < @CategoriesName.Count; j++)
+            {
+                <div class="col-md-3 mt-10">
+                    <a href="~/SearchContractor/Index?CategoryName=@CategoriesName[j].CategoryName" class="btn btn-cstm btn-block btn-orange">@CategoriesName[j].CategoryName</a>
+                </div>
+
+            }
+        </div>
+        <br />
+
+        <h2>Cities</h2>
+
+        <div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <ul class="ul_licities">
+                            <li class="btn btn-cstm btn-block btn-orange"><strong>@item.ProvinceName</strong></li>
+                            @{
+                                string[] CityNamesData = item.CityName.Split(',');
+                            }
+
+                            @foreach (var Citynameitem in CityNamesData)
+                            {
+                                string[] ProvCityNames = Citynameitem.Split('-');
+                                <li><a href="~/SearchContractor/Index?CitieName=@ProvCityNames[1]">@ProvCityNames[1]</a></li>
+                                i++;
+                                if (i == 10)
+                                {
+                                    break;
+                                }
+                            }
+                            @if (i == 10)
+                            {
+                                <li style="border-bottom:none"><strong><a href="~/SearchContractor/GetAllCitiesByProvinceID?ProvinceID=@item.ProvinceID&ProvinceName=@item.ProvinceName" color:#70ac52"="">View all </a></strong></li>
+                            }
+
+                        </ul>
+
+                    </div>
+                                }
+            </div>
+        </div>
+
+    </div>*@

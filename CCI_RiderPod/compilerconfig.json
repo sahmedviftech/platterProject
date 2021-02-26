@@ -1,0 +1,19 @@
+﻿//[
+//  {
+//    "outputFile": "Content/assets/sass/styles.css",
+//    "inputFile": "Content/assets/sass/styles.scss"
+//  }
+//]
+
+[
+{
+"outputFile" : "Content/assets/sass/styles.css",
+"inputFile" : "Content/assets/sass/styles.scss",
+"minify" : {
+"enabled" : true
+},
+"includeInProject" : true,
+"options" :{
+"sourceMap" : true
+}
+}]

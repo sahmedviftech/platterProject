@@ -1,0 +1,289 @@
+﻿
+@{
+    ViewBag.Title = "Cities - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-md-6">
+                <div class="main-HD">
+                    <h1>Cities </h1>
+                    <button type="button" class="btn btn-primary city-btn" data-toggle="modal" data-target="#addmodal">Add Cities</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pro-details">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom-table mt-0">
+                    <div class="table-responsive-lg">
+                        <table class="table" id="example">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" class="th-width-1">ID</th>
+                                    <th scope="col" class="th-width-2">Province ID</th>
+                                    <th scope="col">City Name</th>
+                                    <th scope="col">City Charges</th>
+                                    @*<th scope="col">Slug</th>*@
+                                    <th scope="col" class="th-width-3">Action</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Add Modal -->
+<div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form class="parsleyvalcs" id="city-form">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add Cities</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+
+
+                            <div class="form-group">
+                                <label>City Name</label>
+                                <input type="text" class="form-control" data-parsley-required-message="City name is required" id="CityName" required data-parsley-trigger="keyup">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Province</label>
+                                <select class="form-control kt-select2" id="ProvinceId" name="select">
+                                    <option value="0">Please select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>City Charges</label>
+                                <input type="text" data-parsley-type="digits" class="form-control" value="" id="CityCharges" data-parsley-required-message="City Charges is required" required data-parsley-type="number" data-parsley-trigger="keyup">
+                            </div>
+                                                @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>*@
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-custom" id="btnSave">Save Changes</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form class="parsleyvalcs" id="cityupdate-form">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Edit Cities</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label>City Name</label>
+                                <input type="text" data-parsley-required-message="city name is required" class="form-control" id="CityNameEdit" required data-parsley-trigger="keyup">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Province</label>
+                                <select class="form-control kt-select2" id="ProvinceIdEdit" name="select" onchange="ClearBorderEdit()">
+                                    <option value="0">Please select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>City Charges</label>
+                                <input type="text" data-parsley-type="digits" class="form-control" id="CityChargesEdit" data-parsley-required-message="City charges is required" required data-parsley-type="number" data-parsley-trigger="keyup">
+                            </div>
+                            @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsEdit">
+                            </div>*@
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-custom" id="btnUpdate">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+@*<!-- Add Modal -->
+    <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add Categories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+
+
+                            <div class="form-group">
+                                <label>City Name</label>
+                                <input type="text" class="form-control" id="CityName">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Province</label>
+                                <select class="form-control kt-select2" id="ProvinceId" name="select">
+                                    <option value="0">Please select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSave">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add Categories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label>City Name</label>
+                                <input type="text" class="form-control" id="CityNameEdit">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Province</label>
+                                <select class="form-control kt-select2" id="ProvinceIdEdit" name="select">
+                                    <option value="0">Please select</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsEdit">
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnUpdate">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Delete Cities</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <p>This city may have some projets that also be Deleted. Are you sure you want to delete?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section FooterScripts{
+
+    <script src="~/scripts/PageJS/Cities.js"></script>
+    @*<script src="~/scripts/PageJS/SearchContractor.js"></script>*@
+
+}
+

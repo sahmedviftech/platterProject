@@ -1,0 +1,438 @@
+﻿
+@{
+    ViewBag.Title = "Contractor Project List - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="incentive-block-right mt-5 cstm-project">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                <div class="inner-incentive-box cp_kpi">
+                    <div class="setting"><i class="fa fa-cog" aria-hidden="true"></i></div>
+                    <p class="p-font-size" id="TotalProjectContract"></p>
+                    <h2>Open Project</h2>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="inner-incentive-box cp_kpi">
+
+                    <div class="check"><i class="fa fa-check-square-o" aria-hidden="true"></i></div>
+                    <p class="p-font-size" id="CompleteProjectContract"></p>
+                    <h2>Working Project</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="testimonials pad-cstm-kpis">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-5">
+                <div class="main-HD">
+                    <h1>Contractor Project List </h1>
+                </div>
+            </div>
+            <div class="col-lg-7 text-right">
+                <div class="pro-details cstm-tab-project">
+                    <form class="row align-items-end justify-content-end pdng_top-10">
+                        <div class="col-md-8 pl-lg-0 text-right">
+                            <div class="project-tab">
+
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active with3" data-toggle="tab" href="#home">My Projects</a>
+                                    </li>
+                                    @*<li class="nav-item">
+                                            <a class="nav-link with none" data-toggle="tab" href="#menu1">My Jobs</a>
+                                        </li>*@
+                                    <li class="nav-item">
+                                        <a class="nav-link with2 none" data-toggle="tab" href="#menu2">Working Projects</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tab-content my-custom customs bg-white">
+                    <div id="home" class="container tab-pane active">
+                        <div class="custom-table">
+                            <div class="table-responsive-lg">
+                                <table class="table" id="example">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Job Title</th>
+                                            @*<th scope="col">Categories</th>*@
+                                            <th scope="col">Job Description</th>
+                                            <th scope="col">Estimated Budget</th>
+                                            <th scope="col">Estimate Start Date</th>
+                                            <th scope="col">City</th>
+
+                                            @*<th scope="col" class="removesort">Status</th>*@
+                                            <th scope="col" class="removesort">Message Homeowner</th>
+                                            <th scope="col" class="removesort">View</th>
+                                            @*<th scope="col">My Job</th>*@
+                                            <th scope="col">Mark as</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyOpen"></tbody>
+                                </table>
+                            </div>
+                            @*<div class="row">
+                                    <div class="col-sm-12">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination custom-pagi">
+                                                <li class="page-item ">
+                                                  <a href="javascript:;" class="page-link" tabindex="-1">Previous</a>
+                                                </li>
+                                                <li class="page-item active"><a href="javascript:;" class="page-link">1</a></li>
+                                                <li class="page-item "><a href="javascript:;" class="page-link">2 </a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">3</a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">4</a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">5</a></li>
+                                                <li class="page-item nxt-pagi">
+                                                    <a href="javascript:;" class="page-link">Next Page</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                    @*<div id="menu1" class="container tab-pane fade">
+                            <div class="custom-table">
+                                <div class="table-responsive-lg">
+                                    <table class="table" id="example">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Job Title</th>
+                                                <th scope="col">Categories</th>
+                                                <th scope="col">Job Description</th>
+                                                <th scope="col">Estimated Budget</th>
+                                                <th scope="col">Estimate Start Date</th>
+                                                <th scope="col">City</th>
+
+                                                <th scope="col">View</th>
+                                                <th scope="col">Complete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbodyMyJobs"></tbody>
+                                    </table>
+                                </div>
+                                @*<div class="row">
+                                    <div class="col-sm-12">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination custom-pagi">
+                                                <li class="page-item ">
+                                                  <a href="javascript:;" class="page-link" tabindex="-1">Previous</a>
+                                                </li>
+                                                <li class="page-item active"><a href="javascript:;" class="page-link">1</a></li>
+                                                <li class="page-item "><a href="javascript:;" class="page-link">2 </a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">3</a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">4</a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">5</a></li>
+                                                <li class="page-item nxt-pagi">
+                                                    <a href="javascript:;" class="page-link">Next Page</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>*-@
+                            </div>
+                        </div>*@
+                    <div id="menu2" class="container tab-pane fade">
+                        <div class="custom-table">
+                            <div class="table-responsive-lg">
+                                <table class="table" id="example1">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Job Title</th>
+                                            @*<th scope="col">Categories</th>*@
+                                            <th scope="col">Job Description</th>
+                                            <th scope="col">Estimated Revenue</th>
+                                            <th scope="col">Estimate Start Date</th>
+                                            <th scope="col">City</th>
+                                            @*<th scope="col">Action</th>*@
+                                            <th scope="col" class="removesort">View</th>
+
+                                            <th scope="col">Message Homeowner</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyComplete"></tbody>
+                                </table>
+                            </div>
+                            @*<div class="row">
+                                    <div class="col-sm-12">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination custom-pagi">
+                                                <li class="page-item ">
+                                                  <a href="javascript:;" class="page-link" tabindex="-1">Previous</a>
+                                                </li>
+                                                <li class="page-item active"><a href="javascript:;" class="page-link">1</a></li>
+                                                <li class="page-item "><a href="javascript:;" class="page-link">2 </a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">3</a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">4</a></li>
+                                                <li class="page-item"><a href="javascript:;" class="page-link">5</a></li>
+                                                <li class="page-item nxt-pagi">
+                                                    <a href="javascript:;" class="page-link">Next Page</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="CEmail" value="">
+<input type="hidden" id="Cemail" value="@ViewBag.ContEmail">
+<input type="hidden" id="HEmail" value="">
+<input type="hidden" id="CName" value="">
+<input type="hidden" id="HName" value="">
+
+
+
+
+
+
+
+<!--Video Modal -->
+<div class="modal fade modal-videos" id="VideomodalProCont" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">
+                    Contractor Features
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                @*<iframe controls id="video1" style="width: 100%; height: 400px; margin:0 auto;"
+                    src="~/Content/assets/videos/CONTRACTOR%20FINAL.mp4" type="video/mp4"></iframe>*@
+                <video class="video-fluid z-depth-1" controls>
+                    <source src="~/Content/assets/videos/CONTRACTOR%20FINAL.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                @*<button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Edit Modal -->
+<!-- Edit Modal -->
+
+
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">View Project Upload</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10">
+                    <div class="col-md-12 p_10">
+                        <div class="container" id="imageGallery">
+                            <div class="bg-gray">
+                                <div class="owl-carousel img-gallery row imglist">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        @*<div class="owl-carousel owl-imgicn">
+                            <div class="item">
+
+                            </div>
+                            </div>*@
+
+
+                    </div>
+                    <div class="row">
+                        <div class="Noprofile Documents">
+                            @*<img src="~/Content/assets/img/ftr-logo.png" />*@
+                        </div>
+                    </div>
+                    <div class="no-upproject">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">VIEW</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label>Job Title</label>
+                                <input type="text" disabled class="form-control InputValidation" id="JobTitle">
+                            </div>
+                            <div class="form-group">
+                                <label>Job Description</label>
+                                <input type="text" disabled class="form-control InputValidation" id="JobDescription">
+                            </div>
+                            <div class="form-group">
+                                <label>Estimated Start Date</label>
+                                <input type="text" disabled class="form-control InputValidation" id="EstimatedStartDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Estimated Budget</label>
+                                <input type="text" disabled class="form-control InputValidation" id="EstimatedBudget">
+                            </div>
+
+
+                            @*<div class="form-group">
+                                    <label>Select Province</label>
+                                    <select class="form-control kt-select2" id="ProvinceIdEdit" name="select">
+                                        <option value="">Please select</option>
+                                    </select>
+                                </div>
+
+
+
+                                <label for="recipient-name" class="form-control-label">Job Title</label>
+                                <input type="text" class="form-control InputValidation" id="JobTitle">
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <label for="recipient-name" class="form-control-label">Select Category</label>
+                                    <select class="form-control kt-select2" id="CategoryIDAdd" name="param">
+                                        <option value="">Please select</option>
+                                    </select>
+                                }
+
+
+                                <label for="recipient-name" class="form-control-label">Job Description</label>
+                                <input type="text" class="form-control InputValidation" id="JobDescription">
+
+                                <label for="recipient-name" class="form-control-label">Estimated Start Date</label>
+                                <input type="date" class="form-control InputValidation" id="EstimatedStartDate">
+
+                                <label for="recipient-name" class="form-control-label">Estimated Budget</label>
+                                <input type="number" class="form-control InputValidation" id="EstimatedBudget">
+
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <label>Select Province</label>
+                                    <select id="ProvinceIDAdd" name="select">
+                                        <option value="0">Please select</option>
+                                    </select>
+
+                                    <label>Select City</label>
+                                    <select id="CityIDAdd" name="select">
+                                        <option value="0">Please select</option>
+                                    </select>
+                                }*-@
+
+
+                        </div>
+                    </div>
+                </div>
+                @*<div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnUpdate">Save Changes</button>
+                </div>*-@
+            </div>
+        </div>
+    </div>*@
+
+
+
+<!--Complete Modal -->
+<div class="modal fade" id="Completemodal" tabindex="-1" role="dialog" aria-labelledby="CompletemodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Mark as working</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <p>Marking a project as Working, will move it into another bucket, to help you manage your jobs. This is for your own reference ONLY and will not impact the project on the homeowner's end</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="CompleteId" class="btn btn-primary btn-custom">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Delete Categories</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <p>Are you sure want to delete this</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section FooterScripts{
+
+    <script src="~/scripts/PageJS/ContractorProject.js"></script>
+}
+
+
+

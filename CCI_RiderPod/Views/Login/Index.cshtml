@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Homii";
+}
+
+
+   
+    <div class="bg-login">
+        <div class="container">
+            <div class="row dis-flex">
+                <div class="col-lg-4 col-md-6">
+                    <div class="login-form cstm_login_form position-relative">
+                        <a href="https://portal.homii.ca/"><img src="~/Content/assets/img/mid-logo-transparent.png" alt=""></a>
+                        <h2>Login To Your Account</h2>
+                        @*<form action="/Login/Login" enctype="multipart/form-data" method="post">
+            <div class="form-row m-0">
+                <div class="form-group col-md-12 pl-0 pr-0">
+                    <input type="email" class="form-control login-custm-form" name="email" placeholder="Email">
+                </div>
+                <div class="form-group col-md-12 pl-0 pr-0">
+                    <input type="password" class="form-control login-custm-form" name="password" placeholder="Password">
+                </div>
+                <div class="col-md-6 text-left">
+                    <div class="form-check checkbox-change">
+                        <input class="form-check-input" value="true" name="gridCheck" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <a class="frgt-link" href="/Login/ForgotPassword">Forget Password</a>
+                </div>
+            </div>
+            @*<input  class="btn btn-primary btn-custom" formnovalidate="formnovalidate" type="submit" value="Login" />*-@
+            <button type="submit" class="btn btn-primary btn-custom">Login</button>
+        </form>*@
+                        <form action="/Login/Login" enctype="multipart/form-data" method="post" id="loginForm"  class="form-valid">
+                            @*<form  id="loginForm">*@
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-12 pl-0 pr-0">
+                                    <input type="email" class="form-control login-custm-form" name="email" id="email" placeholder="Email" required data-parsley-type="email" data-parsley-required-message="Email is required" data-parsley-trigger="keyup">
+                                </div>
+                                <div class="form-group col-md-12 pl-0 pr-0">
+                                    <input type="password" class="form-control login-custm-form" name="password" id="password" placeholder="Password" required data-parsley-required-message="Password is required" data-parsley-trigger="keyup">
+                                </div>
+                                <div class="col-md-6 text-left">
+                                    <div class="form-check checkbox-change">
+                                        <input class="form-check-input" value="true" name="gridCheck" type="checkbox" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <a class="frgt-link" href="/Login/ForgotPassword">Forgot Password</a>
+                                </div>
+                            </div>
+                            @*<input  class="btn btn-primary btn-custom" formnovalidate="formnovalidate" type="submit" value="Login" />*@
+                            <button type="submit" class="btn btn-primary btn-custom">Login</button>
+                        </form>
+                        <div class="form-block">
+                            <p>Not A Member?</p>
+                            @*<p>Sign Up <a href="javascript:;">Homeowner</a> / <a href="javascript:;">Contractor</a></p>*@
+                            <p>Sign Up <a href="@Url.Action("Index", "SignUp")">Homeowner</a> / <a href="@Url.Action("ContractorSignUp", "SignUp")">Contractor</a></p>
+
+                            <p class="text-center mt-3 logintc">
+                                By logging in, you agree to the Homii <br /><a class="color-orange" href="https://homii.ca/terms-conditions/">Terms &amp; Condition</a> and <a class="color-orange" href="https://homii.ca/Privacy-Policy/">Privacy Policy</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@*@section FooterScripts{
+    <script>
+
+        $('.loader').css("display", "none");      
+    </script>
+<script src="~/scripts/PageJS/LoginJs.js"></script>
+}*@
+   
+@*Fahad*@
+
+@section FooterScripts{
+    <script>
+        $("body").addClass("login-footer");
+    </script>
+
+    @if (@ViewBag.Msg == "Username or password is invalid")
+    {
+        //var msg = @ViewBag.Msg;
+        <script>
+
+            $('.loader').css("display", "none");      
+            $("body").addClass("login-footer");
+    showMsg("Username or password is invalid");
+                function showMsg(msg1)
+                {
+                    toastr.error(msg1, "Warning");
+                }
+
+        </script>
+    }
+    <script src="~/scripts/PageJS/LoginJs.js"></script>
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

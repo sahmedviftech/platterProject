@@ -1,0 +1,180 @@
+﻿
+@model IEnumerable<CCI_Homii.Models.DAL.SP_GetAllProvinceAndCity_Result>
+@{
+    ViewBag.Title = "Search Contractor Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var i = 0;
+    var CategoriesName = ViewBag.Categories;
+}
+
+
+
+@*<div class="banerdesign text-center mb-5" style="height: 460px; background-image: url(assets/images/Not-Available.jpg)">
+        <div class="container">
+            <h1>Cabinetry  and built - ins to Oshawa</h1>
+            <h1>No Contractor available on your selected location</h1>
+        </div>
+    </div>*@
+<div class="container zain">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="search-contractor sub-content-wide">
+
+
+                <div class="left-sec">
+                    <div class="banner">
+
+                        <div class="contractor-search for-searchs">
+                            <h1>Find Homii Service Professionals </h1>
+
+                            <div class="looking-for search-banner">
+                                <form id="searchfrom">
+
+                                    <div class="find-field-in" id="CatDIv">
+                                        <span class="find-field-in near-field-in">
+                                            <input name="job_sub_cat" id="CategoriesList1" class="find-field-clear" type="text" placeholder="e.g. Plumber, Roofer, Handyman" autocomplete="off">
+                                        </span>
+                                        <div id="outputbox">
+                                            <p id="outputcontent"></p>
+                                        </div>
+                                    </div>
+                                    <div class="find-field-in" id="ComDIv" style="display:none">
+                                        <span class="find-field-in near-field-in">
+                                            <input name="job_sub_cat" id="CompanyName1" class="find-field-clear" type="text" placeholder="Business Name" autocomplete="off">
+                                        </span>
+                                        <div id="outputbox">
+                                            <p id="outputcontent"></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="find-field-in">
+                                        <input class="find-field-clear" name="CitiesList1" id="CitiesList1" type="text" placeholder="Where" autocomplete="off">
+                                    </div>
+                                    <div class="clear"></div>
+                                    <input name="by_business" id="ByCompanyName" type="checkbox" value="">
+                                    <span class="bus-only">Search by business name only</span>
+                                    <div class="clear"></div>
+                                    <div class="show-btn">
+                                        <input id="searchform1_s" type="button" value="search" class="contractor-search">
+                                    </div>
+                                    @*<div class="hide-btn">
+                                <input id="searchform1_s" type="button" value="search for pros" class="search">
+                            </div>*@
+                                    <input name="searchpage" id="searchpage2" type="hidden" value="1">
+                                    <input name="miles" type="hidden" value="30"><input name="sort_by" type="hidden" value="serving">
+                                    <div class="clear"></div>
+                                </form>
+                            </div>
+
+                        </div>
+                        @*<img class="sub-banner mb-none" src="https://trustedpros.ca/images/cover-search.jpg" alt="Contractor Search">*@
+                        <img class="sub-banner mb-none" src="~/Content/assets/img/banner2.png" alt="Contractor Search">
+
+                    </div>
+                    <br>
+                    <div class="clear"></div>
+
+                    @*<div class="breadcrumbs"> <span><a href="/Login/Index"><span>Home</span></a>  </span><span><a class="last" href="/SearchContractor/ContractorInCities"><span>Search</span></a></span></div>*@
+
+                    <style>
+                    </style>
+
+                    <div class="search-locations">
+                        <a name="locations" id="locations"></a>
+                        <div class="srch_video"><iframe width="380" height="215" src="https://www.youtube.com/embed/XXOSpQ-nPwQ" frameborder="0" allowfullscreen></iframe></div>
+                        @*<p>The simple yet powerful Homii search feature conveniently connects you with trusted contractors in your area that have been rated using our unique Homii system that grades contractors against 15 stringent criteria that includes, but not limited to - just customer reviews. This makes Homii the most dependable contractor hiring resource in Canada. We urge you to use the Homii in conjunction with our Hiring Guide to maximize the probability of hiring a competent, trustworthy professional the first time.</p>
+                        <p>We have organized contractors into lot of work categories and many of geo-locations, so you  can find the home improvement pro you need wherever you may need it.</p>
+                        <p>Don’t see your city, or can’t find the service type you’re looking for? Send us a note, and we’ll look into getting this added to our site!</p>*@
+
+                        <p>
+                            Search through Homii’s community of local contractors for the one best suited to your needs.  You can search by City & Category, or you can search directly for a company using their Business Name. You can easily narrow your search down by using our filters to search by best rated in your city!
+
+                        </p>
+                        <p>
+                            Based on your selection, Homii’s algorithm will immediately compile a list of contractors that best suits your needs. Make the right choice by reading screened reviews from other homeowners, browsing work history, and assessing credentials of companies found on Homii. With Homii, it’s always your choice!
+
+                        </p>
+                    </div>
+
+                </div>
+
+                @*<iframe width="380" height="215" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1" frameborder="0" allowfullscreen=""></iframe>*@
+
+                <div class="clear"></div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="main-banner-cls">
+        <div class="inner-content-text">
+
+        </div>
+    </div>*@
+
+<div class="container">
+
+    <h2 class="mb-3 mt-50 color-orange w-700">Categories</h2>
+
+    <ul class="ul_licities">
+        @for (int j = 0; j < @CategoriesName.Count; j++)
+        {
+            <li>
+                <a href="~/SearchContractor/Index?CategoryName=@CategoriesName[j].CategoryName" class="">@CategoriesName[j].CategoryName</a>
+            </li>
+
+        }
+    </ul>
+    <br />
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-3 mt-50 color-orange w-700">Cities</h2>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-12">
+                <button class="btn btn-cstm btn-block btn-orange">@item.ProvinceName</button>
+                <ul class="ul_licities">
+                    @{
+                        if (item.CityName != null)
+                        {
+                            string[] CityNamesData = item.CityName.Split(',');
+                            foreach (var Citynameitem in CityNamesData)
+                            {
+                                string[] ProvCityNames = Citynameitem.Split('-');
+                                <li><a href="~/SearchContractor/Index?CitieName=@ProvCityNames[1]">@ProvCityNames[1]</a></li>
+                                i++;
+                                //if (i == 10)
+                                //{
+                                //    break;
+                                //}
+                            }
+                        }
+
+
+                    }
+
+                </ul>
+
+            </div>
+        }
+    </div>
+</div>
+
+@section FooterScripts{
+
+    <script src="~/scripts/PageJS/SearchContractor.js"></script>
+}
+
+

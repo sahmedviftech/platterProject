@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c892d7bc3e946f68bd9a74b10b5bf3e" Name="Diagram1">
+        <EntityTypeShape EntityType="HomiiModel.Category" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.City" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.ContractorCategory" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomiiModel.ContractorCity" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomiiModel.ContractorOpenProjectVisited" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.ContractorProjectStatu" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomiiModel.ContractorsReport" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.EmailSetting" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomiiModel.EmailTemplate" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomiiModel.ErrorLog" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomiiModel.FavouriteContractor" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomiiModel.FileAttach" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomiiModel.GalleryImage" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.LastSeen" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomiiModel.Payment" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomiiModel.ProfileImage" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HomiiModel.Project" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HomiiModel.Province" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HomiiModel.RedeemNow" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.ReferCharge" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomiiModel.ReferralPayment" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomiiModel.Review" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HomiiModel.Role" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HomiiModel.setting" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HomiiModel.sysdiagram" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomiiModel.Report" Width="1.5" PointX="13.375" PointY="11.75" />
+        <EntityTypeShape EntityType="HomiiModel.UserDetail" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="HomiiModel.User" Width="1.5" PointX="9.375" PointY="13.75" />
+        <EntityTypeShape EntityType="HomiiModel.SaveCancel" Width="1.5" PointX="13.375" PointY="8.75" />
+        <EntityTypeShape EntityType="HomiiModel.PllentyTransaction" Width="1.5" PointX="3.375" PointY="14.75" />
+        <EntityTypeShape EntityType="HomiiModel.PllentyPayment" Width="1.5" PointX="13.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

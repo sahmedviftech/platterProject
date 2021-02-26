@@ -1,0 +1,1632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HomiiModelStoreContainer" CdmEntityContainer="HomiiEntities1">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="HomiiModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="HomiiModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorCategories">
+      <EntityTypeMapping TypeName="HomiiModel.ContractorCategory">
+        <MappingFragment StoreEntitySet="ContractorCategory">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorCities">
+      <EntityTypeMapping TypeName="HomiiModel.ContractorCity">
+        <MappingFragment StoreEntitySet="ContractorCities">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorOpenProjectVisiteds">
+      <EntityTypeMapping TypeName="HomiiModel.ContractorOpenProjectVisited">
+        <MappingFragment StoreEntitySet="ContractorOpenProjectVisited">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CId" ColumnName="CId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorProjectStatus">
+      <EntityTypeMapping TypeName="HomiiModel.ContractorProjectStatu">
+        <MappingFragment StoreEntitySet="ContractorProjectStatus">
+          <ScalarProperty Name="ConStatus" ColumnName="ConStatus" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractorsReports">
+      <EntityTypeMapping TypeName="HomiiModel.ContractorsReport">
+        <MappingFragment StoreEntitySet="ContractorsReport">
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="ContractorReportId" ColumnName="ContractorReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailSettings">
+      <EntityTypeMapping TypeName="HomiiModel.EmailSetting">
+        <MappingFragment StoreEntitySet="EmailSettings">
+          <ScalarProperty Name="SmtpEnableSsl" ColumnName="SmtpEnableSsl" />
+          <ScalarProperty Name="SmtpPort" ColumnName="SmtpPort" />
+          <ScalarProperty Name="SmtpHost" ColumnName="SmtpHost" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplates">
+      <EntityTypeMapping TypeName="HomiiModel.EmailTemplate">
+        <MappingFragment StoreEntitySet="EmailTemplates">
+          <ScalarProperty Name="EmailPassword" ColumnName="EmailPassword" />
+          <ScalarProperty Name="FromEmail" ColumnName="FromEmail" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="HomiiModel.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLogs">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="exceptionString" ColumnName="exceptionString" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavouriteContractors">
+      <EntityTypeMapping TypeName="HomiiModel.FavouriteContractor">
+        <MappingFragment StoreEntitySet="FavouriteContractor">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileAttaches">
+      <EntityTypeMapping TypeName="HomiiModel.FileAttach">
+        <MappingFragment StoreEntitySet="FileAttach">
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="BrowserId" ColumnName="BrowserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GalleryImages">
+      <EntityTypeMapping TypeName="HomiiModel.GalleryImage">
+        <MappingFragment StoreEntitySet="GalleryImage">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="GalImagePath" ColumnName="GalImagePath" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastSeens">
+      <EntityTypeMapping TypeName="HomiiModel.LastSeen">
+        <MappingFragment StoreEntitySet="LastSeen">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="HomiiModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrainTransID" ColumnName="BrainTransID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Intent" ColumnName="Intent" />
+          <ScalarProperty Name="PayPalPaymentID" ColumnName="PayPalPaymentID" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileImages">
+      <EntityTypeMapping TypeName="HomiiModel.ProfileImage">
+        <MappingFragment StoreEntitySet="ProfileImages">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="HomiiModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="HomiiModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RedeemNows">
+      <EntityTypeMapping TypeName="HomiiModel.RedeemNow">
+        <MappingFragment StoreEntitySet="RedeemNow">
+          <ScalarProperty Name="RequestedDate" ColumnName="RequestedDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferCharges">
+      <EntityTypeMapping TypeName="HomiiModel.ReferCharge">
+        <MappingFragment StoreEntitySet="ReferCharges">
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="ReferId" ColumnName="ReferId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferralPayments">
+      <EntityTypeMapping TypeName="HomiiModel.ReferralPayment">
+        <MappingFragment StoreEntitySet="ReferralPayment">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="HomiiModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="HomiiModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Role1" ColumnName="Role" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="settings">
+      <EntityTypeMapping TypeName="HomiiModel.setting">
+        <MappingFragment StoreEntitySet="setting">
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HomiiModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="HomiiModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="HomiiModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="YoutubeUrl" ColumnName="YoutubeUrl" />
+          <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
+          <ScalarProperty Name="FacebookUrl" ColumnName="FacebookUrl" />
+          <ScalarProperty Name="InstagramUrl" ColumnName="InstagramUrl" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="ProjectMinimum" ColumnName="ProjectMinimum" />
+          <ScalarProperty Name="WrittenContract" ColumnName="WrittenContract" />
+          <ScalarProperty Name="Diplomas" ColumnName="Diplomas" />
+          <ScalarProperty Name="LiabilityInsurance" ColumnName="LiabilityInsurance" />
+          <ScalarProperty Name="PaymentMethods" ColumnName="PaymentMethods" />
+          <ScalarProperty Name="Specialties" ColumnName="Specialties" />
+          <ScalarProperty Name="Styles" ColumnName="Styles" />
+          <ScalarProperty Name="Brands" ColumnName="Brands" />
+          <ScalarProperty Name="Products" ColumnName="Products" />
+          <ScalarProperty Name="CompanyOverview" ColumnName="CompanyOverview" />
+          <ScalarProperty Name="EmergencyService" ColumnName="EmergencyService" />
+          <ScalarProperty Name="Financing" ColumnName="Financing" />
+          <ScalarProperty Name="IndustrialServices" ColumnName="IndustrialServices" />
+          <ScalarProperty Name="CommercialServices" ColumnName="CommercialServices" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Certificates" ColumnName="Certificates" />
+          <ScalarProperty Name="Licenses" ColumnName="Licenses" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SaveErrorLogs" FunctionName="HomiiModel.Store.SaveErrorLogs" />
+    <FunctionImportMapping FunctionImportName="sp_AddHomeownerIdInReview" FunctionName="HomiiModel.Store.sp_AddHomeownerIdInReview" />
+    <FunctionImportMapping FunctionImportName="sp_AddUserIdInProject" FunctionName="HomiiModel.Store.sp_AddUserIdInProject" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HomiiModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_CategoryProjectListDelete" FunctionName="HomiiModel.Store.sp_CategoryProjectListDelete" />
+    <FunctionImportMapping FunctionImportName="sp_CitiesAndProjectListDelete" FunctionName="HomiiModel.Store.sp_CitiesAndProjectListDelete" />
+    <FunctionImportMapping FunctionImportName="Sp_CountOfNewProject" FunctionName="HomiiModel.Store.Sp_CountOfNewProject">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_CountOfNewProject_Result">
+          <ScalarProperty Name="CountNewProject" ColumnName="CountNewProject" />
+          <ScalarProperty Name="ProStatus" ColumnName="ProStatus" />
+          <ScalarProperty Name="ProAct" ColumnName="ProAct" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_CountOfNewReview" FunctionName="HomiiModel.Store.Sp_CountOfNewReview">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_CountOfNewReview_Result">
+          <ScalarProperty Name="CountNewReview" ColumnName="CountNewReview" />
+          <ScalarProperty Name="ProStatus" ColumnName="ProStatus" />
+          <ScalarProperty Name="ProAct" ColumnName="ProAct" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HomiiModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HomiiModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="Sp_GetAllCitiesjoinbySp" FunctionName="HomiiModel.Store.Sp_GetAllCitiesjoinbySp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetAllCitiesjoinbySp_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PROiD" ColumnName="PROiD" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetAllNotificationAndCount" FunctionName="HomiiModel.Store.Sp_GetAllNotificationAndCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetAllNotificationAndCount_Result">
+          <ScalarProperty Name="CountNewProject" ColumnName="CountNewProject" />
+          <ScalarProperty Name="CountNewReview" ColumnName="CountNewReview" />
+          <ScalarProperty Name="CountNewReferral" ColumnName="CountNewReferral" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllPendingCategory" FunctionName="HomiiModel.Store.SP_GetAllPendingCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllPendingCategory_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllPendingCities" FunctionName="HomiiModel.Store.SP_GetAllPendingCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllPendingCities_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllPendingSelectedCategory" FunctionName="HomiiModel.Store.SP_GetAllPendingSelectedCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllPendingSelectedCategory_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllPendingSelectedCities" FunctionName="HomiiModel.Store.SP_GetAllPendingSelectedCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllPendingSelectedCities_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllProjects" FunctionName="HomiiModel.Store.sp_GetAllProjects">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetAllProjects_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllProjectsByUserId" FunctionName="HomiiModel.Store.sp_GetAllProjectsByUserId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetAllProjectsByUserId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllProvinceAndCity" FunctionName="HomiiModel.Store.SP_GetAllProvinceAndCity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllProvinceAndCity_Result">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllReportListContractor" FunctionName="HomiiModel.Store.sp_GetAllReportListContractor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetAllReportListContractor_Result">
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="HomeOwnerName" ColumnName="HomeOwnerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllReportListHomeowner" FunctionName="HomiiModel.Store.sp_GetAllReportListHomeowner">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetAllReportListHomeowner_Result">
+          <ScalarProperty Name="ContractorReportId" ColumnName="ContractorReportId" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllSelectedCategory" FunctionName="HomiiModel.Store.SP_GetAllSelectedCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllSelectedCategory_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllSelectedCities" FunctionName="HomiiModel.Store.SP_GetAllSelectedCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetAllSelectedCities_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getallusers" FunctionName="HomiiModel.Store.sp_getallusers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_getallusers_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="IsSubscriptionDone" ColumnName="IsSubscriptionDone" />
+          <ScalarProperty Name="ReferCreditTotal" ColumnName="ReferCreditTotal" />
+          <ScalarProperty Name="ReferCreditPending" ColumnName="ReferCreditPending" />
+          <ScalarProperty Name="DueAmount" ColumnName="DueAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getallusers_Backup" FunctionName="HomiiModel.Store.sp_getallusers_Backup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_getallusers_Backup_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="DueAmount" ColumnName="DueAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetCategoriesList" FunctionName="HomiiModel.Store.Sp_GetCategoriesList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetCategoriesList_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetCategoriesListByUserId" FunctionName="HomiiModel.Store.Sp_GetCategoriesListByUserId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetCategoriesListByUserId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ContracCated" ColumnName="ContracCated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetCities" FunctionName="HomiiModel.Store.sp_GetCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetCities_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetCitiesByPageNumber" FunctionName="HomiiModel.Store.sp_GetCitiesByPageNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetCitiesByPageNumber_Result">
+          <ScalarProperty Name="Items" ColumnName="Items" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetCitiesByUserID" FunctionName="HomiiModel.Store.sp_GetCitiesByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetCitiesByUserID_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetCitiesList" FunctionName="HomiiModel.Store.Sp_GetCitiesList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetCitiesList_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetCitiesListByUserId" FunctionName="HomiiModel.Store.Sp_GetCitiesListByUserId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetCitiesListByUserId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ContracCityId" ColumnName="ContracCityId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetCompleteProjectCount" FunctionName="HomiiModel.Store.Sp_GetCompleteProjectCount" />
+    <FunctionImportMapping FunctionImportName="sp_GetConDetailWithRating" FunctionName="HomiiModel.Store.sp_GetConDetailWithRating">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetConDetailWithRating_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetConDetailWithRatingForHiding" FunctionName="HomiiModel.Store.sp_GetConDetailWithRatingForHiding">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetConDetailWithRatingForHiding_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="HomeownerFirstName" ColumnName="HomeownerFirstName" />
+          <ScalarProperty Name="HomeownerLastName" ColumnName="HomeownerLastName" />
+          <ScalarProperty Name="HomeownerEmail" ColumnName="HomeownerEmail" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetConDetailWithRatingForHidingNEW" FunctionName="HomiiModel.Store.sp_GetConDetailWithRatingForHidingNEW">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetConDetailWithRatingForHidingNEW_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="HomeownerFirstName" ColumnName="HomeownerFirstName" />
+          <ScalarProperty Name="HomeownerLastName" ColumnName="HomeownerLastName" />
+          <ScalarProperty Name="HomeownerEmail" ColumnName="HomeownerEmail" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetConDetailWithRatingForHidingPA" FunctionName="HomiiModel.Store.sp_GetConDetailWithRatingForHidingPA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetConDetailWithRatingForHidingPA_Result">
+          <ScalarProperty Name="itemcount" ColumnName="itemcount" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="ratingSort" ColumnName="ratingSort" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="HomeownerFirstName" ColumnName="HomeownerFirstName" />
+          <ScalarProperty Name="HomeownerLastName" ColumnName="HomeownerLastName" />
+          <ScalarProperty Name="HomeownerEmail" ColumnName="HomeownerEmail" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetContractorCategories" FunctionName="HomiiModel.Store.sp_GetContractorCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetContractorCategories_Result">
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+          <ScalarProperty Name="cateName" ColumnName="cateName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetContractorCities" FunctionName="HomiiModel.Store.sp_GetContractorCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetContractorCities_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetContractordetail" FunctionName="HomiiModel.Store.sp_GetContractordetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetContractordetail_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="IncentiveCode" ColumnName="IncentiveCode" />
+          <ScalarProperty Name="ReferralId" ColumnName="ReferralId" />
+          <ScalarProperty Name="UserDetailId" ColumnName="UserDetailId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+          <ScalarProperty Name="Licenses" ColumnName="Licenses" />
+          <ScalarProperty Name="Certificates" ColumnName="Certificates" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="CommercialServices" ColumnName="CommercialServices" />
+          <ScalarProperty Name="IndustrialServices" ColumnName="IndustrialServices" />
+          <ScalarProperty Name="Financing" ColumnName="Financing" />
+          <ScalarProperty Name="EmergencyService" ColumnName="EmergencyService" />
+          <ScalarProperty Name="CompanyOverview" ColumnName="CompanyOverview" />
+          <ScalarProperty Name="Products" ColumnName="Products" />
+          <ScalarProperty Name="Brands" ColumnName="Brands" />
+          <ScalarProperty Name="Styles" ColumnName="Styles" />
+          <ScalarProperty Name="Specialties" ColumnName="Specialties" />
+          <ScalarProperty Name="PaymentMethods" ColumnName="PaymentMethods" />
+          <ScalarProperty Name="LiabilityInsurance" ColumnName="LiabilityInsurance" />
+          <ScalarProperty Name="Diplomas" ColumnName="Diplomas" />
+          <ScalarProperty Name="WrittenContract" ColumnName="WrittenContract" />
+          <ScalarProperty Name="ProjectMinimum" ColumnName="ProjectMinimum" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="InstagramUrl" ColumnName="InstagramUrl" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="FacebookUrl" ColumnName="FacebookUrl" />
+          <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
+          <ScalarProperty Name="YoutubeUrl" ColumnName="YoutubeUrl" />
+          <ScalarProperty Name="TotalRating" ColumnName="TotalRating" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetContractorProject" FunctionName="HomiiModel.Store.sp_GetContractorProject">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetContractorProject_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ProjectCategoryID" ColumnName="ProjectCategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="ProUserId" ColumnName="ProUserId" />
+          <ScalarProperty Name="CatUserId" ColumnName="CatUserId" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProProvinceId" ColumnName="ProProvinceId" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
+          <ScalarProperty Name="HomeownerEmail" ColumnName="HomeownerEmail" />
+          <ScalarProperty Name="HomeownerFirstName" ColumnName="HomeownerFirstName" />
+          <ScalarProperty Name="HomeownerLastName" ColumnName="HomeownerLastName" />
+          <ScalarProperty Name="ContractorEmail" ColumnName="ContractorEmail" />
+          <ScalarProperty Name="ContractorFirstName" ColumnName="ContractorFirstName" />
+          <ScalarProperty Name="ContractorLastName" ColumnName="ContractorLastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetContractorsEmails" FunctionName="HomiiModel.Store.sp_GetContractorsEmails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetContractorsEmails_Result">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetCountMonthAndYear" FunctionName="HomiiModel.Store.Sp_GetCountMonthAndYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetCountMonthAndYear_Result">
+          <ScalarProperty Name="MonthRecord" ColumnName="MonthRecord" />
+          <ScalarProperty Name="YearRecord" ColumnName="YearRecord" />
+          <ScalarProperty Name="WeekRecord" ColumnName="WeekRecord" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetFavoriteContractorsList" FunctionName="HomiiModel.Store.Sp_GetFavoriteContractorsList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetFavoriteContractorsList_Result">
+          <ScalarProperty Name="FavId" ColumnName="FavId" />
+          <ScalarProperty Name="userfaId" ColumnName="userfaId" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryName1" ColumnName="CategoryName1" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="countFavoriteCon" ColumnName="countFavoriteCon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetFavoriteContractorsListNew" FunctionName="HomiiModel.Store.Sp_GetFavoriteContractorsListNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetFavoriteContractorsListNew_Result">
+          <ScalarProperty Name="FavId" ColumnName="FavId" />
+          <ScalarProperty Name="userfaId" ColumnName="userfaId" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="countFavoriteCon" ColumnName="countFavoriteCon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetFavouriteContractors" FunctionName="HomiiModel.Store.Sp_GetFavouriteContractors">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetFavouriteContractors_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetGalleryImages" FunctionName="HomiiModel.Store.sp_GetGalleryImages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetGalleryImages_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="GalImagePath" ColumnName="GalImagePath" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetHomeOwnerReviewsById" FunctionName="HomiiModel.Store.sp_GetHomeOwnerReviewsById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetHomeOwnerReviewsById_Result">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="HomeOwnerId" ColumnName="HomeOwnerId" />
+          <ScalarProperty Name="HomeOwnerName" ColumnName="HomeOwnerName" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetHomeOwnerReviewsList" FunctionName="HomiiModel.Store.sp_GetHomeOwnerReviewsList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetHomeOwnerReviewsList_Result">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="HomeOwnerName" ColumnName="HomeOwnerName" />
+          <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetHomeOwnerReviewsListNew" FunctionName="HomiiModel.Store.sp_GetHomeOwnerReviewsListNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetHomeOwnerReviewsListNew_Result">
+          <ScalarProperty Name="ItemsCount" ColumnName="ItemsCount" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="HomeOwnerName" ColumnName="HomeOwnerName" />
+          <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetKPIsInfo" FunctionName="HomiiModel.Store.sp_GetKPIsInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetKPIsInfo_Result">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetMyJobAndCompleted" FunctionName="HomiiModel.Store.sp_GetMyJobAndCompleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetMyJobAndCompleted_Result">
+          <ScalarProperty Name="ConId" ColumnName="ConId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ConUserId" ColumnName="ConUserId" />
+          <ScalarProperty Name="ConStatus" ColumnName="ConStatus" />
+          <ScalarProperty Name="ProId" ColumnName="ProId" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ProjectCategoryID" ColumnName="ProjectCategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="ProUserId" ColumnName="ProUserId" />
+          <ScalarProperty Name="CatUserId" ColumnName="CatUserId" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProProvinceId" ColumnName="ProProvinceId" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetOpenProAndCompleteProCount" FunctionName="HomiiModel.Store.Sp_GetOpenProAndCompleteProCount" />
+    <FunctionImportMapping FunctionImportName="sp_GetProjectByID" FunctionName="HomiiModel.Store.sp_GetProjectByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetProjectByID_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetProjectByProjectId" FunctionName="HomiiModel.Store.sp_GetProjectByProjectId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetProjectByProjectId_Result">
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="AttachementID" ColumnName="AttachementID" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetProjectWithId" FunctionName="HomiiModel.Store.sp_GetProjectWithId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetProjectWithId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetRecordOfWriteAReview" FunctionName="HomiiModel.Store.Sp_GetRecordOfWriteAReview">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetRecordOfWriteAReview_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetReferDetailList" FunctionName="HomiiModel.Store.sp_GetReferDetailList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetReferDetailList_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetReview" FunctionName="HomiiModel.Store.sp_GetReview">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetReview_Result">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetReviewByContIDWithName" FunctionName="HomiiModel.Store.sp_GetReviewByContIDWithName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetReviewByContIDWithName_Result">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="ratingSingle" ColumnName="ratingSingle" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetReviewPA" FunctionName="HomiiModel.Store.sp_GetReviewPA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetReviewPA_Result">
+          <ScalarProperty Name="itemcount" ColumnName="itemcount" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+          <ScalarProperty Name="QualityOfWork" ColumnName="QualityOfWork" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="StayedInBudget" ColumnName="StayedInBudget" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="Cleanliness" ColumnName="Cleanliness" />
+          <ScalarProperty Name="Courteous" ColumnName="Courteous" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="ratingSort" ColumnName="ratingSort" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetSelectedCategory" FunctionName="HomiiModel.Store.SP_GetSelectedCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetSelectedCategory_Result">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetUnSelectedCategory" FunctionName="HomiiModel.Store.SP_GetUnSelectedCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetUnSelectedCategory_Result">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetUnSelectedCities" FunctionName="HomiiModel.Store.SP_GetUnSelectedCities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.SP_GetUnSelectedCities_Result">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserByID" FunctionName="HomiiModel.Store.sp_GetUserByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetUserByID_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="UserDeID" ColumnName="UserDeID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserDetail" FunctionName="HomiiModel.Store.sp_GetUserDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetUserDetail_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="Licenses" ColumnName="Licenses" />
+          <ScalarProperty Name="Certificates" ColumnName="Certificates" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="CommercialServices" ColumnName="CommercialServices" />
+          <ScalarProperty Name="IndustrialServices" ColumnName="IndustrialServices" />
+          <ScalarProperty Name="Financing" ColumnName="Financing" />
+          <ScalarProperty Name="EmergencyService" ColumnName="EmergencyService" />
+          <ScalarProperty Name="CompanyOverview" ColumnName="CompanyOverview" />
+          <ScalarProperty Name="Products" ColumnName="Products" />
+          <ScalarProperty Name="Brands" ColumnName="Brands" />
+          <ScalarProperty Name="Styles" ColumnName="Styles" />
+          <ScalarProperty Name="Specialties" ColumnName="Specialties" />
+          <ScalarProperty Name="PaymentMethods" ColumnName="PaymentMethods" />
+          <ScalarProperty Name="LiabilityInsurance" ColumnName="LiabilityInsurance" />
+          <ScalarProperty Name="Diplomas" ColumnName="Diplomas" />
+          <ScalarProperty Name="WrittenContract" ColumnName="WrittenContract" />
+          <ScalarProperty Name="ProjectMinimum" ColumnName="ProjectMinimum" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="settingId" ColumnName="settingId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="InstagramUrl" ColumnName="InstagramUrl" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="FacebookUrl" ColumnName="FacebookUrl" />
+          <ScalarProperty Name="TwitterUrl" ColumnName="TwitterUrl" />
+          <ScalarProperty Name="YoutubeUrl" ColumnName="YoutubeUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getuserDetailByID" FunctionName="HomiiModel.Store.sp_getuserDetailByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_getuserDetailByID_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="ReferCreditTotal" ColumnName="ReferCreditTotal" />
+          <ScalarProperty Name="ReferCreditPending" ColumnName="ReferCreditPending" />
+          <ScalarProperty Name="DueAmount" ColumnName="DueAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserDetailWithAmount" FunctionName="HomiiModel.Store.sp_GetUserDetailWithAmount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetUserDetailWithAmount_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="ReferralTotalAmount" ColumnName="ReferralTotalAmount" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IncentiveCode" ColumnName="IncentiveCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserWithMatchCityCategory" FunctionName="HomiiModel.Store.sp_GetUserWithMatchCityCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetUserWithMatchCityCategory_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HomiiModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HomiiModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HomiiModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="Sp_RevenueReferalKpi" FunctionName="HomiiModel.Store.Sp_RevenueReferalKpi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_RevenueReferalKpi_Result">
+          <ScalarProperty Name="RevenueMonth" ColumnName="RevenueMonth" />
+          <ScalarProperty Name="RevenueYear" ColumnName="RevenueYear" />
+          <ScalarProperty Name="ReferalMonth" ColumnName="ReferalMonth" />
+          <ScalarProperty Name="ReferalYear" ColumnName="ReferalYear" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SaveErrorLogs" FunctionName="HomiiModel.Store.SP_SaveErrorLogs" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HomiiModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_GetConDetailWithRatingForHidingPA_Test1" FunctionName="HomiiModel.Store.sp_GetConDetailWithRatingForHidingPA_Test1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetConDetailWithRatingForHidingPA_Test1_Result">
+          <ScalarProperty Name="itemcount" ColumnName="itemcount" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="ratingSort" ColumnName="ratingSort" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BusinessPhoneNumber" ColumnName="BusinessPhoneNumber" />
+          <ScalarProperty Name="BusinessAddress" ColumnName="BusinessAddress" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="NumberOfEmployee" />
+          <ScalarProperty Name="LegalStructure" ColumnName="LegalStructure" />
+          <ScalarProperty Name="InBusinessSince" ColumnName="InBusinessSince" />
+          <ScalarProperty Name="HomeownerId" ColumnName="HomeownerId" />
+          <ScalarProperty Name="HomeownerFirstName" ColumnName="HomeownerFirstName" />
+          <ScalarProperty Name="HomeownerLastName" ColumnName="HomeownerLastName" />
+          <ScalarProperty Name="HomeownerEmail" ColumnName="HomeownerEmail" />
+          <ScalarProperty Name="ContractorId" ColumnName="ContractorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_GetOProAndCompProHCount" FunctionName="HomiiModel.Store.Sp_GetOProAndCompProHCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.Sp_GetOProAndCompProHCount_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HomiiModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="IsSubscriptionDone" ColumnName="IsSubscriptionDone" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LoginStatus" ColumnName="LoginStatus" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ReferralId" ColumnName="ReferralId" />
+          <ScalarProperty Name="IncentiveCode" ColumnName="IncentiveCode" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="ReferralCreditPending" ColumnName="ReferralCreditPending" />
+          <ScalarProperty Name="ReferralCreditTotal" ColumnName="ReferralCreditTotal" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaveCancels">
+      <EntityTypeMapping TypeName="HomiiModel.SaveCancel">
+        <MappingFragment StoreEntitySet="SaveCancel">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="countCancel" ColumnName="countCancel" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PllentyTransactions">
+      <EntityTypeMapping TypeName="HomiiModel.PllentyTransaction">
+        <MappingFragment StoreEntitySet="PllentyTransaction">
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Interval_" ColumnName="Interval " />
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PllentyPayments">
+      <EntityTypeMapping TypeName="HomiiModel.PllentyPayment">
+        <MappingFragment StoreEntitySet="PllentyPayment">
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="StartedDate" ColumnName="StartedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="interval_" ColumnName="interval " />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetContractorProjectCheckNew" FunctionName="HomiiModel.Store.sp_GetContractorProjectCheckNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HomiiModel.sp_GetContractorProjectCheckNew_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="ProjectCategoryID" ColumnName="ProjectCategoryID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="EstimatedStartDate" ColumnName="EstimatedStartDate" />
+          <ScalarProperty Name="EstimatedBudget" ColumnName="EstimatedBudget" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="HomeOwnerStatus" ColumnName="HomeOwnerStatus" />
+          <ScalarProperty Name="ContractorStatus" ColumnName="ContractorStatus" />
+          <ScalarProperty Name="ProUserId" ColumnName="ProUserId" />
+          <ScalarProperty Name="CatUserId" ColumnName="CatUserId" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProProvinceId" ColumnName="ProProvinceId" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="LastCreatedDate" ColumnName="LastCreatedDate" />
+          <ScalarProperty Name="HomeownerEmail" ColumnName="HomeownerEmail" />
+          <ScalarProperty Name="HomeownerFirstName" ColumnName="HomeownerFirstName" />
+          <ScalarProperty Name="HomeownerLastName" ColumnName="HomeownerLastName" />
+          <ScalarProperty Name="ContractorEmail" ColumnName="ContractorEmail" />
+          <ScalarProperty Name="ContractorFirstName" ColumnName="ContractorFirstName" />
+          <ScalarProperty Name="ContractorLastName" ColumnName="ContractorLastName" />
+          <ScalarProperty Name="ContractorCompanyName" ColumnName="ContractorCompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

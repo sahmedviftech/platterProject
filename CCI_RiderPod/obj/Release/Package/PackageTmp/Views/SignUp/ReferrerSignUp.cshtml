@@ -1,0 +1,320 @@
+﻿@{
+    ViewBag.Title = "Referrer Signup - Homii";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="bg-login">
+    <div class="container position-relative cstm_zindex">
+        <div class="row dis-flex">
+            <div class="col-md-7">
+                <div class="login-form">
+                    <a href="https://portal.homii.ca/"><img src="~/Content/assets/img/mid-logo-transparent.png" alt=""></a>
+                    <h2> Create FREE Referrer Account</h2>
+                    <form class="parsleyvalcs inhert" id="Referrer-Form">
+                        <div class="form-row m-0">
+                            <div class="form-group col-md-6 pl-md-0">
+                                @* <input type="text" class="form-control login-custm-form" title="" name="FirstName" id="FirstName" placeholder="First Name" data-parsley-trigger="keyup" data-parsley-required-message="First Name is required" data-placement="bottom">*@
+                                <input type="text" class="form-control login-custm-form" title="" data-placement="bottom" name="FirstName" id="FirstName" placeholder="First Name" required data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="First Name should be without space">
+
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                @* <input type="text" class="form-control login-custm-form" title="" name="LastName" id="LastName" placeholder="Last Name" data-parsley-trigger="keyup" data-parsley-required-message="Last Name is required" data-placement="bottom">*@
+                                <input type="text" class="form-control login-custm-form" title="" data-placement="bottom" name="LastName" id="LastName" placeholder="Last Name" required data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Last Name should be without space">
+
+                            </div>
+                            @*<div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="email" class="form-control login-custm-form" id="PostalCode" placeholder="Postal Code">
+                                </div>*@
+                            <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                @*<input type="number" class="form-control login-custm-form" id="PhoneNumber" minlength="9" maxlength="40" pattern="[-+,0-9]+" placeholder="Phone number" required data-parsley-type="number" data-parsley-trigger="keyup">*@
+
+                                @*<input type="text" class="form-control login-custm-form" title="" id="PhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" parsley-type="phone" data-parsley-trigger="keydown" required="Requireed Format: 111-111-1111" value="" placeholder="Phone Number" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57" data-placement="bottom">*@
+                                <input type="text" class="form-control login-custm-form" title="" data-placement="bottom" name="PhoneNumber" id="PhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" parsley-type="phone" data-parsley-trigger="keydown" required="Requireed Format: 111-111-1111" value="" placeholder="Phone Number" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+                            </div>
+                            <div class="form-group col-md-6 pl-md-0">
+                                @*    <input type="email" class="form-control login-custm-form" title="" name="Email" id="Email" placeholder="Email" data-parsley-type="email" data-parsley-trigger="keyup" data-parsley-required-message="Email is required" data-placement="bottom">*@
+                                <input type="email" class="form-control login-custm-form" title="" data-placement="bottom" name="Email" id="Email" placeholder="Email" required data-parsley-type="email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Email">
+
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                @*  <input type="email" class="form-control login-custm-form" title="" name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Email" data-parsley-type="email" data-parsley-equalto="#Email" data-parsley-trigger="keyup" data-parsley-required-message="Confirm Email is required" data-placement="bottom">*@
+                                <input type="email" class="form-control login-custm-form" title="" data-placement="bottom" name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Email" required data-parsley-equalto="#Email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Confirm Email">
+
+                            </div>
+                            <div class="form-group col-md-6  pl-md-0">
+                                <input type="password" class="form-control login-custm-form" title="" id="Password" placeholder="Password" required data-parsley-length="[8, 16]" data-parsley-trigger="keyup" data-parsley-required-message="Password is required" data-placement="bottom">
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                <input type="password" class="form-control login-custm-form" title="" id="ConfirmPassword" placeholder="ConfirmPassword" data-parsley-equalto="#Password" required data-parsley-length="[8, 16]" data-parsley-trigger="keyup" data-parsley-required-message="Confirm Password is required" data-placement="bottom">
+                            </div>
+                            @*<div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="email" class="form-control login-custm-form" id="Email" placeholder="Email" onkeyup="ClearReferrerBorder()">
+                                </div>
+                                <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="password" class="form-control login-custm-form" id="Password" placeholder="Password" onkeyup="ClearReferrerBorder()">
+                                </div>*@
+                            @*<div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="password" class="form-control login-custm-form" placeholder="Confirm Password">
+                                </div>*@
+                            <div class="col-md-12 pl-md-0 pr-md-0 mt-50">
+                                <div class="form-check checkbox-change">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" required data-parsley-required>
+                                    <label class="form-check-label" for="gridCheck">
+                                        I AGREE I have read and agree to Homii <a href="https://homii.ca/terms-conditions/" class="login-member-anchr">Tems and Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-md-0 pr-md-0">
+                                <div class="form-check checkbox-change">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1" required data-parsley-required>
+                                    <label class="form-check-label" for="gridCheck1">
+                                        I AGREE I have read and agree to Homii <a href="https://homii.ca/Privacy-Policy/" class="login-member-anchr">Privacy Policy</a>
+                                    </label>
+                                </div>
+                            </div>
+                            @*<div class="col-md-12 pl-md-0 pr-md-0">
+                                    <div class="form-check checkbox-change">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck2" required data-parsley-required>
+                                        <label class="form-check-label" for="gridCheck2">
+                                            I AGREE I have read and agree to Homii <a href="https://homii.ca/code-of-conduct/" class="login-member-anchr">Code of Conduct</a>
+                                        </label>
+                                    </div>
+                                </div>*@
+                            <div class="col-md-12 pl-md-0 pr-md-0">
+                                @*<div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6LdcXOcUAAAAACrmT3qYDM0-A9Yc0pwIVS8uhCwz"> </div>*@
+                                @*<div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6Lex2K4ZAAAAAE1YAuuZhV3LwEBH_rCOT_mHvIhG"> </div>
+                                <span id="error" style="color: red; font-size: 16px; display:none;">please verify  your are not a bot..</span>*@
+
+
+                                <div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6Lex2K4ZAAAAAE1YAuuZhV3LwEBH_rCOT_mHvIhG"> </div>
+                                <span id="error" style="color: red; font-size: 16px;">please verify  your are not a bot..</span>
+
+
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-custom" id="ReferrerbtnSave">CONTINUE REGISTRATION</button>
+
+
+                    </form>
+
+                    <div class="already-member">
+                        <p>Already A Member? <a href="/Login/Index">Login</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-uploader bg-orange">
+                    <h1>
+                        Dear Referrer,
+
+                    </h1>
+                    <p>
+                        At Homii you will earn cash, simply by successfully referring contractors to our site!
+                        Everybody knows somebody right, so why not turn those connections into money? Whether you are a homeowner, contractor or just a visitor to our site, you will be able to earn extra cash by referring contractors to Homii.
+                    </p>
+                    <p>
+                        Your free referrer account is SO SIMPLE and will allow you to:
+
+                    </p>
+                    <div>
+                        <ul>
+                            <li>
+                                Receive a unique URL that will be created for only you
+
+                            </li>
+                            <li>
+                                Earn cash for each contractor that signs up to Homii through your unique URL
+
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        How much can you earn? At Homii, your earnings are uncapped and completely in your control.
+
+                    </p>
+                    <div>
+                        <ul>
+                            <li>
+                                Successfully refer 1-10 contractors and earn 10%
+
+                            </li>
+                            <li>
+                                Successfully refer 11-20 contractors and earn 15%
+
+                            </li>
+                            <li>
+                                Successfully refer 21+ contractors and earn 20%
+
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        Why would a contractor use my unique link to join?
+                    </p>
+
+                    <div class="uploader-ul">
+                        <ul>
+                            <li>
+                                Well that’s simple!  Every contractor who joins Homii through your unique referral link receives an <b><u>additional month’s membership for free!</u></b>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <p>By referring a contractor to Homii, you are agreeing to our<a href="https://homii.ca/terms-conditions/" class=""> Terms of Use </a></p>
+                    <p>
+                        Kind Regards,
+
+                    </p>
+                    <p> Team Homii</p>
+                    <p>
+                        Interested in joining Homii full-time? <a href="https://homii.ca/contact-us/" class=""> Contact Us </a>today.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@{
+            Html.RenderPartial("_PartialViewFooter");
+        }
+
+
+        <!-- ================== Scripting ================== -->
+        <script type="text/javascript" src="~/Content/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/bootstrap.min.js"></script>
+        @*<script type="text/javascript" src="~/Content/assets/js/jstars.min.js"></script>*-@
+        <script src="~/scripts/gijgo.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/datatables.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/dataTables.pageLoadMore.min.js"></script>
+        <script src="~/scripts/jssocials.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/functions.js"></script>
+        <!-- ================== Scripting ================== -->
+        <script src="~/scripts/jquery.fancybox.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/jquery.rateit.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/webfont.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+
+        <script src="~/scripts/jquery-ui.js"></script>
+
+        <script src="~/scripts/PageJS/SignUp.js"></script>
+
+        <script>
+            $("#shareIcons").jsSocials({
+
+                url: "https://portal.homii.ca/",
+                //text: "Google Search Page",
+                showLabel: false,
+                showCount: "inside",
+                countUrl: "url",
+                shares: ["twitter", "faceborok", "linkedin"]
+            });
+        </script>
+
+    </body>
+    </html>*@
+
+
+@section FooterScripts{
+    <script>
+        $("body").addClass("login-footer");
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/scripts/PageJS/SignUp.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

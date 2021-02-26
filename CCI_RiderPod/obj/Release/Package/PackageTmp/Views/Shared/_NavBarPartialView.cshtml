@@ -1,0 +1,225 @@
+﻿@{
+    var user = HomiiSession.CurrentUser;
+}
+
+@if (user != null)
+{
+    if (user.AccountTypeID != 3)
+    {
+        if (user.AccountTypeID == 1 || user.AccountTypeID == 4 || user.AccountTypeID == 2 && user.IsSubscriptionDone == true)
+        {
+<nav class="navigation navbar-expand-lg">
+    <div class="inner-res-btn"><i class="fa fa-bars" aria-hidden="true"></i></div>
+    <div class="container-fluid">
+        <div class="row m-0">
+            <div class="col-sm-12">
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    @*<ul class="ul-nav">
+                            <li><a href="javascript:;">System User</a></li>
+                            <li class="active"><a href="javascript:;">Categories</a></li>
+                            <li><a href="javascript:;">Provinces</a></li>
+                            <li><a href="javascript:;">Cities</a></li>
+                            <li><a href="javascript:;">Posted Projects</a></li>
+                        </ul>*@
+                    <ul class="ul-nav">
+
+                        @if (user.AccountTypeID == 1)
+                        {
+                            <li class="">
+                                <a href="../Project/Index" class="pageURL">
+                                    <span>   Post Project  </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 1)
+                        {
+                            <li>
+                                <a href="../Project/HomeOwnerProjectList" class="pageURL">
+                                    <span>   My Projects  </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 2)
+                        {
+                            <li class="">
+                                <a href="../ContractorProject/Index" class="pageURL">
+                                    <span>   My Projects  </span>
+                                    <span class="active-projects" id="CountNewList" style="display:none"></span>
+                                    @*<span id="CountNewProjectList" style="color:red; font-size:small"></span>*@
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 1)
+                        {
+                            <li>
+                                <a href="../Review/Index" class="pageURL">
+                                    <span>    Write Reviews  </span>
+                                </a>
+                            </li>
+                        }
+                        @*@if (user.AccountTypeID == 2)
+        {
+            <li>
+                <a href="../Contractor/ContractorDetail?id=@user.Id&res=1" class="pageURL" id="ScoldownCl">
+                    My Reviews
+                    <span class="active-projects" id="CountNewListReview" style="display:none"></span>
+                </a>
+            </li>
+        }*@
+                        @if (user.AccountTypeID == 1 || user.AccountTypeID == 2)
+                        {
+                            //var url = "../Chat/Index?userId="+user.Email;
+                            <li>
+                                <a href="../Chats/Index?userid=@user.Email" class="pageURL">
+                                    <span>   Messages  </span>
+                                    <span class="active-projects" id="CountNewMsgNoti" style="display:none"></span>
+
+
+                                </a>
+                            </li>
+                        }
+                        @*@if (user.AccountTypeID == 1)
+        {
+            <li>
+                <a href="../Favorite/Index" class="pageURL">
+                    Favourites
+                </a>
+            </li>
+        }*@
+                        @if (user.AccountTypeID == 1)
+                        {
+                            <li>
+                                <a href="https://homii.ca/tips-homeonwer/" class="pageURL" target="_blank">
+                                    <span>    Homii Tips  </span>
+                                </a>
+                            </li>
+                        }
+
+
+                        @if (user.AccountTypeID != 4 && user.AccountTypeID != 1)
+                        {
+                            @*<li>
+                                <a href="../Incentive/Index?id=@user.Id" class="pageURL">
+                                    <span>   Incentives  </span>
+                                    <span class="active-projects" id="CountNewListReferral" style="display:none"></span>
+                                </a>
+                            </li>*@
+                        }
+                        @if (user.AccountTypeID == 2)
+                        {
+                            <li>
+                                <a href="/Profiles/ContractorProfile?userId=@user.Id" class="pageURL" >
+                                    <span>   Edit Profile  </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 2)
+                        {
+                            <li>
+                                <a href="https://homii.ca/contractor-tips/" class="pageURL" target="_blank">
+                                    <span>   Homii Tips  </span>
+                                </a>
+                            </li>
+                        }
+                        @*@if (user.AccountTypeID == 1)
+        {
+            <li>
+                <a href="../Profiles/MyProfile" class="pageURL">
+                    Edit Profile
+                </a>
+            </li>
+        }*@
+                        @*@if (user.AccountTypeID == 2)
+        {
+            <li>
+                <a href="../Profiles/ContractorProfile?userId=@user.Id" class="pageURL">
+                    Edit Profile
+
+                </a>
+            </li>
+        }*@
+
+
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li class="">
+                                <a href="../AdminProjectList/Index" class="pageURL">
+                                    <span>   Projects  </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../HomeOwnerReviews/Index" class="pageURL">
+                                    <span>   Reviews  </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Categories/Index" class="pageURL">
+                                    <span>    Categories </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Cities/Index" class="pageURL">
+                                    <span>  Cities   </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Province/Index" class="pageURL">
+                                    <span>  Provinces   </span>
+                                </a>
+                            </li>
+                        }
+
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../UsersDetails/Index" class="pageURL">
+                                    <span>   System User   </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Adminsetting/Index" class="pageURL">
+                                    <span>   Settings  </span>
+                                </a>
+                            </li>
+                        }
+                        @if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../ReportToAdmin/Index" class="pageURL">
+                                    <span>   Report  </span>
+                                </a>
+                            </li>
+                        }
+                        @*<li>
+            <a href="../SearchContractor/Index">
+                Search Contractor
+            </a>
+        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+        }
+    }
+}
+
+
+@*</div>*@

@@ -1,0 +1,2106 @@
+﻿
+@model CCI_Homii.Models.PartialClasses.PC_UsercontratoctorDetail
+
+@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ContractorDetail - Homii";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    var ContractorReview = (List<CCI_Homii.Models.DAL.sp_GetReviewByContIDWithName_Result>)TempData["ContractorReview"];
+    var UserDetail = Model.User;
+    var UserGallery = Model.UserGallery;
+    var userlogin = HomiiSession.CurrentUser;
+    var CountOfReview = Model.GetUserCountOfReview;
+    var ContractorDetail = Model.ContractorDetail;
+    var FavContractorDetail = Model.FavContractorDetail;
+    var ContractorCategories = Model.GetContractorCategories;
+    var CitiesCategories = Model.GetCitiesCategories;
+
+    //var a = List<userlogin>
+}
+
+@section HeaderScripts{
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" />
+
+}
+
+<section id="tojimage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 m-auto">
+                <div class="card bg-gray mt-0 cstm-profile-contractor">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <h2 style=" text-align: center!important;">
+                                    Contractor Profile
+                                </h2>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row" style="
+    align-items: center;
+">
+                        <div class="col-md-4">
+                            @if (@UserDetail.ImagePath == null)
+                            {
+
+                                <div class="contractor-dp">
+                                    <img id="blah" src="../Content/Images/b649be80-2687-4f4a-a62e-09165fe405ad.jpg">
+                                    <input type="file" id="profile-img" accept=".jpg, .png, .gif,.JPG, .PNG,.jpeg, .JPEG">
+
+                                </div>
+                            }
+                            else
+                            {
+
+                                <div class="contractor-dp">
+                                    <img id="blah" src="@UserDetail.ImagePath">
+                                    <input type="file" id="profile-img" accept=".jpg, .png, .gif,.JPG, .PNG,.jpeg, .JPEG">
+
+                                </div>
+                            }
+
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row mt-10">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <label style="font-weight:bold;">Company Name</label>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    @ContractorDetail.CompanyName
+
+                                </div>
+                            </div>
+                            <div class="row mt-10">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <label style="font-weight:bold;">Business Address</label>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    @ContractorDetail.BusinessAddress
+
+                                </div>
+                            </div>
+                            <div class="row mt-10">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <label style="font-weight:bold;">Business Phone Number</label>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    @ContractorDetail.BusinessPhoneNumber
+
+                                </div>
+                            </div>
+                            <div class="row mt-10">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <label style="font-weight:bold;">Company Overview</label>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    @ContractorDetail.CompanyOverview
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="HD-main ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="main-haeding">
+                    <h1>@ContractorDetail.CompanyName</h1>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-7 cstm-fav-icons">
+
+
+                @if (@userlogin != null)
+                {
+                    @*if (@userlogin.AccountTypeID == 1)
+                        {
+                            <div class="main-aligns" id="btnContractorReport"><a >Report To Admin</a></div>
+                        }*@
+                    @*if (@ContractorDetail.AccountTypeID != @userlogin.AccountTypeID)
+                        {
+                            <div class="main-aligns"><i class="fa fa-comment" aria-hidden="true"></i><a onclick="CreateGroupChannel('@ContractorDetail.Email','@userlogin.Email','@ContractorDetail.FirstName @ContractorDetail.LastName','@userlogin.FirstName @userlogin.LastName')">Message</a></div>
+                        }*@
+
+                }
+
+                <div class="shareicnbx">
+                    <span class="shares">Share now:</span>
+
+                    <div id="shareIconsCountInside">
+
+                    </div>
+                </div>
+                @if (@userlogin != null)
+                {
+                    if (ContractorDetail.AccountTypeID != userlogin.AccountTypeID && userlogin.AccountTypeID == 1)
+                    {
+
+
+                        if (@FavContractorDetail != null)
+                        {
+                            if (FavContractorDetail.Id > 0)
+                            {
+                                <input type="hidden" class="txtContractorID" id="txtContractorID" value="@ContractorDetail.Id" />
+                                <div class="favi-heart bg-transparent CursorPointer" id="FavouriteContractor_@ContractorDetail.Id" title="Add To Favorite" _ischecked="1" onclick="FavouriteContractor(@ContractorDetail.Id)">
+                                    <i class="fa fa-heart-o hrt"></i>
+                                    Favourite
+                                </div>
+                            }
+
+                        }
+                        else
+                        {
+                            <input type="hidden" class="txtContractorID" id="txtContractorID" value="@ContractorDetail.Id" />
+                            <div class="favi-heart bg-transparent CursorPointer" id="FavouriteContractor_@ContractorDetail.Id" title="Add To Favorite" _ischecked="1" onclick="FavouriteContractor(@ContractorDetail.Id)">
+                                <i class="fa fa-heart-o hrt"></i>
+                                Favourite
+                            </div>
+                        }
+
+
+                    }
+
+
+                }
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="bg-gray">
+                <div class="row">
+
+
+
+
+
+
+
+                    <div class="col-xl-3 col-lg-4 text-center">
+                        @if (@UserDetail.ImagePath == null)
+                        {
+
+                            @*<div class="contractor-dp">*@
+                            <img src="~/Content/Images/images.png" alt="" class="rounded-circle detail_bp" />
+
+                            @*</div>*@
+                        }
+                        else
+                        {
+
+                            @*<img src="@UserDetail.ImagePath" alt="~/Content/Images/images.png" class="rounded-circle detail_bp" />*@
+                            <img src="@UserDetail.ImagePath" class="rounded-circle detail_bp" />
+                        }
+
+                        <div class="brdr-botm">
+                            @*<p>@ContractorDetail.FirstName @ContractorDetail.LastName</p>*@
+                            @if (@userlogin != null)
+                            {
+
+                                if (@ContractorDetail.AccountTypeID != @userlogin.AccountTypeID && @userlogin.AccountTypeID == 1)
+                                {
+                                    <a class="btn btn-primary btn-custom btnsm" onclick="CreateGroupChannel('@ContractorDetail.Email','@userlogin.Email','@ContractorDetail.CompanyName','@userlogin.FirstName @userlogin.LastName')"><i class="fa fa-comment" aria-hidden="true"></i> Send Message</a>
+                                    @*<a class="btn btn-primary btn-custom btnsm" onclick="CreateGroupChannel('@ContractorDetail.Email','@userlogin.Email','@ContractorDetail.FirstName @ContractorDetail.LastName','@userlogin.FirstName @userlogin.LastName')"><i class="fa fa-comment" aria-hidden="true"></i> Send Message</a>*@
+                                }
+                                if (@userlogin.AccountTypeID == 1)
+                                {
+                                    <a class="btn btn-primary btn-custom btnsm" id="btnContractorReport">Report To Admin</a>
+                                }
+
+                                if (userlogin.AccountTypeID == 1)
+                                {
+                                    @*<button type="button" onclick="window.location.href='/writeareview/index?id='+@ContractorDetail.Id+''" class="btn btn-primary btn-custom">WRITE A REVIEW</button>*@
+                                    <a href="/writeareview/index?id=@ContractorDetail.Id" class="btn btn-primary btn-custom btnsm">WRITE A REVIEW</a>
+                                }
+
+
+                            }
+                            else
+                            {
+                                <a href="/writeareview/index?id=@ContractorDetail.Id" class="btn btn-primary btn-custom btnsm">WRITE A REVIEW</a>
+                            }
+                            <p class="p-font-size">Rating of @ContractorDetail.TotalRating / 5 from @ContractorReview.Count() Reviews</p>
+                            <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@ContractorDetail.TotalRating" data-rateit-step="1"></div>
+
+                        </div>
+
+                        @if (ContractorDetail.WebsiteUrl != null)
+                        {
+                            <a href="@ContractorDetail.WebsiteUrl" class="social_contractr" target="_blank"><i class="fa fa-globe"></i></a>
+                        }
+                        @if (ContractorDetail.InstagramUrl != null)
+                        {
+                            <a href="@ContractorDetail.InstagramUrl" class="social_contractr" target="_blank"><i class="fa fa-instagram"></i></a>
+
+                        }
+
+                        @if (ContractorDetail.TwitterUrl != null)
+                        {
+                            <a href="@ContractorDetail.TwitterUrl" class="social_contractr" target="_blank"><i class="fa fa-twitter"></i></a>
+                        }
+                        @if (ContractorDetail.FacebookUrl != null)
+                        {
+                            <a href="@ContractorDetail.FacebookUrl" class="social_contractr" target="_blank"><i class="fa fa-facebook"></i></a>
+                        }
+                        @if (ContractorDetail.YoutubeUrl != null)
+                        {
+
+                            <a href="WWW.@ContractorDetail.YoutubeUrl" class="social_contractr" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                        }
+
+
+
+                        <div class="services">
+                            <h1>
+                                Services
+                                @*@if (@userlogin != null)
+                                    {
+                                        if (@userlogin.AccountTypeID == 2)
+                                        {
+
+                                            <button type="button" class="btn btn-primary btn-custom btn-black text-uppercase addservices" data-toggle="modal" data-target="#addmore"><i class="fa fa-plus" aria-hidden="true"></i>Add Services</button>
+                                        }
+                                    }*@
+                            </h1>
+                            <div class="btns mb-4">
+                                @for (int i = 0; i < ContractorCategories.Count; i++)
+                                {
+                                    <button type="button" class="btn btn-primary btn-custom"><i class="fa fa-check"></i> @ContractorCategories[i].cateName</button>
+                                }
+                            </div>
+
+                        </div>
+                        <div class="add-more-btn">
+                            <!-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#addmore">+ Add More</button> -->
+
+
+                        </div>
+                        <div class="services">
+                            <h1>
+                                Service  Areas
+                                @*@if (userlogin != null)
+                                    {
+                                        if (userlogin.AccountTypeID == 2)
+                                        {
+                                            <button type="button" class="btn btn-primary btn-custom btn-black text-uppercase addservices" data-toggle="modal" data-target="#addmoreCities"><i class="fa fa-plus" aria-hidden="true"></i>Add Cities</button>
+                                        }
+                                    }*@
+                            </h1>
+                            <div class="btns mb-4">
+                                @for (int i = 0; i < CitiesCategories.Count; i++)
+                                {
+                                    <button type="button" class="btn btn-primary btn-custom"><i class="fa fa-check"></i> @CitiesCategories[i].CityName</button>
+                                }
+                            </div>
+
+                        </div>
+                        <div class="add-more-btn">
+                            <!-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#addmore">+ Add More</button> -->
+
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form class="cstm-forms">
+                                    <input type="hidden" class="form-control" value="@ContractorDetail.Id" hidden>
+
+
+
+                                    @if (ContractorDetail.CompanyName != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Company Name</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.CompanyName</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                    @if (ContractorDetail.BusinessPhoneNumber != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Company Phone</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.BusinessPhoneNumber</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.BusinessAddress != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Business Addresss</label>
+                                            <div class="col-sm-7">
+                                                @*<input type="text" class="form-control" placeholder="1600 Amphion street Victoria">*@
+                                                <p class="contrctr_detail_p">@ContractorDetail.BusinessAddress</p>
+                                            </div>
+                                        </div>
+                                    }
+                                    @if (ContractorDetail.Email != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Email address</label>
+                                            <div class="col-sm-7">
+                                                @*<input type="email" class="form-control" placeholder="Finch123@gmail.com">*@
+                                                <p class="contrctr_detail_p emails" title="@ContractorDetail.Email">@ContractorDetail.Email</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                    @if (ContractorDetail.Licenses != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Licenses</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.Licenses</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.Brands != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Brands</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.Brands</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.Certificates != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Certificates</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.Certificates</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.Awards != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Awards</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.Awards</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.CommercialServices != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-7 col-form-label">Commercial Services</label>
+                                            <div class="col-sm-5">
+                                                @if (ContractorDetail.CommercialServices == false)
+                                                {
+                                                    <p class="contrctr_detail_p">No</p>
+                                                }
+                                                else
+                                                {
+                                                    <p class="contrctr_detail_p">Yes</p>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                    @if (ContractorDetail.NumberOfEmployee != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-7 col-form-label">Number of Employees</label>
+                                            <div class="col-sm-5">
+                                                @*<input type="text" readonly class="form-control" value="">*@
+                                                <p class="contrctr_detail_p">@ContractorDetail.NumberOfEmployee</p>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                    @if (ContractorDetail.PaymentMethods != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-7 col-form-label">Payment Methods</label>
+                                            <div class="col-sm-5">
+                                                <p class="contrctr_detail_p">@ContractorDetail.PaymentMethods</p>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+
+
+                                    @if (ContractorDetail.Styles != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Styles</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.Styles</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.Products != null)
+                                    {
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Products</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.Products</p>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    @if (ContractorDetail.EmergencyService != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-7 col-form-label">Emergency Service</label>
+                                            <div class="col-sm-5">
+                                                @if (ContractorDetail.EmergencyService == false)
+                                                {
+                                                    <p class="contrctr_detail_p">No</p>
+                                                }
+                                                else
+                                                {
+                                                    <p class="contrctr_detail_p">Yes</p>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                    @if (ContractorDetail.LegalStructure != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Legal Structure</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.LegalStructure</p>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                    @if (ContractorDetail.InBusinessSince != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">In Business Since</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.InBusinessSince</p>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                    @if (ContractorDetail.ProjectMinimum != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-5 col-form-label">Project Minimum</label>
+                                            <div class="col-sm-7">
+                                                <p class="contrctr_detail_p">@ContractorDetail.ProjectMinimum</p>
+                                            </div>
+                                        </div>
+
+                                    }
+
+                                    @*@if (ContractorDetail.ProjectMinimum != null)
+                                        {
+
+                                            <div class="form-group">
+                                                <label class="col-sm-5 col-form-label">Project Minimum</label>
+                                                <div class="col-sm-7">
+                                                    <p class="contrctr_detail_p">@ContractorDetail.ProjectMinimum</p>
+                                                </div>
+                                            </div>
+
+                                        }*@
+
+
+
+                                    @if (ContractorDetail.WrittenContract != null)
+                                    {
+
+                                        <div class="form-group">
+                                            <label class="col-sm-7 col-form-label">Written Contract</label>
+                                            <div class="col-sm-5">
+                                                @if (ContractorDetail.WrittenContract == false)
+                                                {
+                                                    <p class="contrctr_detail_p">No</p>
+                                                }
+                                                else
+                                                {
+                                                    <p class="contrctr_detail_p">Yes</p>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                </form>
+
+
+                            </div>
+
+
+                            @*<div class="col-sm-12">
+                                    <a href="#" class="see-more">SEE MORE</a>
+                                </div>*@
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (ContractorDetail.CompanyOverview != null)
+{
+
+    <div class="HD-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-haeding">
+                        <h1>Company Overview</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="bg-gray tab-content-1">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="tab-box">
+                        <h3 class="tab-box-P">@ContractorDetail.CompanyOverview</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (UserGallery.Count > 0)
+{
+
+    <div class="HD-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-haeding">
+                        <h1>Image Gallery</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="bg-gray">
+                    <div class="img-gallery owl-carousel imglist">
+
+
+                        @for (int i = 0; i < UserGallery.Count; i++)
+                        {
+                            <a data-fancybox="images" href="@UserGallery[i].GalImagePath">
+                                <img src="@UserGallery[i].GalImagePath" alt="" class="gallery_img" />
+                                <div class="img-searh"><i class="fa fa-search"></i></div>
+                            </a>
+                            @*<img src="@UserGallery[i].GalImagePath" id="profile-img-tag" width="150px" height="150px" align="middle" />*@
+                            @*<a onclick="bindDeleteGalImage(@UserGallery[i].Id)">Delete</a>*@
+                        }
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+}
+
+
+<div class="tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" id="ScrolReview">
+                <div class="tab-slider--container">
+
+                    <div class="tab-slider--body">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <div class="main-HD">
+                                    <h1>Review/Testimonials</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                @if (@userlogin != null)
+                                {
+                                    if (userlogin.AccountTypeID == 1)
+                                    {
+                                        <button type="button" onclick="window.location.href='/writeareview/index?id='+@ContractorDetail.Id+''" class="btn btn-primary btn-custom">WRITE A REVIEW</button>
+                                        @*<input type="button" data-toggle="modal" class="WriteAReview" data-target="#myModalReview" data-id="" value="Write a Review" />*@
+                                        @*<button type="button" data-toggle="modal" class="btn btn-primary btn-custom WriteAReview" data-target="#myModalReview" data-id="">WRITE A REVIEW</button>*@
+                                    }
+                                }
+                                else
+                                {
+                                    <button type="button" onclick="window.location.href='/writeareview/index?id='+@ContractorDetail.Id+''" class="btn btn-primary btn-custom">WRITE A REVIEW</button>
+
+                                }
+
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @if (ContractorReview != null)
+                                {
+                                    if (ContractorReview.Count() != 0)
+                                    {
+                                        foreach (var conreview in ContractorReview)
+                                        {
+                                            <div class="tab-content cstm review-testi">
+
+                                                <div class="star-rating">
+                                                    <div class="row">
+                                                        <input type="hidden" value="@conreview.Id" id="RewId" />
+
+
+                                                        <div class="col-md-9 order-md-9 order-sm-9">
+                                                            <div class="main-review-details">
+                                                                <input id="ReviewDate" type="hidden" value="@Convert.ToDateTime(conreview.CreatedDate).ToString("yyyy-MM-dd")" />
+                                                                <h5 class="text-right dates">Review Date: @Convert.ToDateTime(conreview.CreatedDate).ToString("yyyy-MM-dd")</h5>
+                                                                <span id="ContractorId" hidden>@conreview.ContractorId</span>
+                                                                <h3>
+                                                                    @*<a>*@
+                                                                    @conreview.FirstName  @conreview.LastName[0]
+                                                                    @*from @conreview.CityName*@
+                                                                    @*</a>*@
+                                                                </h3>
+                                                                <h4>"@conreview.Title"</h4>
+                                                                <div class="inner-details">
+                                                                    <p>@conreview.Description</p>
+                                                                    @if (userlogin != null)
+                                                                    {
+                                                                        if (userlogin.AccountTypeID == 2)
+                                                                        {
+
+                                                                            @*<div>
+                                                                                    <input type="button" data-toggle="modal" id="btn_@conreview.Id" class="ReportBt" data-target="#myModal" data-id="@conreview.Id" value="Report To Admin" />
+                                                                                </div>*@
+                                                                            if (userlogin.Id == @ContractorDetail.Id)
+                                                                            {
+
+                                                                                <button class="btn btn-primary btn-custom ReportBt" data-toggle="modal" id="btn_@conreview.ReviewId" data-target="#ReportToAdmin" data-id="@conreview.ReviewId">Report To Admin</button>
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 order-md-3 order-sm-12">
+                                                            <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@conreview.ratingSingle" data-rateit-step="1"></div>
+                                                            <div class="main-works">
+                                                                <p>Quality of Work</p>
+                                                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.QualityOfWork" data-rateit-step="1"></div>*@
+                                                                <span>  @conreview.QualityOfWork</span>
+                                                            </div>
+                                                            <div class="main-works">
+                                                                <p>Communication</p>
+                                                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Communication" data-rateit-step="1"></div>*@
+                                                                <span>  @conreview.Communication</span>
+                                                            </div>
+
+                                                            <div class="main-works">
+                                                                <p>Timelines</p>
+                                                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Timeliness" data-rateit-step="1"></div>*@
+                                                                <span>  @conreview.Timeliness</span>
+                                                            </div>
+
+                                                            <div class="main-works">
+                                                                <p>Cleanliness</p>
+                                                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Cleanliness" data-rateit-step="1"></div>*@
+                                                                <span> @conreview.Cleanliness</span>
+                                                            </div>
+
+                                                            <div class="main-works">
+                                                                <p>Stayed in Budget</p>
+                                                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.StayedInBudget" data-rateit-step="1"></div>*@
+                                                                <span>  @conreview.StayedInBudget</span>
+                                                            </div>
+                                                            <div class="main-works">
+
+                                                                <p>Courteous</p>
+                                                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Courteous" data-rateit-step="1"></div>*@
+                                                                <span>  @conreview.Courteous</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div class="tab-content review no-reviews">
+                                            <div class="main-no-review">
+                                                <h1>Whoops,</h1>
+                                                @*<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>*@
+                                                <p> looks like this company doesn't have a review just yet. Why don't you be the first to share your experience?</p>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                else
+                                {
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addmore" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Add More Services</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <h5>Your Selected Services</h5>
+                <div class="row Wrapper1">
+
+                </div>
+                <hr>
+                <h5>Multiple Services</h5>
+                <div class="row Wrapper2">
+
+                </div>
+                <hr />
+                <div class="row Wrapper3">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="setCategoriestoUnSelected()" class="btn btn-primary btn-custom">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addmoreCities" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Add More Cities</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <h5>Your Selected Cities</h5>
+                <div class="row SelectedCitiesWrapper">
+
+                </div>
+                <hr>
+                <h5>Multiple Cities</h5>
+                <div class="row UnSelectedCitiesWrapper">
+
+                </div>
+                <hr />
+                <div class="row PendingCitiesWrapper">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="setCitiestoUnSelected()" class="btn btn-primary btn-custom">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--Modal-->
+@*<div id="myModalReview" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                <h1 class="modal-title text-center">Write a Review</h1>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>
+
+                    <span> QualityOfWork</span>
+                    <input id="input1" name="input-1" class="rating" value="0" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-clear="false" data-show-caption="false">
+                    <span> Timeliness</span>
+                    <input id="input2" name="input-1" class="rating" value="0" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-clear="false" data-show-caption="false">
+                    <span> StayedInBudget</span>
+                    <input id="input3" name="input-1" class="rating" value="0" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-clear="false" data-show-caption="false">
+                    <span> Communication</span>
+                    <input id="input4" name="input-1" class="rating" value="0" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-clear="false" data-show-caption="false">
+                    <span> Cleanliness</span>
+                    <input id="input5" name="input-1" class="rating" value="0" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-clear="false" data-show-caption="false">
+                    <span> Courteous</span>
+                    <input id="input6" name="input-1" class="rating" value="0" data-min="0" data-max="5" data-step="1" data-size="xs" data-show-clear="false" data-show-caption="false">
+                    <div class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>
+
+                    <span> Title </span>
+                    <input id="title" name="Title" type="text">
+
+
+
+                    @*<input id="btnsave" type="button" value="Submit" />*@
+@*<lable>Comments</lable><br />
+                            <textarea rows="4" cols="50" id="CommentSave"></textarea>*-@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" id="btnsave">Submit</button>
+                    <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancel" />
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="write-a-review" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form class="parsleyvalcs" id="reviewForm">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Write a Review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="form-title col-sm-6">
+                        <input type="text" name="title" id="title" data-parsley-required="true" data-parsley-trigger="keyup" class="form-control" placeholder="Title">
+                    </div>
+                    <br />
+                    <div class="form-title col-sm-12">
+                        <textarea type="text" name="description" id="Description" cols="05" rows="05" data-parsley-required="true" data-parsley-trigger="keyup" class="form-control" placeholder="Description"></textarea>
+                    </div>
+                    <div class="start-modal-rating">
+                        <div class="row">
+                            <div class="col-sm-4 mr-top">
+
+                                <input value="@ContractorDetail.Id" id="contratorId" hidden />
+                                <p>Quality of Work</p>
+                                @*<div id="input1" class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                                <div id="input1" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                                @*<div class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                            </div>
+                            <div class="col-sm-4 mr-top">
+                                <p>Communication</p>
+                                @*<div id="input4" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*@
+                                @*<div id="input4" class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                                <div id="input4" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                            </div>
+                            <div class="col-sm-4 mr-top">
+                                <p>Timelines</p>
+                                @*<div id="input2" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*@
+                                @*<div id="input2" class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                                <div id="input2" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                            </div>
+                            <div class="col-sm-4 mr-top">
+                                <p>Cleanliness</p>
+                                @*<div id="input5" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*@
+                                @*<div id="input5" class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                                <div id="input5" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                            </div>
+                            <div class="col-sm-4 mr-top">
+                                <p>Stayed in Budget</p>
+                                @*<div id="input3" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*@
+                                @*<div id="input3" class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                                <div id="input3" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                            </div>
+                            <div class="col-sm-4 mr-top">
+                                <p>Courteous</p>
+                                @*<div id="input6" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*@
+                                @*<div id="input6" class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*@
+
+                                <div id="input6" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btnsave1" class="btn btn-primary btn-custom">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="ReportToAdmin" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <form class="parsleyvalcs form" id="reportadminForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Report To Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row">
+                        @*<div class="col-sm-12">
+
+                                <div>
+                                    <span>Comments</span>
+
+                                    <textarea rows="4" class="form-control" id="CommentSave" data-parsley-required="true" data-parsley-trigger="keyup"></textarea>
+
+                                </div>
+
+                            </div>*@
+
+
+                        <div class="col-sm-12">
+
+                            <div class="row">
+                                <div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>Subject</label>
+                                        <input type="text" class="form-control" id="txtSubjectHome" data-parsley-required="true" data-parsley-trigger="keyup">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea rows="4" type="text" class="form-control" id="txtDescriptionHome"
+                                                  data-parsley-required="true" data-parsley-trigger="keyup"
+                                                  data-parsley-minlength="50" data-parsley-maxlength="4000"
+                                                  data-parsley-required-message="Description Is Required"
+                                                  data-parsley-minlength-message="Description must be at least 50 characters"
+                                                  data-parsley-maxlength-message="Description must be between 50-4000 characters"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-custom" id="ReportBtnSave">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--HomeOwner Report Modal-->
+<div class="modal fade" id="ContractorReport" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form class="parsleyvalcs form" id="conRepForm">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Contractor Report</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="form-group">
+                        <label>Homii's report tool is designed for Homeowners to report any major issues that could not be resolved directly with the Contractor Company. Submit as much information as possible, and someone from Homii will update you.</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="row">
+                                <div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>Subject</label>
+                                        <input type="text" class="form-control" id="txtSubject" data-parsley-required="true" data-parsley-trigger="keyup">
+                                    </div>
+                                </div>
+                                @*<div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="number" class="form-control" id="txtContact" min="10" max="10" required data-parsley-type="number" data-parsley-trigger="keyup">
+                                        </div>
+                                    </div>*@
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea rows="4" type="text" class="form-control" id="txtDescription"
+                                                  data-parsley-required="true" data-parsley-trigger="keyup"
+                                                  data-parsley-minlength="50" data-parsley-maxlength="4000"
+                                                  data-parsley-required-message="Description Is Required"
+                                                  data-parsley-minlength-message="Description must be at least 50 characters"
+                                                  data-parsley-maxlength-message="Description must be between 50-4000 characters"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-custom" id="btnSaveContractReport">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+@section FooterScripts{
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script>
+
+        $('.loader').css("display", "flex");
+
+        $("#shareIconsCountInside").jsSocials({
+
+            //text: "Google Search Page",
+            showLabel: true,
+            showCount: "inside",
+            shares: ["twitter", "facebook", "linkedin"]
+        });
+    </script>
+    <script src="~/scripts/PageJS/FavoriteContractor.js"></script>
+    <script src="~/scripts/PageJS/Contractor.js"></script>
+
+    @*<script src="~/scripts/jquery.rateyo.min.js"></script>*@
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model CCI_Homii.Models.PartialClasses.PC_UsercontratoctorDetail
+
+    @{
+        //Layout = null;
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewBag.Title = "ContractorDetail - Homii";
+        //Layout = "~/Views/Shared/_Layout.cshtml";
+        var ContractorReview = (List<CCI_Homii.Models.DAL.sp_GetReviewByContIDWithName_Result>)TempData["ContractorReview"];
+        var UserDetail = Model.User;
+        var UserGallery = Model.UserGallery;
+        var userlogin = HomiiSession.CurrentUser;
+        var CountOfReview = Model.GetUserCountOfReview;
+        var ContractorDetail = Model.ContractorDetail;
+        var FavContractorDetail = Model.FavContractorDetail;
+        var ContractorCategories = Model.GetContractorCategories;
+        var CitiesCategories = Model.GetCitiesCategories;
+
+        //var a = List<userlogin>
+    }
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <div class="HD-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="main-haeding">
+                        <h1>@ContractorDetail.CompanyName</h1>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-lg-7 cstm-fav-icons">
+
+
+                    @if (@userlogin != null)
+                    {
+                        if (@userlogin.AccountTypeID == 1)
+                        {
+                            <div class="main-aligns" id="btnContractorReport"><a>Report To Admin</a></div>
+                        }
+                        if (@ContractorDetail.AccountTypeID != @userlogin.AccountTypeID)
+                        {
+                            <div class="main-aligns"><i class="fa fa-comment" aria-hidden="true"></i><a onclick="CreateGroupChannel('@ContractorDetail.Email','@userlogin.Email','@ContractorDetail.FirstName @ContractorDetail.LastName','@userlogin.FirstName @userlogin.LastName')">Message</a></div>
+                        }
+
+                    }
+
+                    <div id="shareIconsCountInside">
+
+                    </div>
+                    @if (@userlogin != null)
+                    {
+                        if (ContractorDetail.AccountTypeID != userlogin.AccountTypeID && userlogin.AccountTypeID != 4)
+                        {
+
+
+                            if (@FavContractorDetail != null)
+                            {
+                                if (FavContractorDetail.Id > 0)
+                                {
+                                    @*<span>Favourite</span>*@
+@*<i class="fa fa-heart" id="FavouriteContractor" style="color:red;"></i>*@
+@*<input type="hidden" class="txtContractorID" id="txtContractorID" value="@UserDetail.Id" />
+                                        <div class="favi-heart" id="favouritecontractor_@UserDetail.Id" title="UnFavorite" style="color:#0c2233;" onclick="FavouriteContractor(@UserDetail.Id)">
+                                        @*<div class="favi-heart" id="FavouriteContractor" style="color:red;" >*-@
+                                            <i class="fa fa-heart" style="color:#0c2233;"></i><span>
+                                                Favourite
+                                            </span>
+                                        </div>*-@
+                                    <input type="hidden" class="txtContractorID" id="txtContractorID" value="@UserDetail.Id" />
+                                    <div class="favi-heart bg-transparent" id="favouritecontractor_@UserDetail.Id" title="Add To Favorite" _ischecked="1" onclick="FavouriteContractor(@UserDetail.Id)">
+                                        <i class="fa fa-heart-o hrt"></i>
+                                        Favourite
+                                    </div>
+                                }
+
+                            }
+                            else
+                            {
+                                <input type="hidden" class="txtContractorID" id="txtContractorID" value="@UserDetail.Id" />
+                              <div class="favi-heart" id="FavouriteContractor_@UserDetail.Id" title="Add To Favorite" onclick="FavouriteContractor(@UserDetail.Id)">
+
+                                    <div class="favi-heart" id="FavouriteContractor">
+                                        <i class="fa fa-heart-o"></i><span>
+                                            Favourite
+                                        </span>
+                                    </div>
+                                </div>
+                            }
+
+
+                        }
+
+
+                    }
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="bg-gray">
+                    <div class="row">
+
+
+
+
+
+
+
+                        <div class="col-xl-3 col-lg-4 text-center">
+                            @if (@UserDetail.ImagePath == null)
+                            {
+
+
+                                <img src="~/Content/Images/images.png" alt="" class="rounded-circle detail_bp" />
+
+
+                            }
+                            else
+                            {
+
+                                <img src="@UserDetail.ImagePath" alt="" class="rounded-circle detail_bp" />
+                            }
+
+                            <div class="brdr-botm">
+                                <p>@ContractorDetail.FirstName @ContractorDetail.LastName</p>
+
+                                <p class="p-font-size">Rating of @ContractorDetail.TotalRating / 5 from @ContractorReview.Count() Reviews</p>
+                                <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@ContractorDetail.TotalRating" data-rateit-step="1"></div>
+
+                            </div>
+                            <div class="services">
+                                <h1>
+                                    Services
+                                    @if (@userlogin != null)
+                                    {
+                                        if (@userlogin.AccountTypeID == 2)
+                                        {
+
+                                            <button type="button" class="btn btn-primary btn-custom btn-black text-uppercase addservices" data-toggle="modal" data-target="#addmore"><i class="fa fa-plus" aria-hidden="true"></i>Add Services</button>
+                                        }
+                                    }
+                                </h1>
+                                <div class="btns mb-4">
+                                    @for (int i = 0; i < ContractorCategories.Count; i++)
+                                    {
+                                        <button type="button" class="btn btn-primary btn-custom"><i class="fa fa-check"></i> @ContractorCategories[i].cateName</button>
+                                    }
+                                </div>
+
+                            </div>
+                            <div class="add-more-btn">
+                                <!-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#addmore">+ Add More</button> -->
+
+
+                            </div>
+                            <div class="services">
+                                <h1>
+                                    Service  Areas
+                                    @if (userlogin != null)
+                                    {
+                                        if (userlogin.AccountTypeID == 2)
+                                        {
+                                            <button type="button" class="btn btn-primary btn-custom btn-black text-uppercase addservices" data-toggle="modal" data-target="#addmoreCities"><i class="fa fa-plus" aria-hidden="true"></i>Add Cities</button>
+                                        }
+                                    }
+                                </h1>
+                                <div class="btns mb-4">
+                                    @for (int i = 0; i < CitiesCategories.Count; i++)
+                                    {
+                                        <button type="button" class="btn btn-primary btn-custom"><i class="fa fa-check"></i> @CitiesCategories[i].CityName</button>
+                                    }
+                                </div>
+
+                            </div>
+                            <div class="add-more-btn">
+                                <!-- <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#addmore">+ Add More</button> -->
+
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-xl-9 col-lg-8">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form>
+                                        <input type="hidden" class="form-control" value="@ContractorDetail.Id" hidden>
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Email address</label>
+                                            <div class="col-sm-7">
+                                               <input type="email" readonly class="form-control" value="@ContractorDetail.Email">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Business Addresss</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.BusinessAddress">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Licenses</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.Licenses">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Brands</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.Brands">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Certificates</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.Certificates">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Awards</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.Awards">
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 col-form-label">Commercial Services</label>
+                                                <div class="col-sm-8">
+                                                    <input type="tel" readonly class="form-control" value="@ContractorDetail.CommercialServices">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-7 col-form-label">Number of Employees</label>
+                                                <div class="col-sm-5">
+                                                    <input type="text" readonly class="form-control" value="@ContractorDetail.NumberOfEmployee">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-7 col-form-label">Payment Methods</label>
+                                                <div class="col-sm-5">
+                                                    <input type="text" readonly class="form-control" value="@ContractorDetail.PaymentMethods">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                                <div class="col-md-6">
+                                    <form>
+
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Company Name</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.CompanyName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Company Phone</label>
+                                            <div class="col-sm-7">
+                                                <input type="tel" readonly class="form-control" value="@ContractorDetail.BusinessPhoneNumber">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Styles</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.Styles">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-sm-5 col-form-label">Products</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" readonly class="form-control" value="@ContractorDetail.Products">
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-5 col-form-label">Emergency Service</label>
+                                                <div class="col-sm-7">
+                                                    <input type="tel" readonly class="form-control" value="@ContractorDetail.EmergencyService">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-5 col-form-label">Legal Structure</label>
+                                                <div class="col-sm-7">
+                                                    <input type="tel" readonly class="form-control" value="@ContractorDetail.LegalStructure">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-5 col-form-label">In Business Since</label>
+                                                <div class="col-sm-7">
+                                                    <input type="tel" readonly class="form-control" value="@ContractorDetail.InBusinessSince">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-5 col-form-label">Project Minimum</label>
+                                                <div class="col-sm-7">
+                                                    <input type="tel" readonly class="form-control" value="@ContractorDetail.ProjectMinimum">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="col-sm-5 col-form-label">Written Contract</label>
+                                                <div class="col-sm-7">
+                                                    <input type="tel" readonly class="form-control" value="@ContractorDetail.WrittenContract">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (ContractorDetail.CompanyOverview != null)
+    {
+
+        <div class="HD-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main-haeding">
+                            <h1>Company Overview</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="bg-gray tab-content-1">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="tab-box">
+                            <h3 class="tab-box-P">@ContractorDetail.CompanyOverview</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    @if (UserGallery.Count > 0)
+    {
+
+        <div class="HD-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main-haeding">
+                            <h1>Image Gallery</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="bg-gray">
+                        <div class="img-gallery owl-carousel imglist">
+
+
+                            @for (int i = 0; i < UserGallery.Count; i++)
+                            {
+                                <a data-fancybox="images" href="@UserGallery[i].GalImagePath">
+                                    <img src="@UserGallery[i].GalImagePath" alt="" class="gallery_img" />
+                                    <div class="img-searh"><i class="fa fa-search"></i></div>
+                                </a>
+
+                            }
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+
+    <div class="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" id="ScrolReview">
+                    <div class="tab-slider--container">
+
+                        <div class="tab-slider--body">
+                            <div class="row align-items-center">
+                                <div class="col-sm-6">
+                                    <div class="main-HD">
+                                        <h1>Review/Testimonials</h1>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    @if (@userlogin != null)
+                                    {
+                                        if (userlogin.AccountTypeID == 1)
+                                        {
+                                            <button type="button" class="btn btn-primary btn-custom" data-toggle="modal" data-target="#write-a-review">WRITE A REVIEW</button>
+                                           }
+                                    }
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-12">
+                                @if (ContractorReview != null)
+                                {
+                                    foreach (var conreview in ContractorReview)
+                                    {
+
+
+
+                                        <div class="tab-content cstm">
+
+
+
+                                            <div class="star-rating">
+                                                <div class="row">
+                                                    <input type="hidden" value="@conreview.Id" id="RewId" />
+                                                    <div class="col-lg-3 col-md-4 col-6">
+                                                        <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@conreview.rating" data-rateit-step="1"></div>
+                                                        <div class="main-works">
+                                                            <p>Quality of Work</p>
+                                                            <span>  @conreview.QualityOfWork</span>
+                                                        </div>
+                                                        <div class="main-works">
+                                                            <p>Communication</p>
+                                                            <span>  @conreview.Communication</span>
+                                                        </div>
+
+                                                        <div class="main-works">
+                                                            <p>Timelines</p>
+                                                            <span>  @conreview.Timeliness</span>
+                                                        </div>
+
+                                                        <div class="main-works">
+                                                            <p>Cleanliness</p>
+                                                            <span> @conreview.Cleanliness</span>
+                                                        </div>
+
+                                                        <div class="main-works">
+                                                            <p>Stayed in Budget</p>
+                                                            <span>  @conreview.StayedInBudget</span>
+                                                        </div>
+                                                        <div class="main-works">
+
+                                                            <p>Courteous</p>
+                                                            <span>  @conreview.Courteous</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-9 col-md-9">
+                                                        <div class="main-review-details">
+                                                            <h5 class="text-right dates">Review Date: @Convert.ToDateTime(conreview.CreatedDate).ToString("yyyy-MM-dd")</h5>
+                                                            <span id="ContractorId" hidden>@conreview.ContractorId</span>
+                                                            <h3><a> @conreview.FirstName  @conreview.LastName</a> </h3>
+                                                            <h4>"@conreview.Title"</h4>
+                                                            <div class="inner-details">
+                                                                <p>@conreview.Description</p>
+                                                                @if (userlogin != null)
+                                                                {
+                                                                    if (userlogin.AccountTypeID == 2)
+                                                                    {
+     <button class="btn btn-primary btn-custom" data-toggle="modal" id="btn_@conreview.Id" data-target="#ReportToAdmin" data-id="@conreview.Id">Report To Admin</button>
+                                                                    }
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+
+
+
+                                    }
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="addmore" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add More Services</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <h5>Your Selected Services</h5>
+                    <div class="row Wrapper1">
+
+                    </div>
+                    <hr>
+                    <h5>Multiple Services</h5>
+                    <div class="row Wrapper2">
+
+                    </div>
+                    <hr />
+                    <div class="row Wrapper3">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="setCategoriestoUnSelected()" class="btn btn-primary btn-custom">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addmoreCities" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add More Cities</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <h5>Your Selected Cities</h5>
+                    <div class="row SelectedCitiesWrapper">
+
+                    </div>
+                    <hr>
+                    <h5>Multiple Cities</h5>
+                    <div class="row UnSelectedCitiesWrapper">
+
+                    </div>
+                    <hr />
+                    <div class="row PendingCitiesWrapper">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="setCitiestoUnSelected()" class="btn btn-primary btn-custom">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="write-a-review" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <form class="parsleyvalcs" id="reviewForm">
+                <div class="modal-content modal-content-review">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="write-a-reviewLabel">Write a Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-body-review">
+                        <div class="form-title col-sm-6">
+                            <input type="text" name="title" id="title" data-parsley-required="true" data-parsley-trigger="keyup" class="form-control" placeholder="Title">
+                        </div>
+                        <br />
+                        <div class="form-title col-sm-12">
+                            <textarea type="text" name="description" id="Description" cols="05" rows="05" data-parsley-required="true" data-parsley-trigger="keyup" class="form-control" placeholder="Description"></textarea>
+                        </div>
+                        <div class="start-modal-rating">
+                            <div class="row">
+                                <div class="col-sm-4 mr-top">
+
+                                    <input value="@ContractorDetail.Id" id="contratorId" hidden />
+                                    <p>Quality of Work</p>
+
+                                    <div id="input1" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+
+                                </div>
+                                <div class="col-sm-4 mr-top">
+                                    <p>Communication</p>
+
+                                    <div id="input4" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                                </div>
+                                <div class="col-sm-4 mr-top">
+                                    <p>Timelines</p>
+
+                                    <div id="input2" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                                </div>
+                                <div class="col-sm-4 mr-top">
+                                    <p>Cleanliness</p>
+
+                                    <div id="input5" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                                </div>
+                                <div class="col-sm-4 mr-top">
+                                    <p>Stayed in Budget</p>
+
+                                    <div id="input3" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                                </div>
+                                <div class="col-sm-4 mr-top">
+                                    <p>Courteous</p>
+
+                                    <div id="input6" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnsave1" class="btn btn-primary btn-custom">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="ReportToAdmin" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <form class="parsleyvalcs form" id="reportadminForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="write-a-reviewLabel">Report To Admin</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-body-review">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div>
+                                    <span>Comments</span>
+                                    @*<input id="option1" name="option2" type="checkbox" />*-@
+                                    <textarea rows="4" class="form-control" id="CommentSave" data-parsley-required="true" data-parsley-trigger="keyup"></textarea>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-custom" id="ReportBtnSave">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--HomeOwner Report Modal-->
+    <div class="modal fade" id="ContractorReport" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <form class="parsleyvalcs form" id="conRepForm">
+                <div class="modal-content modal-content-review">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="write-a-reviewLabel">Contractor Report</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body modal-body-review">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="row">
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Subject</label>
+                                            <input type="text" class="form-control" id="txtSubject" data-parsley-required="true" data-parsley-trigger="keyup">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="number" class="form-control" id="txtContact" min="10" max="10" required data-parsley-type="number" data-parsley-trigger="keyup">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea rows="4" type="text" class="form-control" id="txtDescription" data-parsley-required="true" data-parsley-trigger="keyup"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-custom" id="btnSaveContractReport">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    @section FooterScripts{
+
+
+
+        <!-- Latest compiled and minified JavaScript -->
+
+        <script>
+
+            $('.loader').css("display", "flex");
+
+            $("#shareIconsCountInside").jsSocials({
+
+                //text: "Google Search Page",
+                showLabel: true,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "linkedin"]
+            });
+        </script>
+        <script src="~/scripts/PageJS/FavoriteContractor.js"></script>
+        <script src="~/scripts/PageJS/Contractor.js"></script>
+
+        @*<script src="~/scripts/jquery.rateyo.min.js"></script>*-@
+
+
+
+    }*@
+

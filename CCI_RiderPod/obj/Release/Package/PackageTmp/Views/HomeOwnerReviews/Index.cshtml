@@ -1,0 +1,404 @@
+﻿
+@{
+    ViewBag.Title = "Homeowner Reviews - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-md-6">
+                <div class="main-HD">
+                    <h1>Homeowner Reviews </h1>
+                </div>
+            </div>
+            @*<div class="col-md-6">
+                    <div class="pro-details">
+                        <form class="row align-items-end justify-content-end">
+                            <div class="form-group col-lg-5 col-md-7 col-8 pl-md-0">
+                                <label class="mb-0">Search</label>
+                                <input type="text" class="form-control form-custom" placeholder="Search here...">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-5 col-4 pl-md-0">
+                                <button type="button" class="btn btn-primary btn-custom">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>*@
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom-table">
+                    <div class="table-responsive">
+                        <table class="table" id="example">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Homeowner Name</th>
+                                    <th scope="col">Contractor Name</th>
+                                    <th scope="col">Rating/Reviews</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody"></tbody>
+                        </table>
+                    </div>
+
+                    @*<div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination custom-pagi">
+                                        <li class="page-item ">
+                                            <a href="javascript:;" class="page-link" tabindex="-1">Previous</a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>*@
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Edit Homeowner Reviews</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        <input id="ReviewId" name="ReviewId" value="" hidden>
+                        <div class="form-group">
+                            <label>Homeowner Name</label>
+                            <input type="text" class="form-control" required data-parsley-trigger="keyup" data-parsley-required-message="Homeowner Name is required" id="HomeOwnerName" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Contractor Name</label>
+                            <input type="text" required data-parsley-trigger="keyup" data-parsley-required-message="Contractor Name is required" class="form-control" id="ContractorName" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 p_10">
+                        <div class="form-group">
+                            <label>Review Title</label>
+                            <input type="text" required data-parsley-trigger="keyup" data-parsley-required-message="Review Title Name is required" class="form-control" id="Title" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-12 p_10">
+                        <div class="form-group">
+                            <label>Review Description</label>
+                            <input type="text" class="form-control" required data-parsley-trigger="keyup" data-parsley-required-message="Description is required" id="Description" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label> QualityOfWork </label><br>
+                            <input type="number" class="form-control" id="QualityOfWork" min="1" max="5" value="" required data-parsley-trigger="keyup" data-parsley-required-message="Quality of work is required">
+                            @*<div class="rateit" data-rateit-mode="font" id="QualityOfWork" data-rateit-value="" data-rateit-step="1"></div>*@
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label> Timeliness </label><br>
+                            <input type="number" class="form-control" id="Timeliness" min="1" max="5" value="" required data-parsley-trigger="keyup" data-parsley-required-message="Timeliness  is required">
+                            @*<div class="rateit" data-rateit-mode="font" id="Timeliness" data-rateit-value="" data-rateit-step="1"></div>*@
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label> StayedInBudget </label><br>
+                            <input type="number" class="form-control" id="StayedInBudget" min="1" max="5" value="" required data-parsley-trigger="keyup" data-parsley-required-message="StayedinBudget  is required">
+                            @*<div class="rateit" data-rateit-mode="font" id="StayedInBudget" data-rateit-value="" data-rateit-step="1"></div>*@
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label> Communication </label><br>
+                            <input type="number" class="form-control" id="Communication" min="1" max="5" value="" required data-parsley-trigger="keyup" data-parsley-required-message="Communication is required">
+                            @*<div class="rateit" data-rateit-mode="font" id="Communication" data-rateit-value="" data-rateit-step="1"></div>*@
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label> Cleanliness </label><br>
+                            <input type="number" class="form-control" id="Cleanliness" min="1" max="5" value="" required data-parsley-trigger="keyup" data-parsley-required-message="Cleanliness is required">
+                            @*<div class="rateit" data-rateit-mode="font" id="Cleanliness" data-rateit-value="" data-rateit-step="1"></div>*@
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label> Courteous </label><br>
+                            <input type="number" class="form-control" id="Courteous" min="1" max="5" value="" required data-parsley-trigger="keyup" data-parsley-required-message="Courteous is required">
+                            @*<div class="rateit" data-rateit-mode="font" id="Courteous" data-rateit-value="" data-rateit-step="1"></div>*@
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="Updatebtn"  class="btn btn-primary btn-custom">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Edit Modal -->
+@*<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Edit Homeowner Reviews</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+                            <input id="ReviewId" name="ReviewId" value="" hidden>
+                            <div class="form-group">
+                                <label>Homeowner Name</label>
+                                <input type="text" class="form-control" id="HomeOwnerName" value="" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label>Contractor  Name</label>
+                                <input type="text" class="form-control" id="ContractorName" value="" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 p_10">
+                            <div class="form-group">
+                                <label>Review Title</label>
+                                <input type="text" class="form-control" id="Title" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-12 p_10">
+                            <div class="form-group">
+                                <label>Review Description</label>
+                                <input type="text" class="form-control" id="Description" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label> QualityOfWork </label><br>
+                                <input type="number" class="form-control" id="QualityOfWork" min="1" max="5" value="" required>
+                                @*<div class="rateit" data-rateit-mode="font"  id="QualityOfWork" data-rateit-value="" data-rateit-step="1"></div>*-@
+                            </div>
+                        </div>
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label> Timeliness </label><br>
+                                <input type="number" class="form-control" id="Timeliness" min="1" max="5" value="" required>
+                                @*<div class="rateit" data-rateit-mode="font" id="Timeliness" data-rateit-value="" data-rateit-step="1"></div>*-@
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label> StayedInBudget </label><br>
+                                <input type="number" class="form-control" id="StayedInBudget" min="1" max="5" value="" required>
+                                @*<div class="rateit" data-rateit-mode="font" id="StayedInBudget" data-rateit-value="" data-rateit-step="1"></div>*-@
+                            </div>
+                        </div>
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label> Communication </label><br>
+                                <input type="number" class="form-control" id="Communication" min="1" max="5" value="" required>
+                                @*<div class="rateit" data-rateit-mode="font"  id="Communication" data-rateit-value="" data-rateit-step="1"></div>*-@
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label> Cleanliness </label><br>
+                                <input type="number" class="form-control" id="Cleanliness" min="1" max="5" value="" required>
+                                @*<div class="rateit" data-rateit-mode="font"  id="Cleanliness" data-rateit-value="" data-rateit-step="1"></div>*-@
+                            </div>
+                        </div>
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label> Courteous </label><br>
+                                <input type="number" class="form-control" id="Courteous" min="1" max="5" value="" required>
+                                @*<div class="rateit" data-rateit-mode="font"  id="Courteous" data-rateit-value="" data-rateit-step="1"></div>*-@
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="Updatebtn" data-dismiss="modal" class="btn btn-primary btn-custom">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title text-center">HomeOwner Reviews Edit</h1>
+            </div>
+            <div class="modal-body">
+
+                <input id="ReviewId" name="ReviewId" value="" hidden>
+                <span>HomeOwner Name</span>
+                <input id="HomeOwnerName" class="form-control" name="HomeOwnerName" value="" type="text" readonly>
+                <br />
+                <span>Contractor Name</span>
+                <input id="ContractorName" class="form-control" name="ContractorName" value="" type="text" readonly>
+                <br />
+
+                <span>Review Title</span>
+                <input id="Title" class="form-control" name="Title" min="1" max="5" value="" type="text">
+                <br />
+
+                <div class="row">
+                    <div class="col-6 col-md-4">
+                        <span>QualityOfWork</span>
+                        <input type="number" class="form-control" id="QualityOfWork" min="1" max="5" value="" required>
+                        <br />
+                        <span>Timeliness</span>
+                        <input type="number" class="form-control" id="Timeliness" min="1" max="5" value="" required>
+                        <br />
+
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span>StayedInBudget</span>
+                        <input type="number" class="form-control" id="StayedInBudget" min="1" max="5" value="" required>
+                        <br />
+                        <span>Communication</span>
+                        <input type="number" class="form-control" id="Communication" min="1" max="5" value="" required>
+                        <br />
+
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <span>Cleanliness</span>
+                        <input type="number" class="form-control" id="Cleanliness" min="1" max="5" value="" required>
+                        <br />
+                        <span>Courteous</span>
+                        <input type="number" class="form-control" id="Courteous" min="1" max="5" value="" required>
+                        <br />
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                <input type="submit" id="Updatebtn" value="Update" class="btn btn-danger" data-id="" />
+            </div>
+        </div>
+
+    </div>
+</div>*@
+
+
+
+
+
+@section FooterScripts{
+    <script src="~/scripts/PageJS/HomeOwnerReviews.js"></script>
+}

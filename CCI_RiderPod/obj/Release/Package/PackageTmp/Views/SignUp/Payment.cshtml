@@ -1,0 +1,147 @@
+﻿
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payment - Homii</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    @*<div>
+
+            <label for="recipient-name" class="form-control-label">Amount</label>
+            <input type="number" class="form-control InputValidation" id="Amount" data-parsley-required="true" />
+
+
+            <button type="button" class="btn btn-success" id="btnSavePayment" data-dismiss="modal">Submit</button>
+        </div>*@
+
+    @*@Html.Action("_Documents", "Ticket", Model)*@
+    <h1>Braintree</h1>
+    <div class="col-lg-3">
+        <label>Amount</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+
+            <input type="number" class="form-control frm_user" id="txtAmount">
+
+            <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+        @*<input type="number" class="form-control" id="txtAmount" /> $USD*@
+    </div>
+    <div class="col-lg-3">
+        <br />
+        @*<button type="button" id="init_amt" onclick="initBrainTree()" class="button button--small button--green">Initiate Payment</button>*@
+    </div>
+    <br />
+
+    <div id="dropin-container">
+    </div>
+    <button id="submit-button" class="button button--small button--green" style="display:none;">Purchase</button>
+    <div id="Paypal" class="tab-pane pt-40 fade">
+
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    @*<script src="~/scripts/PageJS/SignUp.js"></script>*@
+
+    <script src="https://js.braintreegateway.com/web/dropin/1.21.0/js/dropin.min.js"></script>
+    <script>
+            var Nonce = "";
+            var Mpayload;
+
+            function initBrainTree() {
+
+                var button = document.querySelector('#submit-button');
+                var amt = $('#txtAmount').val();
+                if (amt == null || amt == 0) {
+                    toastr.warning('Please Enter Amount First.', 'Warning');
+                }
+                else
+                {
+                    $('#txtAmount').attr('disabled', true);
+                    $('#init_amt').attr('disabled', true);
+                    // Disable that text box
+                    //sandbox_g42y39zw_348pk9cgf3bgyw2b
+                    braintree.dropin.create({
+                        authorization: 'production_hc43fjc4_ccnsg84ds54s9t9s',
+                        selector: '#dropin-container',
+                        paypal: {
+                            flow: 'checkout',
+                            amount: amt,
+                            currency: 'USD'
+                        }
+                    }, function (err, instance) {
+                        $('#submit-button').css('display', 'block');
+                        button.addEventListener('click', function () {
+                            instance.requestPaymentMethod(function (err, payload) {
+                                if (err) {
+                                    toastr.error(err, 'Error');
+                                }
+                                else {
+                                    //$("#amtDiv").css('display', 'block')
+                                    $("#submit-button").css('display', 'none')
+                                    $(".braintree-toggle").css('display', 'none')
+                                    //$("#PayAmount").css('display', 'block')
+                                    Nonce = payload.nonce;
+                                    Mpayload = payload;
+                                    // Submit payload.nonce to your server
+                                    console.log(Mpayload);
+
+                                    var data = {
+                                        "TransID": 0,
+                                        "PaymentToken": "",
+                                        "OrderID": "",
+                                        "PayPalPaymentID": "",
+                                        "Intent": "sale",
+                                        "State": "approved",
+                                        "Amount": amt,
+                                        "PaymentType": Mpayload.type,
+                                        "UserID": $("#UserRefId").val(),
+                                        "TicketID": $("#id").val(),
+                                        "Nonce": Nonce
+                                    }
+                                    var url = "/api/PayPal/SavePayment";
+                                    $.ajax({
+                                        url: url,
+                                        type: 'POST',
+                                        data: data,
+                                        contentType: 'application/json; charset=utf-8',
+                                        success: function (data) {
+                                            console.log(data);
+                                            if (data.message == "Succesfull_api") {
+                                                toastr.success('Payment save successfully', 'Success');
+                                                var delay = 5000;
+                                                var url = '/Ticket/Index'
+                                                setTimeout(function () { window.location = url; }, delay);
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    });
+                }
+            }
+
+    </script>
+
+
+
+</body>
+</html>

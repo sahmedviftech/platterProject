@@ -1,0 +1,174 @@
+﻿@{
+    Layout = null;
+   Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- ================== Title ================== -->
+    <title>Homii</title>
+    <!-- ================== Required meta tags ================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- ================== Bootstrap CSS ================== -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <link href="~/Content/assets/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/datatables.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!-- ================== Font Family ================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <!-- ================== Font Awesome and Icons ================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ================== Custom Css ================== -->
+    <link rel="stylesheet" href="~/Content/assets/css/styles.css">
+
+
+    <link rel="stylesheet" href="~/Content/assets/css/rateit.css">
+    <!-- ================== my Css ================== -->
+
+    <link rel="stylesheet" href="~/Content/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <!-- ================== Dropdown Search List Css ================== -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+</head>
+<body class="login-page">
+
+
+    @{
+        Html.RenderPartial("_PartialViewHeader");
+    }*@
+
+
+
+    <div class="bg-login">
+        <div class="container">
+            <div class="row dis-flex">
+                <div class="col-md-7">
+                    <div class="login-form">
+                        <a href="http://homiitesting.codecreators.io/"><img src="~/Content/assets/img/logo-1.png" alt=""></a>
+                        <h2> Create Homeowner Account</h2>
+                        <form>
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 pl-md-0">
+                                    <input type="text" class="form-control login-custm-form" id="FirstName" placeholder="First Name" onkeyup="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-6 pr-md-0">
+                                    <input type="text" class="form-control login-custm-form" id="LastName" placeholder="Last Name" onkeyup="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="number" class="form-control login-custm-form" id="PostalCode" placeholder="Postal Code" onchange="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="number" class="form-control login-custm-form" id="PhoneNumber" minlength="9"  oninput="validity.valid || (value = '');" maxlength="40" pattern="[-+,0-9]+" placeholder="Phone number" onchange="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="email" class="form-control login-custm-form" id="Email" placeholder="Email" onkeyup="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                    <input type="password" class="form-control login-custm-form" id="Password" placeholder="Password" onkeyup="ClearBorder()">
+                                </div>
+                                @*<div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                        <input type="password" class="form-control login-custm-form" placeholder="Confirm Password">
+                                    </div>*@
+                                <div class="col-md-12 pl-md-0 pr-md-0">
+                                    <div class="form-check checkbox-change">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            I Agreed to the Terms and Conditions
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-custom" id="btnSaveHomeowner">Registration</button>
+                        </form>
+
+                        <div class="already-member">
+                            <p>Already A Member? <a href="/Login/Index">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-uploader bg-orange">
+                        <h1>Upload images related to the project.</h1>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                        <h1>All photos must be</h1>
+                        <div class="uploader-ul">
+                            <ul>
+                                <li>Family-friendly</li>
+                                <li>Non-copyrighted images</li>
+                                <li>Non-commercial</li>
+                                <li>Virus-free</li>
+                                <li>In .gif, .jpg, or .png format</li>
+                                <li>No more than 20 photos per upload</li>
+                                <li>Lorem ipsum</li>
+                                <li>Dummy Text</li>
+                                <li>Text place holder</li>
+                                <li>More place holder...</li>
+                                <li>Non-copyrighted images</li>
+                                <li>Non-commercial</li>
+                                <li>In .gif, .jpg, or .png format</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+@section FooterScripts{
+
+<script src="~/scripts/PageJS/SignUp.js"></script>
+    }
+
+
+    @*@{
+        Html.RenderPartial("_PartialViewFooter");
+    }
+
+
+
+    <!-- ================== Scripting ================== -->
+    <script type="text/javascript" src="~/Content/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript" src="~/Content/assets/js/jstars.min.js"></script>*-@
+    <script src="~/scripts/gijgo.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/dataTables.pageLoadMore.min.js"></script>
+    <script src="~/scripts/jssocials.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/functions.js"></script>
+    <!-- ================== Scripting ================== -->
+    <script src="~/scripts/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/jquery.rateit.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/webfont.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+
+    <script src="~/scripts/jquery-ui.js"></script>
+    
+    <script src="~/scripts/PageJS/SignUp.js"></script>
+    <script>
+        $("#shareIcons").jsSocials({
+
+            url: "http://homiitesting.codecreators.io/",
+            //text: "Google Search Page",
+            showLabel: false,
+            showCount: "inside",
+            countUrl: "url",
+            shares: ["twitter", "facebook", "linkedin"]
+        });
+    </script>
+
+</body>
+</html>*@
+

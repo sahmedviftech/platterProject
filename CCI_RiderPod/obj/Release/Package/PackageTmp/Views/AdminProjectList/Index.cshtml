@@ -1,0 +1,351 @@
+﻿@{
+    ViewBag.Title = "Posted Project - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="bg-gray incentive-block-right mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="inner-incentive-box cp_kpi">
+                    <h2>Total Posted Jobs: Week</h2>
+                    <p class="p-font-size" id="TotalProjectWeek"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="inner-incentive-box  cp_kpi">
+                    <h2>  Total Posted Jobs: Month    </h2>
+                    <p class="p-font-size" id="TotalProjectmonth"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="inner-incentive-box  cp_kpi">
+                    <h2> Total Posted Jobs: Year</h2>
+                    <p class="p-font-size" id="TotalProjectyear"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-3">
+                <div class="main-HD">
+                    <h1>Posted Project </h1>
+                </div>
+            </div>
+         
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom-table">
+                    <div class="table-responsive">
+                        <table class="table" id="example">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Job Title</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Job Description</th>
+                                    <th scope="col">Estimated Budget</th>
+                                    <th scope="col">Estimated Start Date</th>
+                                    <th scope="col" class="th-width-3">Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="detailmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Detail Posted Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Job Title</label>
+                            <input type="text" id="ProjectId" hidden>
+                            <input type="text" class="form-control" id="JobTitle" data-parsley-pattern="/^[a-zA-Z \W ]*$/" required data-parsley-required-message="JobTitle Required" data-parsley-trigger="keyup">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control kt-select2" id="CategoryIDAdd" name="param" required data-parsley-required-message="You Must Select Estimated Category" data-parsley-trigger="click">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Homeowner Name</label>
+                            <input type="text" class="form-control"  id="HomeownerName"  disabled>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Estimated Budget</label>
+                           <select class="form-control" id="EstimatedBudget" required data-parsley-required-message="You Must Select Estimated Budget" data-parsley-trigger="click">
+                                <option value="">Estimated Budget</option>
+                                <option value="$100 - $500">$100 - $500</option>
+                                <option value="$500 - $1,000">$500 - $1,000</option>
+                                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                <option value="$5,000 - $20,000">$5,000 - $20,000</option>
+                                <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+                                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                                <option value="$250,000 - $500,000">$250,000 - $500,000</option>
+                                <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                                <option value="$1,000,000">$1,000,000</option>
+                                <option value="Uncertain">Uncertain</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 p_10">
+                        <div class="form-group">
+                            <label>Posted Date</label>
+                            <input type="text" class="form-control datepicker" autocomplete="off" id="EstimatedStartDate" readonly />
+                        </div>
+                    </div>
+                    <div class="col-md-12 p_10">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control InputValidation" rows="5" id="JobDescription" required data-parsley-required-message="JobDescription Required" data-parsley-trigger="keyup"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <h3>Project Upload</h3>
+                        <div class="row ">
+
+                            <div class="col-md-12 Images"></div>
+
+                        </div>
+                        <div class="row ">
+
+                            <div class="col-md-12 Documents"></div>
+
+                        </div>
+                        <div class="no-upproject">
+
+                        </div>
+                        <div class="row">
+
+                            <div class="btnContainer">
+                              
+                                <div class="valign-middle multilefileselect">
+                                    <label for="file" class="sr-only"> Attach File(S)</label>
+                                    <input type="file" id="imageUploadForm" name="filename" accept=".png,.gif,.jpeg,.doc,.pdf,.xlsx" multiple="multiple" onchange="javascript:ShowFile()">
+                                    
+                                    <div id="fileListFromHome"><ul id="uploadImage"></ul></div>
+                                    <label id="lblProjectID" style="display:none;"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-primary btn-custom" id="SaveImageData">Image Data Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@*<div class="modal fade" id="detailmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Detail Posted Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Job Title</label>
+                            <input type="text" id="ProjectId" hidden>
+                            <input type="text" class="form-control" value="Job" id="JobTitle" onkeyup="ClearBorder()">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Category</label>
+                            @*<input type="text" class="form-control" value="Toronto" id="CategoryIDAdd">*-@
+
+                            <select class="form-control kt-select2" id="CategoryIDAdd" name="param" onchange="ClearBorder()">
+                                <option value="0">Please select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Homeowner Name</label>
+                            <input type="text" class="form-control" value="John Doe" id="HomeownerName" disabled onkeyup="ClearBorder()">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Estimated Budget</label>
+                            @*<input type="number" class="form-control" value="$200" id="EstimatedBudget" min=0 oninput="validity.valid||(value='');" onchange="ClearBorder()">*-@
+                            <select class="form-control" id="EstimatedBudget" onchange="ClearBorder()">
+                                <option value="">Estimated Budget</option>
+                                <option value="$100 - $500">$100 - $500</option>
+                                <option value="$500 - $1,000">$500 - $1,000</option>
+                                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                <option value="$5,000 - $20,000">$5,000 - $20,000</option>
+                                <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+                                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                                <option value="$250,000 - $500,000">$250,000 - $500,000</option>
+                                <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                                <option value="$1,000,000">$1,000,000</option>
+                                <option value="Uncertain">Uncertain</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 p_10">
+                        <div class="form-group">
+                            <label>Posted Date</label>
+                            <input type="text" class="form-control datepicker" autocomplete="off" id="EstimatedStartDate" onchange="ClearBorder()">
+                        </div>
+                    </div>
+                    <div class="col-md-12 p_10">
+                        <div class="form-group">
+                            <label>Description</label>
+                            @*<input type="text" class="form-control" id="JobDescription">*-@
+                            <textarea class="form-control InputValidation" rows="5" id="JobDescription" onchange="ClearBorder()"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <h3>Project Upload</h3>
+                        <div class="row ">
+                         
+                            <div class="col-md-12 Images"></div>
+
+                        </div>
+                        <div class="row ">
+                           
+                            <div class="col-md-12 Documents"></div>
+
+                        </div>
+                        <div class="no-upproject">
+
+                        </div>
+                        <div class="row">
+
+                            <div class="btnContainer">
+                                @*<label for="file" class="sr-only"> Attach File(S)</label>
+                                @*<input type="file" id="file">*-@
+                                <input type="file" id="imageUploadFormAdmin" multiple name="filename">
+                                <label id="lblProjectID" style="display:none;"></label>*-@
+                                <div class="valign-middle multilefileselect">
+                                    <label for="file" class="sr-only"> Attach File(S)</label>
+                                    @*<input type="file" id="file">*@
+                                    @*<input type="file" id="imageUploadForm" multiple name="filename">*-@
+                                    @*<input type="file" id="imageUploadFormAdmin" name="filename" accept=".png,.gif,.jpeg,.doc,.pdf,.xlsx" multiple="multiple" onchange="javascript:updateList()">*-@
+                                    <input type="file" id="imageUploadForm" name="filename" accept=".png,.gif,.jpeg,.doc,.pdf,.xlsx" multiple="multiple" onchange="javascript:ShowFile()">
+                                    @*<span style="color:red" id="filemsgformHome">Please Select File</span>*-@
+                                    
+                                    <div id="fileListFromHome"><ul></ul></div>
+                                    <label id="lblProjectID" style="display:none;"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnUpdate">Save Changes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnUpdateAttachments">Update Attachements</button>*-@
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="SaveImageData">Image Data Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>*@
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Delete Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <p>Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title text-center">Detail</h1>
+            </div>
+            <div class="modal-body">
+                <span id="HName"></span>
+                <span id="CName"></span>
+                <span id="CEmail"></span>
+                <span id=""></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section FooterScripts{
+
+
+  
+    <script src="~/scripts/PageJS/AdminProjectList.js"></script>
+
+}
+
+
+
+

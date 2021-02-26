@@ -1,0 +1,502 @@
+﻿
+@{
+    ViewBag.Title = "System User - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var User = HomiiSession.CurrentUser;
+}
+
+
+<div class="container">
+    <div class="bg-gray incentive-block-right mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="inner-incentive-box cp_kpi">
+                    <h2> Total Homeowner count</h2>
+                    <p class="p-font-size" id="TotalHomeownerCount"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="inner-incentive-box  cp_kpi">
+                    <h2>Total Contractor Count</h2>
+                    <p class="p-font-size" id="TotalContractorCount"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="inner-incentive-box  cp_kpi">
+                    <h2> Total Referrer Count</h2>
+                    <p class="p-font-size" id="TotalReferrerCount"></p>
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="inner-incentive-box cp_kpi">
+                    <h2> Revenue Earn</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 pr-2">
+                            <div class="inner-incentive-box  cp_kpi kpi-child">
+                                <h2> This Month</h2>
+                                <p class="p-font-size" id="RevenueMonth">0</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 pl-2">
+                            <div class="inner-incentive-box  cp_kpi kpi-child">
+                                <h2> This Year</h2>
+                                <p class="p-font-size" id="RevenueYear">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner-incentive-box  cp_kpi">
+                    <h2>Referal Earned </h2>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 pr-2">
+                            <div class="inner-incentive-box  cp_kpi kpi-child">
+                                <h2> This Month</h2>
+                                <p class="p-font-size" id="ReferalMonth">0</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 pl-2">
+                            <div class="inner-incentive-box  cp_kpi kpi-child">
+                                <h2>  This Year</h2>
+                                <p class="p-font-size" id="ReferalYear">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-lg-3">
+                <div class="main-HD">
+                    <h1>System User </h1>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                @*<div class="pro-details">
+                            <form class="row align-items-end justify-content-end">
+                                <div class="form-group col-lg-2 col-md col-6 pl-lg-0 mb-md-0 mb-2">
+                                    <label class="mb-0">Search</label>
+                                    <input type="text" class="form-control form-custom" placeholder="Search here...">
+                                </div>
+                                <div class="form-group col-lg-2 col-md col-6 pl-md-0 mb-md-0 mb-2">
+                                    <label class="mb-0">Search By</label>
+                                    <select class="form-control form-custom select2">
+                                        <option>Name</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-2 col-md col-6 pl-md-0 mb-md-0 mb-2">
+                                    <label class="mb-0">Select Date Range</label>
+                                    <input type="text" class="form-control form-custom datepicker" placeholder="Start Date">
+                                </div>
+                                <div class="form-group col-lg-2 col-md col-6 pl-md-0 mb-md-0 mb-2">
+                                    <label class="mb-0"></label>
+                                    <input type="text" class="form-control form-custom datepicker" placeholder="End Date">
+                                </div>
+                                <div class="form-group col-lg-2 col-md pl-md-0">
+                                    <button type="button" class="btn btn-primary btn-custom">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>*@
+            </div>
+            <div class="col-sm-12">
+                <div class="custom-table">
+                    <div class="table-responsive">
+                        <table class="table" id="example">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Email</th>
+
+                                    <th scope="col">Date Created</th>
+                                    <th scope="col">Is Active</th>
+                                    <th scope="col">Referral Credit </th>
+                                    <th scope="col">Referral Due</th>
+                                    @*<th scope="col">Payment Done</th>*@
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            @*<div class="row">
+                    <div class="col-sm-12">
+                        <div class="custom-table">
+                            <div class="table-responsive">
+                                <table class="table" id="example">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">Date Created</th>
+                                            <th scope="col">Is Active</th>
+                                            <th scope="col">Referral Credit Total</th>
+                                            <th scope="col">Referral Credit Pending</th>
+                                            @*<th scope="col">Payment Done</th>*-@
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            @*<div class="row">
+                    <div class="col-sm-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination custom-pagi">
+                                <li class="page-item ">
+                                  <a href="javascript:;" class="page-link" tabindex="-1">Previous</a>
+                                </li>
+                                <li class="page-item active"><a href="javascript:;" class="page-link">1</a></li>
+                                <li class="page-item "><a href="javascript:;" class="page-link">2 </a></li>
+                                <li class="page-item"><a href="javascript:;" class="page-link">3</a></li>
+                                <li class="page-item"><a href="javascript:;" class="page-link">4</a></li>
+                                <li class="page-item"><a href="javascript:;" class="page-link">5</a></li>
+                                <li class="page-item nxt-pagi">
+                                    <a href="javascript:;" class="page-link">Next Page</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Edit Modal -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Add System User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                @*<form id="Registers-Form" data-parsley-validate>*@
+
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" id="FirstName" class="form-control InputValidation">
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" id="LastName" class="form-control InputValidation">
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Type</label>
+                            @*<input type="text" class="form-control" id="AccountTypeID"  value="Type">*@
+                            <select class="form-control" id="AccountTypeID">
+                                <option value="0">Please select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control InputValidation" id="Email" data-parsley-type="email">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>City</label>
+                            @*<input type="text" class="form-control" value="$100">*@
+                            <select class="form-control kt-select2" id="CityEdit" name="param">
+                                <option value="0">Please select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control InputValidation" id="PostalCode" data-parsley-required="true">
+                        </div>
+                    </div>
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control InputValidation" id="PhoneNumber">
+                        </div>
+                    </div>
+
+
+                    @*@if (User.AccountTypeID == 2)
+                        {
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" class="form-control InputValidation" id="CompanyName" data-parsley-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>Business Phone Number</label>
+                                    <input type="number" class="form-control InputValidation" id="BusinessPhoneNumber">
+                                </div>
+                            </div>
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>Business Address</label>
+                                    <input type="text" class="form-control InputValidation" id="BusinessAddress" data-parsley-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>Number Of Employee</label>
+                                    <input type="text" class="form-control InputValidation" id="NumberOfEmployee">
+                                </div>
+                            </div>
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>Business Address</label>
+                                    <input type="text" class="form-control InputValidation" id="BusinessAddress" data-parsley-required="true">
+                                    <select class="form-control kt-select2" id="LegalStructure">
+                                        <option value="">Please select</option>
+                                        <option value="Sole Proprietor">Sole Proprietor</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Incorporated">Incorporated</option>
+                                        <option value="Limited Partnership">Limited Partnership</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>In Business Since</label>
+                                    <input type="text" class="form-control InputValidation" id="InBusinessSince">
+                                </div>
+                            </div>
+
+                        }*@
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="btnSave" class="btn btn-primary btn-custom">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Delete User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <p>Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Amount Modal -->
+<div class="modal fade" id="amountmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Amount</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input type="number" class="form-control" id="ReferralAmount" min="0" onchange="ClearBorder()">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="ReferralPaymentBtn" class="btn btn-primary btn-custom">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Action Modal -->
+<div class="modal fade inners-icons" id="actionModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title UsernameAction">Modal Header</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body cstm-modal-icon">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a id="messageClick">
+                            <div class="inner-iconss msg">
+
+                                <div class="innerall">
+                                    <img src="~/Content/assets/img/i-message.png" alt="icons" />
+                                    <p>Message</p>
+                                </div>
+
+                            </div>
+                        </a>
+                        <a id="editClick" href="">
+                            <div class="inner-iconss edit">
+                                <div class="innerall">
+                                    <img src="~/Content/assets/img/i-edit.png" alt="icons" />
+                                    <p>Edit</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a id="deleteClick">
+                            <div class="inner-iconss delete">
+                                <div class="innerall">
+                                    <img src="~/Content/assets/img/i-delete.png" alt="icons" />
+                                    <p>Delete</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a id="amountClick">
+                            <div class="inner-iconss oranges">
+                                <div class="innerall">
+                                    <img src="~/Content/assets/img/i-amount.png" alt="icons" />
+                                    <p>Amount</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a id="billingClick" href="">
+                            <div class="inner-iconss oranges">
+                                <div class="innerall">
+                                    <img src="~/Content/assets/img/i-billing.png" alt="icons" />
+                                    <p>Billing</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a id="incentiveClick" href="">
+                            <div class="inner-iconss oranges">
+                                <div class="innerall">
+                                    <img src="~/Content/assets/img/i-inc.png" alt="icons" />
+                                    <p>Incentive</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*<h2>Users Details</h2>
+    <div id="KPIs">
+
+    </div>
+    <br />
+    <br />*@
+
+
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                <h1 class="modal-title text-center"> Amount</h1>
+            </div>
+            <div class="modal-body">
+                <div>
+
+                    <lable>Amount</lable><br />
+                    <input type="number" value="" id="ReferralAmount" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" id="ReferralPaymentBtn">Save</button>
+                <input type="button" class="btn btn-danger" data-dismiss="modal" value="Cancel" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section FooterScripts{
+
+
+    <script src="~/scripts/PageJS/UserDetails.js"></script>
+
+    @*<script src="~/scripts/PageJS/SearchContractor.js"></script>*@
+}

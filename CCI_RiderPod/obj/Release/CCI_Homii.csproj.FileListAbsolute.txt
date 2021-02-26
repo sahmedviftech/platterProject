@@ -1,0 +1,960 @@
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Braintree.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\EntityFramework.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\EntityFramework.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojResolveAssemblyReference.cache
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\LibSassHost.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Buffers.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\WebGrease.dll
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\LibSassHost.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+E:\usama\Homii\Homii 27Feb2020\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Braintree.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\EntityFramework.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\LibSassHost.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Buffers.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Webpages.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\WebGrease.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\EntityFramework.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\LibSassHost.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Webpages.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojResolveAssemblyReference.cache
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+E:\usama\Homii\Homii 09 March 2020 latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Braintree.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\EntityFramework.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\LibSassHost.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Buffers.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Webpages.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\WebGrease.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\EntityFramework.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\LibSassHost.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Webpages.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojResolveAssemblyReference.cache
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+E:\usama\Homii\Homii 10 march 2020 1106\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Braintree.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\EntityFramework.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\LibSassHost.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Buffers.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\WebGrease.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\EntityFramework.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\LibSassHost.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojResolveAssemblyReference.cache
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+E:\usama\Homii\Homii 15 march 2020\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Braintree.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\EntityFramework.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\LibSassHost.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Buffers.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Webpages.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\WebGrease.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\EntityFramework.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\LibSassHost.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Webpages.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Webpages.Deployment.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Webpages.Razor.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojResolveAssemblyReference.cache
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+D:\Projects\Homii 19 march 2020 Day End new\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Win32.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\netstandard.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.AppContext.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Concurrent.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.NonGeneric.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Specialized.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.TypeConverter.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Console.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Data.Common.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Contracts.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Debug.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Process.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.StackTrace.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Tools.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.TraceSource.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Tracing.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Drawing.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Dynamic.Runtime.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Globalization.Calendars.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Globalization.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Globalization.Extensions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.Compression.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.Compression.ZipFile.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.Watcher.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.IsolatedStorage.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.MemoryMappedFiles.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.Pipes.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.Expressions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.Parallel.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.Queryable.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Http.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.NameResolution.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.NetworkInformation.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Ping.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Requests.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Security.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Sockets.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.WebHeaderCollection.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.WebSockets.Client.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.WebSockets.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ObjectModel.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Reflection.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Reflection.Extensions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Reflection.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Resources.Reader.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Resources.ResourceManager.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Resources.Writer.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Extensions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Handles.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Numerics.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Formatters.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Json.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Xml.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Claims.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Algorithms.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Csp.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Encoding.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Primitives.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Principal.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.SecureString.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Text.Encoding.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Text.Encoding.Extensions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Text.RegularExpressions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Overlapped.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Parallel.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Thread.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.ThreadPool.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Timer.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ValueTuple.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.ReaderWriter.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XDocument.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XmlDocument.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XmlSerializer.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XPath.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XPath.XDocument.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Braintree.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\LibSassHost.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.EntityFramework.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.PlatformAbstractions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.Protocol.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Stripe.net.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Buffers.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Immutable.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Extensions.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Cors.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.Cors.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Razor.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\WebGrease.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\LibSassHost.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.pdb
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.EntityFramework.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.Protocol.pdb
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.Protocol.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Stripe.net.pdb
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Stripe.net.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Immutable.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Extensions.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.Cors.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Razor.xml
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojAssemblyReference.cache
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csproj.CoreCompileInputs.cache
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csproj.CopyComplete
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+D:\Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Win32.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\netstandard.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.AppContext.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Concurrent.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.NonGeneric.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Specialized.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ComponentModel.TypeConverter.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Console.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Data.Common.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Contracts.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Debug.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Process.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.StackTrace.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Tools.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.TraceSource.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Diagnostics.Tracing.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Drawing.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Dynamic.Runtime.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Globalization.Calendars.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Globalization.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Globalization.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.Compression.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.Compression.ZipFile.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.FileSystem.Watcher.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.IsolatedStorage.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.MemoryMappedFiles.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.Pipes.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.Expressions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.Parallel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Linq.Queryable.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Http.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.NameResolution.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.NetworkInformation.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Ping.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Requests.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Security.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Sockets.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.WebHeaderCollection.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.WebSockets.Client.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.WebSockets.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ObjectModel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Reflection.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Reflection.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Reflection.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Resources.Reader.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Resources.ResourceManager.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Resources.Writer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Handles.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Numerics.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Formatters.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Json.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Xml.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Claims.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Algorithms.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Csp.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Encoding.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.Principal.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Security.SecureString.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Text.Encoding.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Text.Encoding.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Text.RegularExpressions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Overlapped.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Parallel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Thread.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.ThreadPool.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Timer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.ValueTuple.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.ReaderWriter.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XDocument.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XmlDocument.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XmlSerializer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XPath.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Xml.XPath.XDocument.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Braintree.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\LibSassHost.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.EntityFramework.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.PlatformAbstractions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.Protocol.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Stripe.net.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Buffers.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Immutable.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Cors.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.Cors.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Razor.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\WebGrease.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\LibSassHost.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.EntityFramework.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.Protocol.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Sentry.Protocol.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Stripe.net.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\Stripe.net.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Collections.Immutable.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Extensions.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.Cors.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\System.Web.WebPages.Razor.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojAssemblyReference.cache
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csproj.CoreCompileInputs.cache
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csproj.CopyComplete
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\ApplicationInsights.config
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\csc.exe
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\vbc.exe
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\CCI_Homii.dll.config
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\CCI_Homii.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\CCI_Homii.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.Win32.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\netstandard.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.AppContext.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Collections.Concurrent.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Collections.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Collections.NonGeneric.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Collections.Specialized.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.ComponentModel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.ComponentModel.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.ComponentModel.TypeConverter.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Console.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Data.Common.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.Contracts.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.Debug.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.Process.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.StackTrace.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.Tools.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.TraceSource.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Diagnostics.Tracing.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Drawing.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Dynamic.Runtime.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Globalization.Calendars.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Globalization.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Globalization.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.Compression.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.Compression.ZipFile.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.FileSystem.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.FileSystem.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.FileSystem.Watcher.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.IsolatedStorage.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.MemoryMappedFiles.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.Pipes.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Linq.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Linq.Expressions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Linq.Parallel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Linq.Queryable.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Http.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.NameResolution.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.NetworkInformation.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Ping.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Requests.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Security.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Sockets.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.WebHeaderCollection.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.WebSockets.Client.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.WebSockets.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.ObjectModel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Reflection.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Reflection.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Reflection.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Resources.Reader.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Resources.ResourceManager.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Resources.Writer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Handles.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Numerics.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Formatters.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Json.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.Serialization.Xml.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Claims.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Algorithms.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Csp.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Encoding.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Cryptography.Primitives.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.Principal.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Security.SecureString.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Text.Encoding.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Text.Encoding.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Text.RegularExpressions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Overlapped.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Tasks.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Parallel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Thread.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.ThreadPool.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Timer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.ValueTuple.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Xml.ReaderWriter.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Xml.XDocument.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Xml.XmlDocument.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Xml.XmlSerializer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Xml.XPath.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Xml.XPath.XDocument.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Antlr3.Runtime.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Braintree.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\BundleTransformer.Core.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\EntityFramework.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\LibSassHost.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Newtonsoft.Json.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.EntityFramework.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.PlatformAbstractions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.Protocol.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Stripe.net.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Buffers.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Collections.Immutable.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Extensions.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Cors.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Helpers.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Http.Cors.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Http.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Mvc.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Optimization.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Razor.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.WebPages.Deployment.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.WebPages.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.WebPages.Razor.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\WebGrease.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\AdvancedStringBuilder.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Antlr3.Runtime.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\BundleTransformer.Core.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\BundleTransformer.SassAndScss.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\EntityFramework.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\EntityFramework.SqlServer.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\LibSassHost.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.DependencyCollector.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.Web.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.AI.WindowsServer.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.ApplicationInsights.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Newtonsoft.Json.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.EntityFramework.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.Protocol.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Sentry.Protocol.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Stripe.net.pdb
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\Stripe.net.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Collections.Immutable.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Net.Http.Formatting.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Threading.Tasks.Extensions.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Helpers.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Http.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Http.Cors.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Http.WebHost.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Mvc.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Optimization.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.Razor.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.WebPages.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\System.Web.WebPages.Razor.xml
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\bin\ru-ru\BundleTransformer.Core.resources.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csprojAssemblyReference.cache
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csproj.CoreCompileInputs.cache
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\obj\Release\CCI_Homii.csproj.CopyComplete
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\obj\Release\CCI_Homii.dll
+D:\Projects\Offices Projects\Homii Project\Homii Latest\Homii 27 Jan 2021\Homii\CCI_RiderPod\obj\Release\CCI_Homii.pdb

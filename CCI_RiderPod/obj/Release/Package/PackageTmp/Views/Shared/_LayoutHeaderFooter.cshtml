@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- ================== Title ================== -->
+    <title>Homii - Create Account</title>
+    <!-- ================== Required meta tags ================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- ================== Bootstrap CSS ================== -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <!-- ================== Font Family ================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <!-- ================== Font Awesome and Icons ================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ================== Custom Css ================== -->
+    <link rel="stylesheet" href="~/Content/assets/css/styles.css">
+</head>
+<body class="login-page referrer-signup">
+    <!--HEADER START-->
+    <header class="custom-navbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 pl-0">
+                    <a href="/"><img src="~/Content/assets/img/Mid-logo-transparent-white.png" alt=""></a>
+                </div>
+                <div class="col-sm-7">
+                    <div class="nav-form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <span class="form-label">Find<i class="fa fa-caret-right"></i></span>
+                                    <input type="text" class="form-control custom-form-control" onblur="if(this.value == '') { this.value='e.g. Plumber, Roofer, Handyman'}" onfocus="if (this.value == 'e.g. Plumber, Roofer, Handyman') {this.value=''}" value="e.g. Plumber, Roofer, Handyman" autocomplete="off">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <span class="form-label">Near<i class="fa fa-caret-right"></i></span>
+                                    <input type="text" class="form-control custom-form-control" onblur="if(this.value == '') { this.value='e.g. Toronto, ON'}" onfocus="if (this.value == 'e.g. Toronto, ON') {this.value=''}" value="e.g. Toronto, ON" autocomplete="off">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-3 pr-0">
+                    <form class="form-login">
+                        <button type="button" class="btn btn-outline-primary custm-outline-btn">Signup</button>
+                        <button type="button" class="btn btn-primary btn-custom">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--HEADER END-->
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="ftr-logo">
+                        <a href="/"><img src="~/Content/assets/img/ftr-logo.png" alt=""></a>
+                        <p>@@2014-19 Homii Pvt. Ltd.s</p>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h1>Homeowner</h1>
+                            <div class="ftr-links">
+                                <ul>
+                                    <li><a href="javascript:;">Login/Sign up</a></li>
+                                    <li><a href="javascript:;">Post your project</a></li>
+                                    <li><a href="javascript:;">write a review</a></li>
+                                    <li><a href="javascript:;">Search contractor/categories</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h1>Contractors</h1>
+                            <div class="ftr-links">
+                                <ul>
+                                    <li><a href="javascript:;">Log in/sign up</a></li>
+                                    <li><a href="javascript:;">Incentives</a></li>
+                                    <li><a href="javascript:;">Procing</a></li>
+                                    <li><a href="javascript:;">Code of product</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h1>Homii</h1>
+                            <div class="ftr-links">
+                                <ul>
+                                    <li><a href="javascript:;">About</a></li>
+                                    <li><a href="javascript:;">Careers</a></li>
+                                    <li><a href="javascript:;">Blog</a></li>
+                                    <li><a href="javascript:;">Contact us</a></li>
+                                    <li><a href="javascript:;">Terms & conditions</a></li>
+                                    <li><a href="javascript:;">Review guideline</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h1>Conncet WIth Us</h1>
+                            <div class="social-links">
+                                <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                                <a href="javascript:;"><i class="fa fa-instagram"></i></a>
+                                <a href="javascript:;"><i class="fa fa-facebook-square"></i></a>
+                                <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--FOOTER END-->
+    <!-- ================== Scripting ================== -->
+    <script type="text/javascript" src="~/Content/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/bootstrap.min.js"></script>
+    @if (IsSectionDefined("FooterScripts"))
+    {
+        @RenderSection("FooterScripts");
+    }
+</body>
+</html>

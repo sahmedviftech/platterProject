@@ -1,0 +1,109 @@
+﻿
+@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Payment - Homii";
+}
+
+@*<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">*@
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto">
+                <br />
+                <div class="card bg-gray mt-2">
+                    <div class="card-header">
+                        <div class="row mb-3">
+                            <div class="col-md-6 col-sm-12">
+                                @*<div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+
+                                    <input type="number" class="form-control frm_user" value="0" id="txtAmount" readonly>
+
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">.00</span>
+                                    </div>*@
+
+
+                                <h2 id="txtAmount"></h2>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-rights">
+                                <h6 class="mt-3 white-space">	Provide your Card information</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body bg-white cstm-value">
+                        <div class="bg-white p-3 mb-4">
+                            @*<div id="dropin-container">
+                                </div>*@
+                            @*<button id="submit-button" class="button button--small button--green" style="display:none;">Purchase</button>*@
+                            @*<div id="Paypal" class="tab-pane pt-40 fade">*@
+
+                            @*<div class="container-fluid">*@
+                            <div id="app"></div>
+                            <pllenty-card-add-form request-key="07oh6wa9lm6ycaqt9a4xvd9jl7tk3ste" success-fn="mySuccessFn"></pllenty-card-add-form>
+                            @*</div>*@
+
+                            @*<div id="card-element">
+                                    <!-- a Stripe Element will be inserted here. -->
+                                </div>
+                                <!-- Used to display Element errors -->
+                                <div id="card-errors" role="alert"></div>*@
+
+
+                        </div>
+                        <div class="col-md-12 pl-md-0 pr-md-0">
+                            <div class="form-check checkbox-change mb-4">
+                                <input class="form-check-input" type="checkbox" id="gridCheck2" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Terms and Conditions">
+                                <label class="form-check-label" for="gridCheck2">
+                                    By clicking Purchase you agree to our Terms of Service <a href="https://homii.ca/terms-conditions/#contractor" class="login-member-anchr">Terms and Conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<div class="or_underline">OR</div>
+
+                        <a href="javascript:;" class="anotherway_pay">Chose another way to pay</a>*@
+
+                    <div class="card-footer text-right inherit-borer">
+                        <button class="btn btn-primary btn-custom" id="submit-button" style="display:none;">Purchase</button>
+                    </div>
+                </div>
+            </div><!-- End card -->
+        </div><!-- End col -->
+    </div><!-- End row -->
+</div><!-- End container -->
+
+
+@section FooterScripts{
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script src="~/scripts/PageJS/PaymentGateway.js"></script>
+    <script type="text/javascript" src="https://forms.pllenty.com/cards/add.js"></script>
+    @*<script src="~/scripts/PllentyJS/Add.js"></script>*@
+    <script>
+
+
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

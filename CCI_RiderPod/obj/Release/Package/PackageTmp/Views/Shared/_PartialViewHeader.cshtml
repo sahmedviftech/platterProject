@@ -1,0 +1,140 @@
+﻿
+@{
+    var user = HomiiSession.CurrentUser;
+}
+
+
+<div class="fixed_hdr">
+    <header class="custom-navbar">
+        <div class="top"></div>
+        <div class="container">
+            <div class="row h-0">
+                <div class="col-lg-2 col-sm-12 pl-lg-0">
+                    <button class="navbar-toggler collapsed d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="toglebtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                    @*<a href="https://homii.ca/"><img class="header_logo" src="~/Content/assets/img/Mid-logo-transparent-white.png" alt=""></a>*@
+                    <a href="https://portal.homii.ca/">
+                        <svg class="header_logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 286.5 135.1" style="enable-background:new 0 0 286.5 135.1;" xml:space="preserve">
+<style type="text/css">
+    .st0 {
+        fill: #FFFFFF;
+    }
+
+    .st1 {
+        fill: #ED8622;
+    }
+</style>
+<path id="XMLID_281_" class="st0" d="M69.6,82.2h-9.9V55.8c0-4.3-0.8-7.5-2.3-9.6c-1.5-2.1-3.7-3.1-6.6-3.1c-1.4,0-2.8,0.3-4.1,0.8
+c-1.4,0.5-2.7,1.3-3.9,2.3c-1.2,1-2.3,2.2-3.3,3.5c-1,1.3-1.7,2.8-2.2,4.4v27.9h-9.9V16.6h9.9v28c1.8-3.2,4.2-5.7,7.3-7.5
+c3.1-1.8,6.5-2.7,10.1-2.7c2.9,0,5.3,0.5,7.2,1.6c1.9,1,3.4,2.4,4.5,4.2c1.1,1.7,1.9,3.8,2.4,6.1c0.4,2.3,0.7,4.7,0.7,7.3V82.2z"></path>
+<path id="XMLID_279_" class="st0" d="M212.9,82.2H203V55.8c0-4.4-0.7-7.6-2.2-9.6s-3.5-3.1-6.3-3.1c-2.8,0-5.4,1-7.7,3.1
+c-2.3,2.1-4,4.7-5,8v27.9H172V55.8c0-4.4-0.7-7.7-2.2-9.7c-1.4-2-3.5-3-6.2-3c-2.8,0-5.4,1-7.7,3.1c-2.3,2-4,4.7-5,8v27.9H141v-47h9
+v9.4c1.9-3.3,4.3-5.8,7.3-7.6c3-1.8,6.5-2.6,10.4-2.6c3.9,0,7,1,9.2,3.1c2.2,2,3.6,4.6,4.2,7.6c2-3.5,4.5-6.1,7.5-8
+c3-1.8,6.4-2.7,10.2-2.7c2.8,0,5,0.5,6.9,1.6c1.8,1,3.3,2.4,4.4,4.2c1.1,1.7,1.8,3.8,2.2,6.1c0.4,2.3,0.6,4.7,0.6,7.3V82.2z"></path>
+<path id="XMLID_276_" class="st0" d="M224.3,27.4V16.6h9.9v10.9H224.3z M224.3,82.2v-47h9.9v47H224.3z"></path>
+<path id="XMLID_273_" class="st0" d="M246,27.4V16.6h9.9v10.9H246z M246,82.2v-47h9.9v47H246z"></path>
+<path id="XMLID_270_" class="st0" d="M148.8,106.5l-20.1-25.9c-0.5-0.6-1.2-1-2-1.1c-0.7-0.1-1.4,0.1-2,0.5l-2.8-3.7
+c9-8.8,10.3-23.3,2.3-33.6l0,0c-8.6-11.1-24.5-13.1-35.6-4.5C77.4,46.7,75.4,62.6,84,73.7c7.9,10.2,22.2,12.8,33.1,6.2l2.8,3.7
+c-1.2,1-1.4,2.8-0.4,4.1l20.1,25.9c1,1.3,2.9,1.5,4.2,0.5l2.2-1.7l0,0l0,0l2.2-1.7C149.6,109.6,149.8,107.8,148.8,106.5z
+M115.9,73.4c-8.5,6.6-20.6,5-27.2-3.5c-6.6-8.5-5-20.6,3.5-27.2c8.4-6.5,20.6-5,27.2,3.5C125.9,54.7,124.4,66.9,115.9,73.4z"></path>
+<circle id="XMLID_269_" class="st0" cx="103.9" cy="58.3" r="22.5"></circle>
+<g id="XMLID_223_">
+<rect id="XMLID_311_" x="95.2" y="48.9" class="st1" width="2.8" height="6.2"></rect>
+<path id="XMLID_230_" class="st1" d="M93.8,70.3h19.7V56.5h1.3c0.4,0,0.6-0.6,0.3-0.8l-11-9.4l-11.7,9.4c-0.4,0.3-0.2,0.8,0.3,0.8
+h1V70.3z"></path>
+<g id="XMLID_225_">
+<rect id="XMLID_229_" x="100.5" y="55.6" class="st0" width="3.1" height="3.1"></rect>
+<rect id="XMLID_228_" x="104.1" y="55.6" class="st0" width="3.1" height="3.1"></rect>
+<rect id="XMLID_227_" x="104.1" y="59.3" class="st0" width="3.1" height="3.1"></rect>
+<rect id="XMLID_226_" x="100.5" y="59.3" class="st0" width="3.1" height="3.1"></rect>
+</g>
+</g>
+</svg>
+                    </a>
+                       
+</div>
+
+                @if (user != null)
+                {
+                    <div class="col-lg-3 order-lg-7 col-sm-12">
+                        <div class="dropdown custom-user text-rights">
+                            <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @*<span><img src="~/Content/assets/img/user.png" alt=""></span>*@ 
+                                <span class="user-name">@user.FirstName </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                @*<a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                    onclick='window.location="@Url.Action("Logout", "Login")";' *@
+                                @if (user.AccountTypeID == 1)
+                                {
+                                    <a class="dropdown-item" href="/Favorite/Index" ;><i class="fa fa-sign-out" aria-hidden="true"></i>Favourites</a>
+                                }
+                                @if (user.AccountTypeID != 4)
+                                {
+
+                                    <a class="dropdown-item" href="/Incentive/Index?id=@user.Id" ;><i class="fa fa-sign-out" aria-hidden="true"></i>EARN CASH</a>
+                                }
+                                @if (user.AccountTypeID == 2)
+                                {
+
+                                    <a class="dropdown-item" href="/BillingHistory/Index"><i class="fa fa-sign-out" aria-hidden="true"></i>Billing History</a>
+                                    <a class="dropdown-item" href="/Contractor/ContractorDetail?id=@user.Id"><i class="fa fa-sign-out" aria-hidden="true"></i>Public Profile    <span class="active-reviews" id="CountNewListReview" style="display:none"></span></a>
+                                    @*<a class="dropdown-item" href="/Profiles/ContractorProfile?userId=@user.Id"><i class="fa fa-sign-out" aria-hidden="true"></i>Edit Profile</a>*@
+                                }
+                                @if (user.AccountTypeID == 1)
+                                {
+                                    <a class="dropdown-item" href="/Profiles/MyProfile" ;><i class="fa fa-sign-out" aria-hidden="true"></i>Edit Profile</a>
+                                }
+                                <a class="dropdown-item" href="" ; onclick="SessionLogout(@user.AccountTypeID)"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="col-lg-3 order-lg-7 col-sm-12">
+                        <form class="form-login">
+                            @*     <button type="button" class="btn btn-outline-primary custm-outline-btn" onclick='window.location.href = "homii.codecreators.io/signup/"'>Sign up</button>*@
+                            <button type="button" class="btn btn-outline-primary custm-outline-btn" onclick="window.location = 'https://homii.ca/signup/';">Sign up</button>
+                            <button type="button" class="btn btn-primary btn-custom" onclick='window.location = "@Url.Action("Index", "Login")";'>Login</button>
+                        </form>
+                    </div>
+                }
+
+
+                <div class="col-lg-7 h-0">
+                    <div class="nav-form">
+                        <form>
+                            <div class="form-row">
+                                <div class="input-group form-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text form-label">Find <i class="fa fa-caret-right"></i></span>
+                                    </div>
+                                    @* <input type="text" class="form-control custom-form-control" id="CategoriesList" onblur="if(this.value == '') { this.value='e.g. Plumber, Roofer, Handyman'}" onfocus="if (this.value == 'e.g. Plumber, Roofer, Handyman') {this.value=''}" value="e.g. Plumber, Roofer, Handyman" autocomplete="off">*@
+                                    <input type="text" class="form-control custom-form-control" id="CategoriesList" placeholder="e.g. Plumber, Roofer, Handyman" onkeyup="ClearBorder()" autocomplete="off">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text form-label">Near <i class="fa fa-caret-right"></i></span>
+                                    </div>
+                                    @*<input type="text" class="form-control custom-form-control" id="CitiesList" onblur="if(this.value == '') { this.value='e.g. Toronto, ON'}" onfocus="if (this.value == 'e.g. Toronto, ON') {this.value=''}" value="e.g. Toronto, ON" autocomplete="off">*@
+                                    <input type="text" class="form-control custom-form-control" id="CitiesList" placeholder="e.g. Toronto, ON" onkeyup="ClearBorder()" autocomplete="off">
+                                    <div class="input-group-append" id="SearchContractorByCat">
+                                        @*<a href="/SearchContractor/Index" class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>*@
+                                        <a class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</div>

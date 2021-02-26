@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "PaymentExpiryProcess - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto">
+                <br />
+                <div class="card bg-gray mt-2">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8">
+
+
+
+                                <h2 id="txtAmount"></h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <h6 class="mt-3">Card Details</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+
+
+                        @*<div class="bg-white p-3 mb-4">
+                                <div id="dropin-container">
+                                </div>
+                                <div id="Paypal" class="tab-pane pt-40 fade">
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="card-footer text-right">
+                                <button class="btn btn-primary btn-custom" id="submit-button" style="display:none;">Purchase</button>
+                            </div>*@
+
+
+                        <div id="card-element">
+                            <!-- a Stripe Element will be inserted here. -->
+                        </div>
+                        <!-- Used to display Element errors -->
+                        <div id="card-errors" role="alert"></div>
+
+                        <div class="card-footer text-right">
+                            <button class="btn btn-primary btn-custom" id="submit-button" style="display:none;">Purchase</button>
+                        </div>
+
+                    </div>
+                </div><!-- End card -->
+            </div><!-- End col -->
+        </div><!-- End row -->
+    </div><!-- End container -->
+</div>
+
+
+@section FooterScripts{
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script src="~/scripts/PageJS/PaymentExpiryProcess.js"></script>
+}
+
+

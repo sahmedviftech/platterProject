@@ -1,0 +1,875 @@
+﻿@model CCI_Homii.Models.DAL.Sp_GetRecordOfWriteAReview_Result
+@{
+    ViewBag.Title = "Write A Review - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var user = HomiiSession.CurrentUser;
+}
+
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 pd-0">
+            <div class="head-sub" style="background:url(/Content/assets/img/banner3.png);background-repeat:no-repeat;/* background-position:100% 100% */background-size: cover;">
+                <div class="table-cell-area">
+                    <div class="title-head-sub"> <h1>Submit My Review For:</h1></div>
+                    <p><a class="subline-head-sub" href="">@Model.CompanyName</a></p>
+
+                    <p class="content-head-sub-2">
+                        <a href="">@Model.BusinessAddress</a>
+
+
+                    </p>
+
+                    @*<p class="cstm-area-p"> Main contacts listed as: Nick Tuttle</p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="tellus">
+    <div class="container">
+        <form id="WriteaReviewFrom">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="prjct_titlehdng">Tell Us About Your Experience</h1>
+                    <div class="bg-gray full_bg_gry">
+
+
+                        <div class="main-form-area">
+                            @if (user != null)
+                            {
+                                <input type="hidden" value="@user.Id" id="hddUser" />
+                            }
+                            else
+                            {
+                                <input type="hidden" value="Undefined" id="hddUser" />
+                            }
+
+                            <div class="label-first">
+                                @*<label for="Service Provided">Service Provided</label>*@
+                                @*<input type="text" class="form-control" id="wrtitle">*@
+                                <input type="text" name="wrtitle" title="" class="form-control" id="wrtitle" placeholder="Service Provided" required data-parsley-trigger="keyup" data-parsley-required-message="Title is required" data-placement="bottom">
+                            </div>
+                            <div class="label-second">
+                                @*<label for="Written Review">Written Review</label>*@
+                                @*<textarea name="WRDescription" id="WRDescription" cols="30" rows="10"  data-placement="bottom"  title="Enter Your Company Name" required data-parsley-trigger="keyup" data-parsley-required-message="Review Description is required" data-parsley-maxlength="1000"></textarea>*@
+
+                                <textarea name="WRDescription" id="WRDescription" placeholder="Written Review"
+                                          cols="30" rows="10" required data-parsley-trigger="keyup"
+                                          data-parsley-required-message="Review Description is required"
+                                          data-parsley-minlength="50" data-parsley-maxlength="4000"
+                                          data-parsley-minlength-message="Description must be at least 50 characters"
+                                          data-parsley-maxlength-message="Description must be between 50-4000 characters"
+                                          data-placement="bottom"></textarea>
+
+
+                            </div>
+                        </div>
+                        <div class="inner-additional">
+                            @*<select name="" id="selectarea" class="form-control">
+                    <option value="">Additional Information (Optional)</option>
+                    <option value="">Additional Information (Optional)</option>
+                    <option value="">Additional Information (Optional)</option>
+                    <option value="">Additional Information (Optional)  </option>
+                </select>*@
+                            <h3 class="mt-4">Rate Your Experience</h3>
+                            <p class="clicktoselect mb-3">Click to select a rating from 1 - 5 for each of the following 6 options.</p>
+                            <div class="inner-review-submit">
+                                <div class="row">
+                                    <div class="col-md-6" id="Div1">
+                                        <p>Quality of work:</p>
+                                        @*<p style="color:red">Quality of work:</p>*@
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="start-list">
+                                            <div id="input1" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+                                            @*<input id="input1" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1" />*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" id="Div2">
+                                        <p>Stayed on budget:</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="start-list">
+                                            <div id="input2" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" id="Div3">
+                                        <p>Timeliness:</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="start-list">
+                                            <div id="input3" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" id="Div4">
+                                        <p>Cleanliness:</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="start-list">
+                                            <div id="input4" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" id="Div5">
+                                        <p>Communication:</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="start-list">
+                                            <div id="input5" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+                                            @*<div id="input3" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" id="Div6">
+                                        <p>Courteous:</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="start-list">
+                                            <div id="input6" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @*<h2>Do You Have Photos To Share?</h2>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="inner-attachments">
+                                Add documents or images that might be helpful (Optional)
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="inner-btn">
+                                <button class="button">Add Files</button>
+                            </div>
+                        </div>
+                    </div>*@
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @if (user == null)
+                                {
+                                    @*<div class="row" id="Termdiv">
+                            <div class="col-md-12 pl-md-0 pr-md-0">
+                                <div class="form-check checkbox-change terms-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheckTerms" data-parsley-required-message="Terms of Use is required">
+                                    <label class="form-check-label" for="gridCheckTerms">
+                                        By clicking Post Review & Create FREE account. you agree to the Homii <a href="#" class="login-member-anchr"> Terms</a> of Use
+                                    </label>
+                                </div>
+                            </div>
+                        </div>*@
+                                    <div class="cstm-tabssSignup">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="pro-detailsSignup">
+                                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active" id="SignUp-tab" data-toggle="tab" href="#SignUp" role="tab" aria-controls="SignUp" aria-selected="true"> I am a new user </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="Login-tab" data-toggle="tab" href="#Login" role="tab" aria-controls="Login" aria-selected="false">I am a returning user</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-content cstms review_tab_cntnt writereviewtab p-0" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="SignUp" role="tabpanel" aria-labelledby="SignUp-tab">
+                                            <div class="testimonials">
+                                                <div class="">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="card bg-gray mt-0 cstm-flow">
+                                                                <div class="card-header border-0">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h2>I AM A NEW USER</h2>
+                                                                        </div>
+                                                                        @*<div class="col-4 text-right">
+                                                            <h6 class="mt-3">Contractor</h6>
+                                                            </div>*@
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="card-body">
+                                                                    <div class="form-row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3 mt-0">
+                                                                                <input type="text" title="" class="form-control cstm_border_write_review" name="FirstName" id="FirstName" placeholder="First Name" data-parsley-required-message="First Name is required" data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="First Name should be without space" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3 mt-0">
+                                                                                <input type="text" title="" class="form-control cstm_border_write_review" name="LastName" id="LastName" placeholder="Last Name" data-parsley-required-message="Last Name is required" data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Last Name should be without space" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3">
+                                                                                <input type="text" title="" class="form-control form-custom" name="PostalCode" id="PostalCode" placeholder="Postal Code" data-parsley-required-message="Postal Code is required" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3">
+                                                                                @*<input type="text" class="form-control form-custom" name="PostalCode" id="PostalCode" placeholder="Postal Code" data-parsley-required-message="Postal Code is required" data-parsley-trigger="keyup"  data-placement="bottom"  title="Enter Your Company Name">*@
+                                                                                <input type="text" title="" class="form-control form-custom" name="PhoneNumber" id="PhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" parsley-type="phone" data-parsley-trigger="keydown" value="" placeholder="Phone Number" maxlength="12" data-parsley-required-message="This value is required." onkeypress="return event.charCode >= 48 && event.charCode <= 57" data-placement="bottom">
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3">
+                                                                                <input type="email" title="" class="form-control form-custom" name="Email" id="Email" placeholder="Email" data-parsley-type="email" data-parsley-required-message="Email is required" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3">
+                                                                                <input type="email" title="" class="form-control form-custom" name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Email" data-parsley-equalto="#Email" data-parsley-type="email" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3">
+                                                                                <input type="password" title="" class="form-control form-custom" name="Password" id="Password" placeholder="Password" data-parsley-length="[8, 16]" data-parsley-required-message="Password is required" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3">
+                                                                                <input type="password" title="" class="form-control form-custom" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password" data-parsley-equalto="#Password" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!-- End card -->
+                                                        </div><!-- End col -->
+                                                    </div><!-- End row -->
+                                                </div><!-- End container -->
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="Login" role="tabpanel" aria-labelledby="Login-tab">
+                                            <div class="testimonials">
+                                                <div class="">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="card bg-gray mt-0 cstm-flow">
+                                                                <div class="card-header">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h2>I AM A RETURNING USER</h2>
+                                                                        </div>
+                                                                        @*<div class="col-4 text-right">
+                                                            <h6 class="mt-3">Contractor</h6>
+                                                            </div>*@
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="card-body">
+                                                                    <div class="form-row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3 mt-0">
+                                                                                @*<input type="email" class="form-control form-custom" name="emailLogin" id="emailLogin" placeholder="Email" >*@
+                                                                                <input type="email" title="" class="form-control form-custom" name="emailLogin" id="emailLogin" placeholder="Email" data-parsley-type="email" data-parsley-required-message="Email is required" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group mb-3 mt-0">
+                                                                                @*<input type="password" class="form-control form-custom" name="passwordLogin" id="passwordLogin" placeholder="Password" >*@
+                                                                                <input type="password" title="" class="form-control form-custom" name="passwordLogin" id="passwordLogin" placeholder="Password" data-parsley-required-message="Password is required" data-parsley-trigger="keyup" data-placement="bottom">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+
+                                                                        </div>
+                                                                        <div class="col-md-6 text-right">
+                                                                            <a class="frgt-link" href="/Login/ForgotPassword">Forgot Password</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End card -->
+                                                        </div>
+                                                        <!-- End col -->
+                                                    </div>
+                                                    <!-- End row -->
+                                                </div>
+                                                <!-- End container -->
+                                            </div>
+                                            <!--FOOTER START-->
+                                        </div>
+
+
+                                    </div>
+                                }
+
+                                <div class="row" id="Termdiv" style="display: block;">
+                                    <div class="col-md-12">
+                                        <div class="form-check checkbox-change terms-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheckTerms" data-parsley-required-message="Terms of Use is required" data-parsley-multiple="gridCheckTerms" data-parsley-required="true">
+                                            <label class="form-check-label" for="gridCheckTerms">
+                                                By clicking Submit Review
+                                                @if (user == null)
+                                                {
+                                                    <span id="WRrems"> &amp; Create FREE account </span>
+
+                                                }
+
+                                                you agree to the Homii <a href="https://homii.ca/terms-conditions/" class="login-member-anchr"> Terms</a> of Use
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="Termdiv" style="display: block;">
+                                    <div class="col-md-12">
+                                        <div class="form-check checkbox-change terms-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1" required data-parsley-required data-parsley-required-message="Privacy Policy is required">
+
+                                            <label class="form-check-label" for="gridCheck1">
+                                                I AGREE I have read and agree to Homii <a href="https://homii.ca/Privacy-Policy/" class="login-member-anchr">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-md-0 pr-md-0 cstm-responsive-captcha">
+                                    @*<div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6LdcXOcUAAAAACrmT3qYDM0-A9Yc0pwIVS8uhCwz"> </div>*@
+                                    <div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6Lex2K4ZAAAAAE1YAuuZhV3LwEBH_rCOT_mHvIhG"> </div>
+                                    <span id="error" style="color: red; font-size: 16px;">please verify  your are not a bot..</span>
+                                </div>
+
+
+                                <div class="col-md-12 text-right">
+                                    <div class="inner-confirm">
+                                        @*<h1>Confirmation</h1>
+                            <p>I certify that I did hire Tuttle Construction Services Inc. and this review is based on my own experience and is my honest opinion of this company, and that I have no personal or business relationship with this company or its owners, and have not been offered any incentive or payment originating from this company, its owners or employees to write this review.</p>*@
+                                        @* <button type="submit" class="button mt-3" id="btnwritereview">SUBMIT REVIEW</button>*@
+
+
+
+
+                                        @if (user == null)
+                                        {
+                                            <button type="submit" class="button mt-3" id="btnwritereview">
+                                                CREATE FREE ACCOUNT & SUBMIT REVIEW
+
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button type="submit" class="button mt-3" id="btnwritereview">
+                                                SUBMIT REVIEW
+
+                                            </button>
+                                        }
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-bluebg">
+                        <h1 class="text-dear-user">
+                            Dear user,
+
+                        </h1>
+
+                        <p>
+                            The purpose of Homii's review system is to retrieve honest feedback from homeowners to help others with their contractor selection and hiring process.
+                        </p>
+                        <p>
+                            To submit a review, you MUST have employed the contractor in which you are writing about. By sharing your experiences, you’re helping other homeowners make better choices when hiring a contractor on our site.
+                        </p>
+                        <p>
+                            For tips on writing helpful reviews, or more information about submitting a review, please read our <a href="https://homii.ca/review-guidlines" class="login-member-anchr">Review Guidelines</a>  .
+                        </p>
+                        <p>
+                            Thank you for your review and we hope to have helped with your home improvement project.
+
+                        </p>
+
+                        <p>Kind Regards,</p>
+                        <p>Homii Team</p>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</section>
+
+<br />
+
+@section FooterScripts{
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/scripts/PageJS/WriteAReview.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model CCI_Homii.Models.DAL.Sp_GetRecordOfWriteAReview_Result
+        @{
+            ViewBag.Title = "Writte A Review - Homii";
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            var user = HomiiSession.CurrentUser;
+        }
+
+
+
+
+        <div class="main-banner-cls">
+            <div class="inner-content-text">
+                <h1>Submit My Review For:</h1>
+                <h2>@Model.CompanyName</h2>
+                <p>@Model.BusinessAddress </p>
+                <p class="general">@Model.CategoryName </p>
+                <p>Main contacts listed as: Nick Tuttle </p>
+            </div>
+        </div>
+
+        <section class="tellus">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="main-form-area">
+                            @if (user != null)
+                            {
+                                <input type="hidden" value="@user.Id" id="hddUser" />
+                            }
+                            else
+                            {
+                                <input type="hidden" value="Undefined" id="hddUser" />
+                            }
+                            <h2>Tell Us About Your Experience</h2>
+                            <div class="label-first">
+                                <label for="Service Provided">Service Provided</label>
+                                <input type="text" class="form-control" id="wrtitle">
+                            </div>
+                            <div class="label-second">
+                                <label for="Written Review">Written Review</label>
+                                <textarea name="textareareview" id="WRDescription" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="inner-additional">
+                            @*<select name="" id="selectarea" class="form-control">
+                                <option value="">Additional Information (Optional)</option>
+                                <option value="">Additional Information (Optional)</option>
+                                <option value="">Additional Information (Optional)</option>
+                                <option value="">Additional Information (Optional)  </option>
+                            </select>*-@
+    <hr class="cstm-hrs" />
+    <h3>Rate Your Experience</h3>
+    <p class="clicktoselect">Click to select a rating from 1 - 5 for each of the following 6 options.</p>
+    <div class="inner-review-submit">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Quality of work:</p>
+            </div>
+            <div class="col-md-6">
+                <div class="start-list">
+                    <div id="input1" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Stayed on budget:</p>
+            </div>
+            <div class="col-md-6">
+                <div class="start-list">
+                    <div id="input3" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Timeliness:</p>
+            </div>
+            <div class="col-md-6">
+                <div class="start-list">
+                    <div id="input2" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Cleanliness:</p>
+            </div>
+            <div class="col-md-6">
+                <div class="start-list">
+                    <div id="input5" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Communication:</p>
+            </div>
+            <div class="col-md-6">
+                <div class="start-list">
+                    <div id="input4" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+                    <div id="input3" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Courteous:</p>
+            </div>
+            <div class="col-md-6">
+                <div class="start-list">
+                    <div id="input6" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                </div>
+            </div>
+        </div>
+        @*<h2>Do You Have Photos To Share?</h2>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="inner-attachments">
+                        Add documents or images that might be helpful (Optional)
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="inner-btn">
+                        <button class="button">Add Files</button>
+                    </div>
+                </div>
+            </div>*-@
+
+    </div>
+
+                    </div>
+                </div>
+            </div>
+    @if (user == null)
+    {
+        <div class="cstm-tabssSignup">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pro-detailsSignup">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="SignUp-tab" data-toggle="tab" href="#SignUp" role="tab" aria-controls="SignUp" aria-selected="true"> I AM A NEW USER </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="Login-tab" data-toggle="tab" href="#Login" role="tab" aria-controls="Login" aria-selected="false">I AM A RETURNING USER</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content cstms review_tab_cntnt writereviewtab p-0" id="myTabContent">
+            <div class="tab-pane fade show active" id="SignUp" role="tabpanel" aria-labelledby="SignUp-tab">
+                <div class="testimonials">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card bg-gray mt-0">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>I AM A NEW USER</h2>
+                                            </div>
+                                            @*<div class="col-4 text-right">
+                                                <h6 class="mt-3">Contractor</h6>
+                                                </div>*-@
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group  mb-3">
+                                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name" onkeyup="ClearBorder()">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-3">
+                                                    <input type="text" class="form-control" id="PostalCode" placeholder="Postal Code" onchange="ClearBorder()">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-3">
+                                                    <input type="email" class="form-control" id="Email" placeholder="Email" onkeyup="ClearBorder()">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-3">
+                                                    <input type="email" class="form-control" id="ConfirmEmail" placeholder="Confirm Email" onkeyup="ClearBorder()">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-3">
+                                                    <input type="password" class="form-control" id="Password" placeholder="Password" onkeyup="ClearBorder(d)">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group mb-3">
+                                                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="ConfirmPassword" onkeyup="ClearBorder()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End card -->
+                            </div><!-- End col -->
+                        </div><!-- End row -->
+                    </div><!-- End container -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Login" role="tabpanel" aria-labelledby="Login-tab">
+                <div class="testimonials">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card bg-gray mt-0">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2>I AM A RETURNING USER</h2>
+                                            </div>
+                                            @*<div class="col-4 text-right">
+                                                <h6 class="mt-3">Contractor</h6>
+                                                </div>*-@
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" name="emailLogin" id="emailLogin" placeholder="Email" onkeyup="ClearBorder()">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" name="passwordLogin" id="passwordLogin" placeholder="Password" onkeyup="ClearBorder()">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End card -->
+                            </div>
+                            <!-- End col -->
+                        </div>
+                        <!-- End row -->
+                    </div>
+                    <!-- End container -->
+                </div>
+                <!--FOOTER START-->
+            </div>
+
+
+        </div>
+    }
+    <div class="col-md-12 text-right">
+        <div class="inner-confirm">
+            @*<h1>Confirmation</h1>
+                <p>I certify that I did hire Tuttle Construction Services Inc. and this review is based on my own experience and is my honest opinion of this company, and that I have no personal or business relationship with this company or its owners, and have not been offered any incentive or payment originating from this company, its owners or employees to write this review.</p>*-@
+            <button type="button" class="button mt-3" id="btnwritereview">Submit My Review</button>
+        </div>
+
+
+    </div>
+
+            </div>
+        </div>
+    </section>
+
+    <br />
+
+    @section FooterScripts{
+
+        <script src="~/scripts/PageJS/WriteAReview.js"></script>
+    }*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto">
+                <div class="card bg-gray mt-5">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8">
+                                <h2 class="white-nowrap">Write A Review</h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <!-- <h6 class="mt-3">Contractor</h6> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row editprofile">
+                            <div class="col-md-6 p_10">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" name="title" id="wrtitle" onkeyup="setfields('wrtitle')" class="form-control" placeholder="Title">
+                                </div>
+                            </div>
+                            <div class="col-md-12 p_10">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea type="text" name="description" id="WRDescription" onkeyup="setfields('WRDescription')" class="form-control" placeholder="Description"> </textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                  <p>Quality of Work</p>
+                                  <div id="input1" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+                                  @*<div id="input1" data-rateit="0" data-rateit-read-only="false" class="rateit bookrating"></div>*@
+
+@*<div class="rateit" data-rateit-mode="font" data-rateit-value="5" data-rateit-step="1"></div>*-@
+
+                                  </div>
+    <div class="col-sm-4">
+        <p>Communication</p>
+        @*<div id="input4" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*-@
+        <div id="input4" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+        @*<div id="input4" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>*-@
+    </div>
+    <div class="col-sm-4">
+        <p>Timelines</p>
+        @*<div id="input2" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*-@
+        <div id="input2" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+        @*<div id="input2" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>*-@
+    </div>
+    <div class="col-sm-4">
+        <p>Cleanliness</p>
+        @*<div id="input5" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*-@
+        <div id="input5" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+        @*<div id="input5" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>*-@
+    </div>
+    <div class="col-sm-4">
+        <p>Stayed in Budget</p>
+        @*<div id="input3" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*-@
+        <div id="input3" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+        @*<div id="input3" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>*-@
+    </div>
+    <div class="col-sm-4">
+        <p>Courteous</p>
+        @*<div id="input6" class="rateit" data-rateit-value="5" data-rateit-step="1"></div>*-@
+        <div id="input6" class="rateit" data-rateit-mode="font" data-rateit-value="0" data-rateit-step="1"></div>
+
+        @*<div id="input6" data-rating="0" data-rateyo-read-only="false" class="rateYo bookrating"></div>*-@
+    </div>
+                            </div>
+
+    <div class="card-footer text-right">
+        <button class="btn btn-primary btn-custom" id="btnwritereview">Submit</button>
+    </div>
+                       </div>
+                    </div><!-- End card -->
+                </div><!-- End col -->
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </div>*@

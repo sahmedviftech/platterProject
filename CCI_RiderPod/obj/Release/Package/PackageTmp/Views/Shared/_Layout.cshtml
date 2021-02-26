@@ -1,0 +1,1063 @@
+﻿@{
+    var user = HomiiSession.CurrentUser;
+
+    var imagepath = "https://portal.homii.ca/Content/assets/img/mid-logo-transparent.png";
+    if (ViewBag.contractoriamgepath != null)
+    {
+        imagepath = ViewBag.contractoriamgepath;
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ================== Title ================== -->
+    <title>@ViewBag.Title</title>
+    <!-- ================== Required meta tags ================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @*<link rel="shortcut icon" href="http://example.com/favicon.ico" />*@
+
+
+    <!-- ================== Facebook ================== -->
+    <meta property="og:title" content="@ViewBag.Title">
+    <meta property="og:description" content="">
+    <meta property="og:image" content=@imagepath>
+    <meta property="og:url" content="">
+
+    <!-- ================== Twitter ================== -->
+    <meta name="twitter:title" content="@ViewBag.Title">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content=@imagepath>
+    <meta name="twitter:card" content="">
+
+    <!-- ================== Favicon ================== -->
+    <link rel="shortcut icon" href="~/Content/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/Content/assets/img/favicon.ico" type="image/x-icon">
+    <!-- ================== Bootstrap CSS ================== -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <link href="~/Content/assets/css/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/datatables.min.css" rel="stylesheet" />
+    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css?ctag=200604" rel="stylesheet" />
+
+    <link href="~/Content/css/yearpicker.css" rel="stylesheet" />
+    <link href="~/Content/css/toastr.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!-- ================== Font Family ================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <!-- ================== Font Awesome and Icons ================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ================== Custom Css ================== -->
+    @*<link rel="stylesheet" href="~/Content/assets/sass/styles.css">*@
+    <link href="~/Content/css/Parsley.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/fixing.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/assets/css/rateit.css">
+    <!-- ================== my Css ================== -->
+    <link rel="stylesheet" href="~/Content/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <!-- ================== Dropdown Search List Css ================== -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="~/Content/assets/sass/styles.css" rel="stylesheet" />
+   
+
+
+
+
+    @if (IsSectionDefined("HeaderScripts"))
+    {
+
+        @RenderSection("HeaderScripts");
+    }
+</head>
+<body class="login-page system-user provinces categories">
+    
+    <!--HEADER START-->
+    @*style="display:none;"*@
+    <div class="loader">
+        <img src="~/Content/assets/Loader.gif" />
+    </div>
+
+    @{
+        Html.RenderPartial("_PartialViewHeader");
+    }
+
+
+    @{
+        if (user != null)
+        {
+            Html.RenderPartial("_NavBarPartialView");
+        }
+
+    }
+    <!--HEADER END-->
+
+
+
+
+    @RenderBody()
+
+
+
+
+
+
+    @{
+        Html.RenderPartial("_PartialViewFooter");
+    }
+
+    <!-- ================== Scripting ================== -->
+
+    <script type="text/javascript" src="~/Content/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/scripts/moment.min.js"></script>
+
+    <script src="~/Content/toastr.min.js"></script>
+    <script type="text/javascript" src="~/scripts/SendBird.min.js"></script>
+    <script src="~/scripts/jquery-ui.js"></script>
+    <script src="~/scripts/ChatJS/chat.js"></script>
+    <script src="~/scripts/ChatJS/util.js"></script>
+    <script src="~/scripts/ChatJS/sample.index.js"></script>
+    @*<script type="text/javascript" src="~/Content/assets/js/jstars.min.js"></script>*@
+    <script src="~/scripts/gijgo.min.js"></script>
+    <script src="~/scripts/jquery.rateyo.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/dataTables.pageLoadMore.min.js"></script>
+    <script src="~/scripts/jssocials.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/functions.js"></script>
+    <script src="~/scripts/parsley.min.js"></script>
+    <!-- ================== Scripting ================== -->
+
+    <script src="~/scripts/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/jquery.rateit.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/webfont.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+    <script src="~/scripts/PageJS/LayoutJS.js"></script>
+    <script src="~/scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/scripts/yearpicker.js"></script>
+    <script src="~/scripts/html2canvas.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet" />
+    @*<link href="https://fonts.googleapis.com/css?family=Abel|Nunito" rel="stylesheet">
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js?ctag=200604"></script>
+
+        <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js?ctag=200604"></script>*@
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous">
+    </script>
+
+    @*<script src="~/scripts/PageJS/SearchContractor.js"></script>*@
+
+    @*<script>
+            $(document).ready(function () {
+
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>*@
+
+    <script>
+        $('body').click(function (e) {
+            $('.modal-body-review').children('iframe').attr('src', 'https://www.youtube.com/embed/XXOSpQ-nPwQ');
+        });
+    </script>
+
+
+
+    @if (IsSectionDefined("FooterScripts"))
+    {
+
+        @RenderSection("FooterScripts");
+    }
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <!-- ================== Title ================== -->
+        <title>Homii </title>
+        <!-- ================== Required meta tags ================== -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- ================== Bootstrap CSS ================== -->
+        <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+        <link href="~/Content/assets/css/select2.min.css" rel="stylesheet" />
+        <!-- ================== Font Family ================== -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+        <!-- ================== Font Awesome and Icons ================== -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- ================== Custom Css ================== -->
+        <link rel="stylesheet" href="~/Content/assets/css/styles.css">
+    </head>
+    <body class="login-page system-user provinces categories">
+        <!--HEADER START-->
+        @*<header class="custom-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 pl-0">
+                        <a href="/"><img src="~/Content/assets/img/Mid-logo-transparent-white.png" alt=""></a>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="nav-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <span class="form-label">Find<i class="fa fa-caret-right"></i></span>
+                                        <input type="text" class="form-control custom-form-control" onblur="if(this.value == '') { this.value='e.g. Plumber, Roofer, Handyman'}" onfocus="if (this.value == 'e.g. Plumber, Roofer, Handyman') {this.value=''}" value="e.g. Plumber, Roofer, Handyman" autocomplete="off">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <span class="form-label">Near<i class="fa fa-caret-right"></i></span>
+                                        <input type="text" class="form-control custom-form-control" onblur="if(this.value == '') { this.value='e.g. Toronto, ON'}" onfocus="if (this.value == 'e.g. Toronto, ON') {this.value=''}" value="e.g. Toronto, ON" autocomplete="off">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="dropdown custom-user text-right">
+                            <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span><img src="~/Content/assets/img/user-img.png" alt=""></span> <span class="user-1">James</span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>*@
+@*<nav class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="ul-nav">
+                            @*<li><a href="javascript:;">System User</a></li>
+                            <li><a href="javascript:;">Categories</a></li>
+                            <li><a href="javascript:;">Provinces</a></li>
+                            <li><a href="javascript:;">Cities</a></li>
+                            <li><a href="javascript:;">Posted Projects</a></li>*-@
+
+                            @if (user.AccountTypeID == 1 || user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../Project/Index">
+                                        Create Project
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 1)
+                            {
+                                <li>
+                                    <a href="../Project/HomeOwnerProjectList">
+                                        Project List
+                                    </a>
+                                </li>
+                            }
+                            else if (user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../AdminProjectList/Index">
+                                        Project List
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 2)
+                            {
+                                <li>
+                                    <a href="../ContractorProject/Index">
+                                        Project List
+                                        <span id="CountNewList" style="color:black; font-size:small"></span>
+
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID != 4)
+                            {
+                                <li>
+                                    <a href="../Incentive/Index">
+                                        Incentive
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../Cities/Index">
+                                        Cities
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../Province/Index">
+                                        Provinces
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../Categories/Index">
+                                        Categories
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 1)
+                            {
+                                <li>
+                                    <a href="../Review/Index">
+                                        Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../Favorite/Index">
+                                        Favorite Contractor
+                                    </a>
+                                </li>
+                            }
+
+                            @if (user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../UsersDetails/Index">
+                                        System User
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 4)
+                            {
+                                <li>
+                                    <a href="../HomeOwnerReviews/Index">
+                                        Homeowner Reviews
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 1 || user.AccountTypeID == 2)
+                            {
+                                //var url = "../Chat/Index?userId="+user.Email;
+                                <li>
+                                    <a href="../Chats/Index?userid=@user.Email">
+                                        Chat
+                                    </a>
+                                </li>
+                            }
+                            @if (user.AccountTypeID == 1)
+                            {
+                                <li>
+                                    <a href="../Profiles/MyProfile">
+                                        My Profile
+                                    </a>
+                                </li>
+                            }
+                            else if (user.AccountTypeID == 2)
+                            {
+                                <li>
+                                    <a href="../Profiles/MyProfile">
+                                        My Profile
+                                        <span id="CountNewListReview" style="color:black; font-size:small"></span>
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a href="../SearchContractor/Index">
+                                    Search Contractor
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>*-@
+
+
+
+
+        <header class="custom-navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-6 pl-lg-0">
+                        <button class="navbar-toggler collapsed d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="toglebtn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <a href="/"><img class="header_logo" src="~/Content/assets/img/Mid-logo-transparent-white.png" alt=""></a>
+                    </div>
+
+                    @*<div class="col-lg-3 order-lg-7 col-6">
+                        <div class="dropdown custom-user text-right">
+                            <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span><img src="/assets/img/user-img.png" alt=""></span> <span class="user-name">James</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </div>*-@
+
+                    <div class="col-lg-7">
+                        <div class="nav-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="input-group form-group">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text form-label">Find <i class="fa fa-caret-right"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control custom-form-control" onblur="if(this.value == '') { this.value='e.g. Plumber, Roofer, Handyman'}" onfocus="if (this.value == 'e.g. Plumber, Roofer, Handyman') {this.value=''}" value="e.g. Plumber, Roofer, Handyman" autocomplete="off">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text form-label">Near <i class="fa fa-caret-right"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control custom-form-control" onblur="if(this.value == '') { this.value='e.g. Toronto, ON'}" onfocus="if (this.value == 'e.g. Toronto, ON') {this.value=''}" value="e.g. Toronto, ON" autocomplete="off">
+                                        <div class="input-group-append">
+                                            <a href="javascript:;" class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navigation navbar-expand-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                            <ul class="ul-nav">
+                                @*<li><a href="javascript:;">System User</a></li>
+                                <li class="active"><a href="javascript:;">Categories</a></li>
+                                <li><a href="javascript:;">Provinces</a></li>
+                                <li><a href="javascript:;">Cities</a></li>
+                                <li><a href="javascript:;">Posted Projects</a></li>*-@
+                                @if (user.AccountTypeID == 1 || user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../Project/Index">
+                                            Create Project
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 1)
+                                {
+                                    <li>
+                                        <a href="../Project/HomeOwnerProjectList">
+                                            Project List
+                                        </a>
+                                    </li>
+                                }
+                                else if (user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../AdminProjectList/Index">
+                                            Project List
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 2)
+                                {
+                                    <li>
+                                        <a href="../ContractorProject/Index">
+                                            Project List
+                                            <span id="CountNewList" style="color:black; font-size:small"></span>
+
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID != 4)
+                                {
+                                    <li>
+                                        <a href="../Incentive/Index">
+                                            Incentive
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../Cities/Index">
+                                            Cities
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../Province/Index">
+                                            Provinces
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../Categories/Index">
+                                            Categories
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 1)
+                                {
+                                    <li>
+                                        <a href="../Review/Index">
+                                            Reviews
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Favorite/Index">
+                                            Favorite Contractor
+                                        </a>
+                                    </li>
+                                }
+
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../UsersDetails/Index">
+                                            System User
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 4)
+                                {
+                                    <li>
+                                        <a href="../HomeOwnerReviews/Index">
+                                            Homeowner Reviews
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 1 || user.AccountTypeID == 2)
+                                {
+                                    //var url = "../Chat/Index?userId="+user.Email;
+                                    <li>
+                                        <a href="../Chats/Index?userid=@user.Email">
+                                            Chat
+                                        </a>
+                                    </li>
+                                }
+                                @if (user.AccountTypeID == 1)
+                                {
+                                    <li>
+                                        <a href="../Profiles/MyProfile">
+                                            My Profile
+                                        </a>
+                                    </li>
+                                }
+                                else if (user.AccountTypeID == 2)
+                                {
+                                    <li>
+                                        <a href="../Profiles/MyProfile">
+                                            My Profile
+                                            <span id="CountNewListReview" style="color:black; font-size:small"></span>
+                                        </a>
+                                    </li>
+                                }
+                                <li>
+                                    <a href="../SearchContractor/Index">
+                                        Search Contractor
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!--HEADER END-->
+
+
+        @RenderBody()
+
+
+
+        <!--FOOTER START-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="ftr-logo">
+                            <a href="/"><img src="~/Content/assets/img/ftr-logo.png" alt=""></a>
+                            <p>@@2014-19 Homii Pvt. Ltd.s</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h1>Homeowner</h1>
+                                <div class="ftr-links">
+                                    <ul>
+                                        <li><a href="javascript:;">Login/Sign up</a></li>
+                                        <li><a href="javascript:;">Post your project</a></li>
+                                        <li><a href="javascript:;">write a review</a></li>
+                                        <li><a href="javascript:;">Search contractor/categories</a></li>
+                                        <li><a href="javascript:;">Homii Tips</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h1>Contractors</h1>
+                                <div class="ftr-links">
+                                    <ul>
+                                        <li><a href="javascript:;">Log in/sign up</a></li>
+                                        <li><a href="javascript:;">Incentives</a></li>
+                                        <li><a href="javascript:;">Procing</a></li>
+                                        <li><a href="javascript:;">Code of product</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h1>Homii</h1>
+                                <div class="ftr-links">
+                                    <ul>
+                                        <li><a href="javascript:;">About</a></li>
+                                        <li><a href="javascript:;">Careers</a></li>
+                                        <li><a href="javascript:;">Blog</a></li>
+                                        <li><a href="javascript:;">Contact us</a></li>
+                                        <li><a href="javascript:;">Terms & conditions</a></li>
+                                        <li><a href="javascript:;">Review guideline</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h1>Conncet WIth Us</h1>
+                                <div class="social-links">
+                                    <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                                    <a href="javascript:;"><i class="fa fa-instagram"></i></a>
+                                    <a href="javascript:;"><i class="fa fa-facebook-square"></i></a>
+                                    <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--FOOTER END-->
+        <!-- ================== Scripting ================== -->
+        <script type="text/javascript" src="~/Content/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/jstars.min.js"></script>
+        <script type="text/javascript" src="~/Content/assets/js/functions.js"></script>
+        @if (IsSectionDefined("FooterScripts"))
+        {
+            @RenderSection("FooterScripts");
+        }
+
+    </body>
+    </html>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        @*<link href="~/Content/css/sb-admin.css" rel="stylesheet">*-------remove----dask-----@-----
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="~/scripts/parsley.min.js"></script>
+        <script src="~/scripts/PageJS/LayoutJS.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="col-lg-1">
+                <ul>
+                    @{
+                        @*if (user != null)
+                            {
+                                <li>
+                                    <a  href="../dashboard/index">
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+
+                            }*-------remove----dask-----@-----
+                    if (user.AccountTypeID == 1 || user.AccountTypeID == 4)
+                    {
+                        <li>
+                            <a href="../Project/Index">
+                                <span>Create Project</span>
+                            </a>
+                        </li>
+                    }
+                    if (user.AccountTypeID == 1)
+                    {
+                        <li>
+                            <a href="../Project/HomeOwnerProjectList">
+                                <span>Project List </span>
+                            </a>
+                        </li>
+                        }
+                        else if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../AdminProjectList/Index">
+                                    <span>Project List </span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 2)
+                        {
+                            <li>
+                                <a href="../ContractorProject/Index">
+                                    <span> Project List </span>
+                                    <span id="CountNewList" style="color:black; font-size:small"></span>
+
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID != 4)
+                        {
+                            <li>
+                                <a href="../Incentive/Index">
+                                    <span>Incentive</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Cities/Index">
+                                    <span>City</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Province/Index">
+                                    <span>Province</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../Categories/Index">
+                                    <span>Category</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 1)
+                        {
+                            <li>
+                                <a href="../Review/Index">
+                                    <span>Reviews</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../Favorite/Index">
+                                    <span>Favorite Contractor</span>
+                                </a>
+                            </li>
+                        }
+
+                        if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../UsersDetails/Index">
+                                    <span>System Users</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 4)
+                        {
+                            <li>
+                                <a href="../HomeOwnerReviews/Index">
+                                    <span>Homeowner Reviews</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 1 || user.AccountTypeID == 2)
+                        {
+                            //var url = "../Chat/Index?userId="+user.Email;
+                            <li>
+                                <a href="../Chats/Index?userid=@user.Email">
+                                    <span>Chat</span>
+                                </a>
+                            </li>
+                        }
+                        if (user.AccountTypeID == 1)
+                        {
+                            <li>
+                                <a href="../Profiles/MyProfile">
+                                    <span>My Profile</span>
+                                </a>
+                            </li>
+                        }
+                        else if (user.AccountTypeID == 2)
+                        {
+                            <li>
+                                <a href="../Profiles/MyProfile">
+                                    <span>My Profile</span>
+                                    <span id="CountNewListReview" style="color:black; font-size:small"></span>
+                                </a>
+                            </li>
+                        }
+                        <li>
+                            <a href="../SearchContractor/Index">
+                                <span>Search Contractor</span>
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        @if (IsSectionDefined("FooterScripts"))
+        {
+            @RenderSection("FooterScripts");
+        }
+
+    </body>
+    </html>*@

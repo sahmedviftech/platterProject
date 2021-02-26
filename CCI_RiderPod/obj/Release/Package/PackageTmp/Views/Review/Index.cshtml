@@ -1,0 +1,306 @@
+﻿@model IEnumerable<CCI_Homii.Models.DAL.sp_GetReviewPA_Result>
+@*@model IEnumerable<CCI_Homii.Models.DAL.sp_GetReview_Result>*@
+@{
+    ViewBag.Title = "Reviews - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="main-HD">
+                    <h1>Reviews</h1>
+                </div>
+            </div>
+
+            @if (Model.Count() != 0)
+            {
+                <div class="col-md-5 text-md-right">
+                    <div class="pro-details">
+                        <form>
+                            <div class="form-group row">
+                                <label class="col-4 pr-0 col-form-label">Sort By</label>
+                                <div class="col-8 text-left">
+                                    <div class="form-dropdown">
+
+                                        <select id="selectHightLow" class="form-control select2">
+                                            <option value="" selected>  Sort by : Filters </option>
+                                            <option id="LowToHight" value="true">highest to lowest</option>
+                                            <option value="false"> lowest to highest </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-3 text-md-right mt-auto">
+                    <a href="/SearchContForReview/Index" class="btn btn-primary btn-custom">WRITE A REVIEW</a>
+
+                </div>
+            }
+            else
+            {
+                <div class="col-md-8 text-md-right mt-auto">
+                    <a href="/SearchContForReview/Index" class="btn btn-primary btn-custom">WRITE A REVIEW</a>
+
+                </div>
+            }
+
+
+        </div>
+
+        
+        
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <span id="itemcount" hidden>@item.itemcount</span>
+                <div class="tab-content cstm">
+
+
+
+                    @*<div class="row align-items-baseline">
+                        <div class="col-sm-6">
+                            <span id="ContractorId" hidden>@item.ContractorId</span>
+                            <h3>"@item.Title"</h3>
+                            <h5><a href="/Contractor/ContractorDetail?id=@item.ContractorId"> @item.FirstName  @item.LastName</a> </h5>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <h5>Review Date: @item.CreatedDate</h5>
+                        </div>
+                    </div>*@
+                    <div class="star-rating">
+                        <div class="row">
+
+
+
+                            <div class="col-md-9 order-md-9 order-sm-9">
+                                <div class="main-review-details">
+                                    <h5 class="text-right dates">Review Date: @Convert.ToDateTime(item.CreatedDate).ToString("yyyy-MM-dd")</h5>
+                                    <span id="ContractorId" hidden>@item.ContractorId</span>
+                                    @*<h3><a href="/Contractor/ContractorDetail?id=@item.ContractorId"> @item.FirstName  @item.LastName</a> </h3>*@
+                                    <h3><a class="cstm_hvr_anchr" href="/Contractor/ContractorDetail?id=@item.ContractorId"> @item.CompanyName </a> </h3>
+                                    <h4>"@item.Title"</h4>
+                                    <div class="inner-details">
+                                        <p class="more">@item.Description</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 order-md-3 order-sm-12">
+                                <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@item.rating" data-rateit-step="1"></div>
+                                <div class="main-works">
+                                    <p>Quality of Work</p>
+                                    @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.QualityOfWork" data-rateit-step="1"></div>*@
+                                    <span>  @item.QualityOfWork</span>
+                                </div>
+                                <div class="main-works">
+                                    <p>Communication</p>
+                                    @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Communication" data-rateit-step="1"></div>*@
+                                    <span>  @item.Communication</span>
+                                </div>
+
+                                <div class="main-works">
+                                    <p>Timelines</p>
+                                    @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Timeliness" data-rateit-step="1"></div>*@
+                                    <span>  @item.Timeliness</span>
+                                </div>
+
+                                <div class="main-works">
+                                    <p>Cleanliness</p>
+                                    @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Cleanliness" data-rateit-step="1"></div>*@
+                                    <span> @item.Cleanliness</span>
+                                </div>
+
+                                <div class="main-works">
+                                    <p>Stayed in Budget</p>
+                                    @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.StayedInBudget" data-rateit-step="1"></div>*@
+                                    <span>  @item.StayedInBudget</span>
+                                </div>
+                                <div class="main-works">
+
+                                    <p>Courteous</p>
+                                    @*<div class="rateit" data-rateit-mode="font" data-rateit-value="@item.Courteous" data-rateit-step="1"></div>*@
+                                    <span>  @item.Courteous</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            }
+        }
+        @if (Model.Count() == 0)
+        {
+            <div class="bg-gray roofer-mainblock">
+                <h1>No Reviews</h1>
+            </div>
+        }
+
+
+
+
+
+
+
+
+        @if (@ViewBag.EndPage > 1)
+        {
+            <ul class="pagination">
+                <!--If Current page is not the First Page, we will show Button/Link to go First or on Previous page-->
+                @if (@ViewBag.CurrentPage > 1)
+                {
+                    <li>
+                        <a href="~/Review/Index">First</a>
+                    </li>
+                    <li>
+                        <a href="~/Review/Index?Pageindex=@(@ViewBag.CurrentPage - 1)">Previous</a>
+                    </li>
+                }
+                <!--Paging from StartPage to the end Page-->
+                @for (var page = @ViewBag.StartPage; page <= @ViewBag.EndPage; page++)
+                {
+                    <li class="@(page == @ViewBag.CurrentPage ? "active" : "")">
+                        <a href="~/Review/Index?Pageindex=@page">@page</a>
+                    </li>
+                }
+                <!--If Current Page is not the Last Page then show Next and Last Button/link on Paging-->
+                @if (@ViewBag.CurrentPage < @ViewBag.TotalPages)
+                {
+                    <li>
+                        <a href="~/Review/Index?Pageindex=@(@ViewBag.CurrentPage + 1)">Next</a>
+                    </li>
+                    <li>
+                        <a href="~/Review/Index?Pageindex=@(@ViewBag.TotalPages)">Last</a>
+                    </li>
+                }
+            </ul>
+        }
+
+    </div>
+</div>
+
+
+
+
+@*<div class="row">
+        <div class="col-sm-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination custom-pagi">
+                    <li class="page-item ">
+                        <a href="javascript:;" class="page-link" tabindex="-1">Previous</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+<!--Video Modal -->
+<div class="modal fade modal-videos" id="VideomodalPro" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">
+                    Homeowner Features
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                @*<iframe controls id="video1" style="width: 100%; height: 400px; margin:0 auto;"
+                        src="~/Content/assets/videos/HOMEOWNER%20FINAL.mp4" type="video/mp4"></iframe>*@
+                <video class="video-fluid z-depth-1" controls>
+                    <source src="~/Content/assets/videos/HOMEOWNER%20FINAL.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                @*<button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section FooterScripts{
+
+    <script src="~/scripts/PageJS/SearchContractor.js"></script>
+    <script src="~/scripts/PageJS/Review.js"></script>
+
+}
+
+
+
+
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

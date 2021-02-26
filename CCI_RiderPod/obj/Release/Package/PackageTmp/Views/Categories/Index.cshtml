@@ -1,0 +1,194 @@
+﻿
+@{
+    ViewBag.Title = "Categories - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-md-6">
+                <div class="main-HD">
+                    <h1>Categories </h1>
+                    <button type="button" class="btn btn-primary city-btn" data-toggle="modal" data-target="#addmodal">Add Categories</button>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                @*<div class="pro-details">
+                        <form class="row align-items-end justify-content-end">
+                            <div class="form-group col-lg-5 col-md-7 col-8 pl-md-0">
+                                <label class="mb-0">Search</label>
+                                <input type="text" class="form-control form-custom" placeholder="Search here...">
+                            </div>
+                            <div class="form-group col-lg-3 col-md-5 col-4 pl-md-0">
+                                <button type="button" class="btn btn-primary btn-custom">Search</button>
+                            </div>
+                        </form>
+                    </div>*@
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom-table">
+                    <table class="table" id="example">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="th-width-1">ID</th>
+                                <th scope="col" class="th-width-2">Categories Name</th>
+                                <th scope="col" class="th-width-2">Categories Charges</th>
+                                @*<th scope="col" class="th-width-2">Slugs</th>*@
+                                <th scope="col" class="th-width-3">Action</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                    @*<div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination custom-pagi">
+
+                                        <li class="page-item active"><a href="javascript:;" class="page-link">1</a></li>
+                                        <li class="page-item "><a href="javascript:;" class="page-link">2 </a></li>
+                                        <li class="page-item"><a href="javascript:;" class="page-link">3</a></li>
+                                        <li class="page-item"><a href="javascript:;" class="page-link">4</a></li>
+                                        <li class="page-item"><a href="javascript:;" class="page-link">5</a></li>
+                                        <li class="page-item nxt-pagi">
+                                            <a href="javascript:;" class="page-link">Next Page</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Modal -->
+<div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form class="parsleyvalcs" id="cat-form">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add Categories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="form-control" value="" id="CategoryName" data-parsley-required-message="Category name is required" required data-parsley-trigger="keyup">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Charges</label>
+                                <input type="text"   data-parsley-type="digits" class="form-control" value="" id="CategoryCharges" data-parsley-required-message="Category Charges is required" required data-parsley-type="number" data-parsley-trigger="keyup">
+                            </div>
+
+                            @*<div class="form-group">
+                                    <label>Slugs</label>
+                                    <input type="text" class="form-control" id="SlugsAdd">
+                                </div>*@
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-custom" id="btnSave">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form class="parsleyvalcs" id="catup-form">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Edit Categories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row m_-10 editprofile">
+                        <div class="col-md-6 p_10">
+                            <div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="form-control" value="" data-parsley-required-message="Category name is required" id="CategoryNameEdit" required data-parsley-trigger="keyup">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Charges</label>
+                                <input type="text"   data-parsley-type="digits" class="form-control" id="CategoryChargesEdit" data-parsley-required-message="Category charges is required" required data-parsley-type="number" data-parsley-trigger="keyup">
+                            </div>
+                            @*<div class="form-group">
+                                    <label>Slugs</label>
+                                    <input type="text" class="form-control" id="SlugsEdit">
+                                </div>*@
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-custom" id="btnUpdate">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!--Delete Modal -->
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Delete Categories</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <p>This category may have some projets that also be Deleted. Are you sure you want to delete?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section FooterScripts{
+
+    <script src="~/scripts/PageJS/Categories.js"></script>
+
+    <script src="~/scripts/PageJS/SearchContractor.js"></script>
+}
+
+

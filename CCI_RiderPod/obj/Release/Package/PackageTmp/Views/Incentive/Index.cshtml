@@ -1,0 +1,504 @@
+﻿@*@model  CCI_Homii.Models.DAL.sp_GetUserDetailWithAmount_Result*@
+@{
+    ViewBag.Title = "Incentive - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="incentives-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bg-gray incentive-block-left text-center p-0">
+                    @*@if (Model.AccountTypeID == 2){*@
+                    <div class="incentive-msg">
+                        @*<img src="~/Content/Images/images.png*@
+                        @* <img class="w-100" src="~/Content/assets/img/Character (money).jpg" />*@
+
+                        @* } *@
+                    </div>
+                    <div class="info-P">
+                        <p>Incentive ID</p>
+                        <p class="p-font-size"><span class="color-orange" id="IncentiveCode"></span></p>
+                    </div>
+                    @*<div class="info-P">
+                        <p>Email Id</p>
+                        <p class="p-font-size" id="EmailId"></p>
+                    </div>*@
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="bg-gray incentive-block-right">
+                    @*<h1>Incentive</h1>*@
+                    <h1>Incentive</h1>
+                    <p>
+
+                        Homii’s Referral Incentive Program is an exciting opportunity for you to earn cash by referring Contractors to our site. It’s a small way for us to thank you for helping us grow our business!
+
+                    </p>
+                    <p>
+                        Whenever someone signs up on Homii using your Referral link, you get 10% of their first year’s membership fees. You can earn up to 20% of all successful referrals after a certain number has been reached.  Below, we lay out the compensation breakdown.
+
+                    </p>
+
+                    @*<h1>
+                        Refer Contractors & Earn Money
+                    </h1>
+                    <p>
+                        Everybody knows somebody, so why not turn those connections into money? With Homii you can earn extra money with no work. Refer contractors and earn 10% of every sale.
+                    </p>
+                    <h1>
+                        It can’t get any easier than this!
+                    </h1>
+                    <p>
+                        When a contractor(s) signs up to Homii through your referral, you will receive 10% of the overall sale(s). The benefit for a contractor to sign up using your link is simple; they receive an additional month of service for free!
+
+
+                    </p>
+                    <p>
+                        I.e., after you send your referrals, if one contractor signs up for an annual $3,000 membership, you make $300.
+
+                    </p>*@
+
+                    <div class="bg-white mt-4">
+                        <div class="row">
+                            <div class="col-md-12 text-center m-auto">
+                                <div class="inner-incentive-box">
+                                    <h2>Share Your Invitation Link</h2>
+                                    <div id="shareIconsCountInside" class="cstm"></div>
+                                    @*<div class="social-links">
+                            <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                            <a href="javascript:;"><i class="fa fa-instagram"></i></a>
+                            <a href="javascript:;"><i class="fa fa-facebook-square"></i></a>
+                            <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                        </div>*@
+                                    @*<p>Share Your Referral Code To Earn $$</p>*@
+                                    <div class="row">
+                                        <div class="col-md-7 m-auto">
+                                            <form class="row">
+                                                <div class="col-md-7 col-sm-12 pr-0">
+                                                    <input type="text" class="form-control form-control-inc mb-2" id="ReferCode" onblur="if(this.value == '') { this.value='Refer Code'}" onfocus="if (this.value == 'Refer Code') {this.value=''}" value="Refer Code" autocomplete="off">
+                                                </div>
+                                                <div class="col-md-5 col-sm-12">
+                                                    <button type="button" class="btn btn-primary btn-custom" onclick="CopyCode()">Copy url</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row_incntv_bx">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="inner-incentive-box incentbox amounts">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12 pr-0">
+                                                <h2>Total Earned</h2>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-12">
+                                                <p class="p-font-size" id="TotalEarnedAmount"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inner-incentive-box incentbox amounts">
+                                        <div class="row">
+                                            <div class="col-md-5 col-sm-12 pr-0">
+                                                <h2>Total Due</h2>
+                                            </div>
+
+                                            <div class="col-md-7 col-sm-12">
+                                                <p class="p-font-size" id="AmountDue"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="req-payment">
+                                            <a href="javascript:;" id="RedeemNow">Request Payment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="earns-points"><h3>When you successfully refer between:</h3></div>
+                <div class="main-inner-rewards">
+                    <div class="row rewards-row">
+                        <div class="col-md-1">
+                            <div class="inner-counts">
+                                <h3>
+                                    10%
+                                </h3>
+                                @*<p>Points</p>*@
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="inner-des-re">
+                                @* <p>You can also earn points for <span> Sharing your referral link on Social Media!</span> So in a month you get 10% points for just sharing your referral link to 10 persons.</p>*@
+                                <p>
+                                    1-10 Contractors, you will receive 10% of their registration payment to our company
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rewards-row">
+                        <div class="col-md-1">
+                            <div class="inner-counts">
+                                <h3>15%</h3>
+                                @*<p>Points</p>*@
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="inner-des-re">
+                                @* <p>You can also earn points for <span> Sharing your referral link on Social Media!</span> So in a month you get 10% points for just sharing your referral link to 10 persons.</p>*@
+                                <p>
+                                    11-20 Contractors, you will receive 15% of their initial payment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rewards-row">
+                        <div class="col-md-1">
+                            <div class="inner-counts">
+                                <h3>20%</h3>
+                                @*<p>Points</p>*@
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="inner-des-re">
+                                @*<p>You can also earn points for <span> Sharing your referral link on Social Media!</span> So in a month you get 10% points for just sharing your referral link to 10 persons.</p>*@
+                                <p>
+                                    21+ Contractors, you will receive 20% of their initial payment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rewards-row">
+                        
+                        <div class="col-md-12">
+                            <div class="inner-des-re">
+                                @*<p>You can also earn points for <span> Sharing your referral link on Social Media!</span> So in a month you get 10% points for just sharing your referral link to 10 persons.</p>*@
+                                <p>
+                                    <b>NOTE: </b> Commissions are paid before taxes, and are only eligible for the first subscription term - first year of a Contractor’s subscription.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom-table">
+                    <div class="table-responsive-lg">
+                        <table class="table" id="example">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Contractor Referred</th>
+                                    <th scope="col">Sign Up Date</th>
+                                    <th scope="col">Money Earned</th>
+                                    @*<th scope="col">Status</th>*@
+                                </tr>
+                            </thead>
+                            <tbody id="Referredtbody"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @*<div id="paidAmountdiv">
+            <h2>Paid Amount </h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="custom-table">
+                        <div class="table-responsive-lg">
+                            <table class="table" id="example1">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Payment Date</th>
+                                        <th scope="col">Money Earned</th>
+                                        @*<th scope="col">Status</th>*-@
+                                    </tr>
+                                </thead>
+                                <tbody id="ReferredPayementDuetbody"></tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    </div>
+</div>
+
+
+
+<!--Video Modal -->
+<div class="modal fade modal-videos" id="VideomodalInc" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Referrer Features</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                @*<video controls id="video1" style="width: 100%; height: auto; margin:0 auto; frameborder:0;">
+                    <source src="~/Content/assets/videos/REFERRER%20FINAL.mp4" type="video/mp4">
+                    Your browser doesn't support HTML5 video tag.
+                </video>*@
+                <video class="video-fluid z-depth-1" controls>
+                    <source src="https://portal.homii.ca/Content/assets/videos/REFERRER%20FINAL.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                @*<button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section FooterScripts{
+    <script>
+
+        $('.loader').css("display", "flex");
+    </script>
+    <script src="~/scripts/PageJS/IncentiveJs.js"></script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@-*-@model  CCI_Homii.Models.DAL.sp_GetUserDetailWithAmount_Result*-@
+    @{
+        ViewBag.Title = "Incentive - Homii";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+
+    <div class="incentives-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bg-gray incentive-block-left text-center p-0">
+                        @*-@if (Model.AccountTypeID == 2){*-@
+                        <div class="">
+                            @*<img src="~/Content/Images/images.png*-@
+                            <img class="w-100" src="~/Content/assets/img/Character (money).jpg" />
+
+                            @* } *-@
+                        </div>
+                        <div class="info-P">
+                            <p>Incentive ID</p>
+                            <p class="p-font-size"><span class="color-orange" id="IncentiveCode"></span></p>
+                        </div>
+                        @*<div class="info-P">
+                            <p>Email Id</p>
+                            <p class="p-font-size" id="EmailId"></p>
+                        </div>*-@
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="bg-gray incentive-block-right">
+                        <h1>Incentive</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                        <div class="bg-white mt-4">
+                            <div class="row">
+                                <div class="col-md-12 text-center m-auto">
+                                    <div class="inner-incentive-box">
+                                        <h2>Share Your Invitation Link</h2>
+                                        <div id="shareIconsCountInside" class="cstm"></div>
+                                        @*<div class="social-links">
+                            <a href="javascript:;"><i class="fa fa-twitter"></i></a>
+                            <a href="javascript:;"><i class="fa fa-instagram"></i></a>
+                            <a href="javascript:;"><i class="fa fa-facebook-square"></i></a>
+                            <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                        </div>*@
+@*<p>Share Your Referral Code To Earn $$</p>*-@
+                                        <div class="row">
+                                            <div class="col-md-7 m-auto">
+                                                <form class="row">
+                                                    <div class="col-7 pr-0">
+                                                        <input type="text" class="form-control form-control-inc mb-2" id="ReferCode" onblur="if(this.value == '') { this.value='Refer Code'}" onfocus="if (this.value == 'Refer Code') {this.value=''}" value="Refer Code" autocomplete="off">
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <button type="button" class="btn btn-primary btn-custom" onclick="CopyCode()">Copy url</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row_incntv_bx">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inner-incentive-box">
+                                            <div class="row">
+                                                <div class="col-7 pr-0">
+                                                    <h2>Total Earned</h2>
+                                                </div>
+
+                                                <div class="col-5">
+                                                    <p class="p-font-size" id="TotalEarnedAmount"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inner-incentive-box">
+                                            <div class="row">
+                                                <div class="col-7 pr-0">
+                                                    <h2>Total Due</h2>
+                                                </div>
+
+                                                <div class="col-5">
+                                                    <p class="p-font-size" id="AmountDue"></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="req-payment">
+                                                <a href="javascript:;" id="RedeemNow">Request Payment</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="custom-table">
+                        <div class="table-responsive-lg">
+                            <table class="table" id="example">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Contractor Referred</th>
+                                        <th scope="col">Signup Date</th>
+                                        <th scope="col">Money Earned</th>
+                                        @*<th scope="col">Status</th>*-@
+                                    </tr>
+                                </thead>
+                                <tbody id="Referredtbody">
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    Video Modal
+    <div class="modal fade" id="VideomodalInc" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">Video</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <video controls id="video1" style="width: 100%; height: auto; margin:0 auto; frameborder:0;">
+                        <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+                        Your browser doesn't support HTML5 video tag.
+                    </video>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                    @*<button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>*-@
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @section FooterScripts{
+        <script>
+
+            $('.loader').css("display", "flex");
+        </script>
+        <script src="~/scripts/PageJS/IncentiveJs.js"></script>
+
+    }*@
+

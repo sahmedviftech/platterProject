@@ -1,0 +1,386 @@
+﻿
+@{
+     ViewBag.Title = "Services - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="testimonials">
+    <div class="container">
+      
+
+
+        <div class="row">
+            <div class="col-lg-12 m-auto cstm-check-areas">
+                <br>
+                <div class="card bg-gray mt-2 selectioncrd">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8">
+                                <h2>Select Categories - 1 included with membership</h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                @*<h6 class="mt-3">Payment Plan</h6>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row" id="SelectedCategory">
+
+
+
+                        </div><!-- End row -->
+
+
+                    </div>
+                    <div class="card-header second-mt-30">
+                        <div class="row">
+                            <div class="col-8">
+                                <h2>Additional Category</h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                @*<h6 class="mt-3">Payment Plan</h6>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row" id="PendingSelectedCategory">
+                        </div><!-- End row -->
+                    </div>
+                    <div class="card-header second-mt-30">
+                        <div class="row">
+                            <div class="col-8">
+                                <h2>Select Category</h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                @*<h6 class="mt-3">Payment Plan</h6>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row" id="ContractorCategory">
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div><!-- End card -->
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <span class="totalamount mt-3">Total <span class="orange-color"><b>: $</b></span><span class="orange-color" id="totalamount"><b>0</b></span></span>
+                        </div>
+
+                        <div class="col-6 text-right">
+                            <a href="javascript: history.go(-1)" class="btn btn-primary btn-custom">
+                                Back
+                            </a>
+                            <button class="btn btn-primary btn-custom" id="SaveContrCategory">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="card-footer">
+            <div class="row">
+                <div class="col-6">
+
+                    <span class="totalamount mt-3 categ">Category <span class="orange-color"><b>: $</b></span><span class="orange-color" id="totalamount">4000</span></span>
+                    <span class="totalamount mt-3">City <span class="orange-color"><b>: $</b></span><span class="orange-color" id="totalamount">4000</span></span>
+                </div>
+
+                <div class="col-6 text-right">
+                    <span class="totalamount mt-3 mr-2">Total<span class="orange-color"><b>: $</b></span><span class="orange-color" id="totalamount">4000</span></span>
+                    <button class="btn btn-primary btn-custom" id="SaveContrCategory">Next</button>
+                </div>
+            </div>
+        </div>*@
+            </div><!-- End col -->
+          
+        </div><!-- End row -->
+    </div><!-- End container -->
+</div>
+
+
+
+
+@section FooterScripts{
+
+    <script>
+	$(".bx-selectcategory").click(function(){
+		$(this).addClass("active").siblings('.bx-selectcategory').removeClass("active");
+    });
+    </script>
+    <script src="~/scripts/PageJS/ContractorCategory.js"></script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>SaveContractorCategory</title>
+
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <style>
+            body {
+                font-family: "Lato", sans-serif;
+            }
+
+            .tablink {
+                /*background-color: #555;*/
+                color: black;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 50%;
+            }
+
+                .tablink:hover {
+                    background-color: #777;
+                }
+
+            /* Style the tab content */
+            .tabcontent {
+                color: black;
+                display: none;
+                padding: 50px;
+                text-align: center;
+            }
+
+            /*#OpenJob {background-color:gray;}
+            #CompleteJob {background-color:gray;}*/
+        </style>
+
+    </head>
+    <body>
+
+
+
+
+
+
+        <button class="tablink" onclick="openCity('AddCategory', this)" id="defaultOpen">Add Category</button>
+        <button class="tablink" onclick="openCity('Payment', this)">Payment</button>
+
+        <div id="AddCategory" class="tabcontent">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <label>Select Category</label>
+                    <div id="ContractorCategory" class="frm_user">
+
+                    </div>
+                    @*<select id="ContractorCategory" name="select">
+                            <option value="0">Please select</option>
+                        </select>*@
+@*<input type="text" class="form-control" id="CategoryCharges" value="0" readonly="readonly">*@
+@*<input type="button" class="form-control btn btn-primay" value="Next" id="BtnSave">*-@
+                </div>
+            </div>
+            <input type="button" class="form-control btn-dark" onclick="openCity('Payment', this)" value="Next" id="NextButton">
+
+        </div>
+
+        <div id="Payment" class="tabcontent">
+
+            @*------------------braintree----------------*-@
+
+
+            <div class="row">
+
+
+                <h1>Braintree</h1>
+                <div class="col-lg-3">
+                    <label>Amount</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+
+                        <input type="number" class="form-control frm_user" value="0" id="txtAmount" readonly>
+
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+                    @*<input type="number" class="form-control" id="txtAmount" /> $USD*-@
+                </div>
+                @*<div class="col-lg-3">
+                        <br />
+                        <button type="button" id="init_amt" onclick="initBrainTree()" class="button button--small button--green">Initiate Payment</button>
+                    </div>*-@
+                <br />
+            </div>
+            <div id="dropin-container">
+            </div>
+            <button id="submit-button" class="button button--small button--green" style="display:none;">Purchase</button>
+            <div id="Paypal" class="tab-pane pt-40 fade">
+
+
+            </div>
+
+
+
+            <input type="button" class="form-control btn-dark" onclick="openCity('AddCategory', this)" value="Pervious" id="">
+            <input type="button" class="form-control btn-dark" value="Submit" id="BtnSave">
+        </div>
+
+
+        @*<div>
+                <input type="button" class="form-control btn btn-primay" onclick="openCity('AddCategory', this)" value="Pervious" id="">
+
+            </div>*-@
+
+
+
+
+
+
+        @*------------------braintree----------------*-@
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script src="~/scripts/PageJS/ContractorCategory.js"></script>
+        <script src="https://js.braintreegateway.com/web/dropin/1.21.0/js/dropin.min.js"></script>
+
+    </body>
+    </html>*@

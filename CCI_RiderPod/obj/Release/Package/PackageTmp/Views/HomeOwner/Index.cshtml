@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>
+    HomeOwner
+</h3>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Job Title</th>
+            <th>Category</th>
+            <th>Job Description</th>
+            <th>Estimated Budget</th>
+            <th>Estimated Start Date</th>
+            <th>City</th>
+            <th>Province</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+       
+       
+    </tbody>
+</table> 
+
+
+
+
+
+
+
+
+<script>
+
+    $(Document).ready(function () {
+        GetAllProjects();
+        
+    });
+
+
+    function GetAllProjects() {
+        var html = null;
+        $.ajax({
+            type: "POST",
+            url: "/HomeOwner/GetAllProjects",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data: '{}',
+            success: function (result) {
+                
+
+                var json = JSON.parse(result);
+                $('#tbody').html('');
+                $(json).each(function (index, value) {
+                    var Id = json[index].Id;
+                    var JobTitle = json[index].JobTitle;
+                    var CategoryID = json[index].CategoryID;
+                    var JobDescription = json[index].JobDescription;
+                    var EstimatedStartDate = json[index].EstimatedStartDate;
+                    var EstimatedBudget = json[index].EstimatedBudget;
+
+                    var CityID = json[index].CityID;
+                    var ProvinceID = json[index].ProvinceID;
+                    var CityName = json[index].CityName;
+                    var ProvinceName = json[index].ProvinceName;
+                    var CategoryName = json[index].CategoryName;
+                    
+
+                    html = '<tr>' +
+                   // '<td>' + Id + '</td>' +
+
+                     '<td>' + JobTitle + '</td>' +
+                     '<td>' + CategoryName + '</td>' +
+                     '<td>' + JobDescription + '</td>' +
+                     '<td>' + EstimatedStartDate + '</td>' +
+                     '<td>' + EstimatedBudget + '</td>' +
+                    '<td>' + CityName + '</td>' +
+                     '<td>' + ProvinceName + '</td>' +
+                   
+                '</tr>';
+                    $('#tbody').append(html);
+                });
+            }
+        });
+    }
+
+</script> 

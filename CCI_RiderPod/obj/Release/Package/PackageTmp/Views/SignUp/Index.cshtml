@@ -1,0 +1,362 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "Homeowner Signup - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-login">
+    <div class="container position-relative cstm_zindex">
+        <div class="row dis-flex">
+            <div class="col-md-7">
+                <div class="login-form">
+                    <a href="https://portal.homii.ca/"><img src="~/Content/assets/img/mid-logo-transparent.png" alt=""></a>
+                    <h2> Create FREE Homeowner Account</h2>
+                    <form id="HomeOwnerSignUpForm inhert" class="form-valid">
+                        <div class="form-row m-0">
+                            <div class="form-group col-md-6 pl-md-0">
+                                <input type="text" class="form-control login-custm-form"  title=""  data-placement="bottom"  name="FirstName" id="FirstName" placeholder="First Name" required data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="First Name should be without space">
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                <input type="text" class="form-control login-custm-form" title=""   data-placement="bottom"  name="LastName" id="LastName" placeholder="Last Name" required data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Last Name should be without space">
+                            </div>
+                            <div class="form-group col-md-6 pl-md-0">
+                                <input type="text" class="form-control login-custm-form"  title=""  data-placement="bottom"  data-parsley-pattern="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$" data-parsley-pattern-message="Format : A1A1A1" data-parsley-trigger="keyup" id="PostalCode" placeholder="Postal Code" data-parsley-minlength="6" data-parsley-maxlength="6" required="" data-parsley-required-message="Invalid Postal code format" value="">
+                                @*<input type="text" class="form-control login-custm-form" id="PostalCode" placeholder="Postal Code" required data-parsley-trigger="keyup">*@
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                @*<input type="text" class="form-control login-custm-form" id="PhoneNumber" data-parsley-pattern="^[0-9]{10}(?:List)?$" parsley-type="phone" data-parsley-trigger="keyup" required="" data-parsley-required-message="Phone number should be 10 digits" value="" placeholder="Phone Number">*@
+
+                                <input type="text" class="form-control login-custm-form"  title=""  data-placement="bottom"  id="PhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" parsley-type="phone" data-parsley-trigger="keydown" required="Requireed Format: 111-111-1111" value="" placeholder="Phone Number" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </div>
+                            <div class="form-group col-md-6 pl-md-0">
+                                <input type="email" class="form-control login-custm-form" title=""   data-placement="bottom"  name="Email" id="Email" placeholder="Email" required data-parsley-type="email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Email">
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                <input type="email" class="form-control login-custm-form" title=""   data-placement="bottom"  name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Email" required data-parsley-equalto="#Email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Confirm Email">
+                            </div>
+                            <div class="form-group col-md-6 pl-md-0">
+                                <input type="password" class="form-control login-custm-form"  title=""  data-placement="bottom"  id="Password" placeholder="Password" required data-parsley-length="[8, 16]" data-parsley-trigger="keyup" data-parsley-required-message="Password is required">
+                            </div>
+                            <div class="form-group col-md-6 pr-md-0">
+                                <input type="password" class="form-control login-custm-form"  title=""  data-placement="bottom"  id="ConfirmPassword" placeholder="ConfirmPassword" required data-parsley-equalto="#Password" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Confirm Password">
+                            </div>
+
+                            <div class="col-md-12 pl-md-0 pr-md-0 mt-50">
+                                <div class="form-check checkbox-change">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Terms and Conditions">
+                                    <label class="form-check-label" for="gridCheck">
+                                        I AGREE I have read and agree to Homii <a href="https://homii.ca/terms-conditions/" class="login-member-anchr">Terms and Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-md-0 pr-md-0">
+                                <div class="form-check checkbox-change">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Privacy Policy">
+                                    <label class="form-check-label" for="gridCheck1">
+                                        I AGREE I have read and agree to Homii <a href="https://homii.ca/Privacy-Policy/" class="login-member-anchr">Privacy Policy</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-md-0 pr-md-0">
+                                <div class="form-check checkbox-change">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck2" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Review Guidelines">
+                                    <label class="form-check-label" for="gridCheck2">
+                                        I AGREE I have read and agree to Homii <a href="https://homii.ca/Review%20Guidlines/" class="login-member-anchr">Review Guidelines</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-md-0 pr-md-0">
+                                @*<div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6LdcXOcUAAAAACrmT3qYDM0-A9Yc0pwIVS8uhCwz"> </div>*@
+                                <div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6Lex2K4ZAAAAAE1YAuuZhV3LwEBH_rCOT_mHvIhG"> </div>
+                                <span id="error" style="color: red; font-size: 16px;">please verify  your are not a bot..</span>
+                            </div>
+                            @*<div class="col-md-12 pl-md-0 pr-md-0">
+                                <div class="form-check checkbox-change">
+                                <input class="form-check-input" type="checkbox" id="gridCheck3">
+                                <label class="form-check-label" for="gridCheck3">
+                                I VERIFY I verify that I am the owner of or I am authorized by to register this business and manage this listing Registration
+                                </label>
+                                </div>
+                                </div>*@
+                        </div>
+                        <button type="button" class="btn btn-primary btn-custom" id="btnSaveHomeowner">CREATE MY FREE HOMII ACCOUNT</button>
+                    </form>
+                    <div class="already-member">
+                        <p>Already A Member? <a href="/Login/Index">Login</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-uploader bg-orange">
+                    <h1>Dear Homeowner,</h1>
+                    <p>
+                        If you are starting or considering a home renovation, interior design project or new construction, this is the place to start.
+
+                    </p>
+                   
+                    <h1>Your free account will allow you to:</h1>
+                    <div class="uploader-ul">
+                        <ul>
+                            <li>
+
+                                Post any project and instantly be matched with top local contractors
+                            </li>
+                            <li>Add images and/or documents to your project postings</li>
+                            <li>
+                                Review contractor profiles, including customer reviews, business credentials, images, and more
+                            </li>
+                            <li>Contractors can privately message you, or you can privately message them first</li>
+                            <li>
+                                Save your favourite contractors for future reference
+                            </li>
+                            <li>
+                                Get design ideas for your project by browsing thousands of photos of previously renovated spaces
+                            </li>
+                            <li>
+                                View our<a href="https://homii.ca/tips-homeonwer" class=""> Homii Tips</a> section for ways to select the best contractor for your job
+                            </li>
+                            <li>
+                                Remain completely anonymous, until you decide to share your information (not required)
+                            </li>
+                            <li>
+                                And much more!
+
+                            </li>
+                        </ul>
+                        <p>
+                            Kind Regards,
+                           
+                        </p>
+                        <p> Team Homii</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section FooterScripts{
+    <script>
+        $("body").addClass("login-footer");
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/scripts/PageJS/SignUp.js"></script>
+}
+
+
+@*@{
+    Html.RenderPartial("_PartialViewFooter");
+    }
+
+
+
+    <!-- ================== Scripting ================== -->
+    <script type="text/javascript" src="~/Content/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript" src="~/Content/assets/js/jstars.min.js"></script>*-@
+    <script src="~/scripts/gijgo.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/dataTables.pageLoadMore.min.js"></script>
+    <script src="~/scripts/jssocials.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/functions.js"></script>
+    <!-- ================== Scripting ================== -->
+    <script src="~/scripts/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/jquery.rateit.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/webfont.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/select2.min.js"></script>
+
+    <script src="~/scripts/jquery-ui.js"></script>
+
+    <script src="~/scripts/PageJS/SignUp.js"></script>
+    <script>
+    $("#shareIcons").jsSocials({
+
+    url: "https://portal.homii.ca/",
+    //text: "Google Search Page",
+    showLabel: false,
+    showCount: "inside",
+    countUrl: "url",
+    shares: ["twitter", "facebook", "linkedin"]
+    });
+    </script>
+
+    </body>
+    </html>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+        Layout = null;
+       Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+
+        <div class="bg-login">
+            <div class="container">
+                <div class="row dis-flex">
+                    <div class="col-md-7">
+                        <div class="login-form">
+                            <a href="https://portal.homii.ca/"><img src="~/Content/assets/img/mid-logo-transparent.png" alt=""></a>
+                            <h2> Create Homeowner Account</h2>
+                            <form>
+                                <div class="form-row m-0">
+                                    <div class="form-group col-md-6 pl-md-0">
+                                        <input type="text" class="form-control login-custm-form" id="FirstName" placeholder="First Name" onkeyup="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-6 pr-md-0">
+                                        <input type="text" class="form-control login-custm-form" id="LastName" placeholder="Last Name" onkeyup="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                        <input type="text" class="form-control login-custm-form" id="PostalCode" placeholder="Postal Code" onchange="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                        <input type="number" class="form-control login-custm-form" id="PhoneNumber" minlength="9"  oninput="validity.valid || (value = '');" maxlength="40" pattern="[-+,0-9]+" placeholder="Phone number" onchange="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-6 pl-md-0">
+                                        <input type="email" class="form-control login-custm-form" id="Email" placeholder="Email" onkeyup="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-6  pr-md-0">
+                                        <input type="email" class="form-control login-custm-form" id="ConfirmEmail" placeholder="Confirm Email" onkeyup="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-6  pl-md-0">
+                                        <input type="password" class="form-control login-custm-form" id="Password" placeholder="Password" onkeyup="ClearBorder()">
+                                    </div>
+                                    <div class="form-group col-md-6  pr-md-0">
+                                        <input type="password" class="form-control login-custm-form" id="ConfirmPassword" placeholder="ConfirmPassword" onkeyup="ClearBorder()">
+                                    </div>
+                                    @*<div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                            <input type="password" class="form-control login-custm-form" placeholder="Confirm Password">
+                                        </div>*-@
+                                    <div class="col-md-12 pl-md-0 pr-md-0">
+                                        <div class="form-check checkbox-change">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                I AGREE I have read and agree to Homii <a href="#" class="login-member-anchr">Terms and Conditions</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pl-md-0 pr-md-0">
+                                        <div class="form-check checkbox-change">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                I AGREE I have read and agree to Homii <a href="#" class="login-member-anchr">Privacy Policy</a>
+    </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pl-md-0 pr-md-0">
+                                        <div class="form-check checkbox-change">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck2">
+                                            <label class="form-check-label" for="gridCheck2">
+                                                I AGREE I have read and agree to Homii <a href="#" class="login-member-anchr">Code of Conduct</a>
+    </label>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-12 pl-md-0 pr-md-0">
+                                        <div class="form-check checkbox-change">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck3">
+                                            <label class="form-check-label" for="gridCheck3">
+                                                I VERIFY I verify that I am the owner of or I am authorized by to register this business and manage this listing
+                                            </label>
+                                        </div>
+                                    </div>*-@
+                                </div>
+                                <button type="button" class="btn btn-primary btn-custom" id="btnSaveHomeowner">Registration</button>
+                            </form>
+
+                            <div class="already-member">
+                                <p>Already A Member? <a href="/Login/Index">Login</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="bg-uploader bg-orange">
+                            <h1>Upload images related to the project.</h1>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            <h1>All photos must be</h1>
+                            <div class="uploader-ul">
+                                <ul>
+                                    <li>Family-friendly</li>
+                                    <li>Non-copyrighted images</li>
+                                    <li>Non-commercial</li>
+                                    <li>Virus-free</li>
+                                    <li>In .gif, .jpg, or .png format</li>
+                                    <li>No more than 20 photos per upload</li>
+                                    <li>Lorem ipsum</li>
+                                    <li>Dummy Text</li>
+                                    <li>Text place holder</li>
+                                    <li>More place holder...</li>
+                                    <li>Non-copyrighted images</li>
+                                    <li>Non-commercial</li>
+                                    <li>In .gif, .jpg, or .png format</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    @section FooterScripts{
+
+    <script src="~/scripts/PageJS/SignUp.js"></script>
+        }*@
+
+

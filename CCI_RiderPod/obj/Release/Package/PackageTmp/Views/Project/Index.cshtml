@@ -1,0 +1,1272 @@
+﻿@{
+    ViewBag.Title = "Post A Project - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var user = HomiiSession.CurrentUser;
+    //var userdet = (List<CCI_Homii.Models.User>)TempData["userdetail"];
+
+}
+
+
+@*<div class="bg-banner project-banner">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="banner-heading">
+                <h1>Post My Project</h1>
+                <p>The first step towards finding a great contractor</p>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+<input type="hidden" id="admin" value="@ViewBag.admin" />
+<div class="project-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 heights">
+                <div class="pro-Heading">
+                    <h1 class="prjct_titlehdng">Tell Us About Your Project</h1>
+                    @*<p>Post a project and get quick responses from local, reputable contractors. Review credentials, previous customer feedback and more for peace of mind.</p>*@
+                    <p>
+                        Post your home improvement project and receive quick responses from local contractors. For peace of mind, review profile credentials, work history, previous customer reviews, and much more!
+
+                    </p>
+                    <p>
+                        Try our project posting tool risk free! It’s easy to use and you’re under NO OBLIGATION to hire.
+
+
+                    </p>
+
+                </div>
+                <div class="pro-details bg-gray newpostprjct">
+                    <form id="Project-Form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6 pl-0">
+                                <input type="text" class="form-control form-custom"  title=""  data-placement="bottom"  name="JobTitle" data-parsley-pattern="/^[a-zA-Z \W ]*$/" id="JobTitle" placeholder="Job Title" required data-parsley-trigger="keyup" data-parsley-required-message="Job Title Is Required">
+
+
+                            </div>
+                            @if (user != null)
+                            {
+
+                                <input type="hidden" value="@user.Id" id="hddUser" class="userloginside" />
+                            }
+                            else
+                            {
+                                <input type="hidden" value="Undefined" id="hddUser" />
+                            }
+                            <div class="form-group col-md-6 pr-0">
+                                <select class="form-control form-custom" name="CategoryIDAdd" title=""   data-placement="bottom"  id="CategoryIDAdd" required data-parsley-required-message="You Must Select Category">
+                                    <option value="" selected>Select Category</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12 pl-0 pr-0">
+                                <textarea rows="5" placeholder="Job Description" name="JobDescription" 
+                                          required data-parsley-trigger="keyup" 
+                                           data-placement="bottom" 
+                                           data-parsley-required-message="Job Description Is Required"
+                                          id="JobDescription" class="form-control form-custom" 
+                                          data-parsley-minlength="50" data-parsley-maxlength="4000"
+                                          data-parsley-minlength-message="Description must be at least 50 characters"
+                                          data-parsley-maxlength-message="Description must be between 50-4000 characters" ></textarea>
+                            </div>
+                            <div class="form-group col-md-6 pl-0">
+                                <input type="text" class="form-control form-custom datepicker"  title=""  data-placement="bottom"  name="EstimatedStartDate" readonly id="EstimatedStartDate" placeholder="Estimated Start Date" data-parsley-required-message="You Must Select Estimated Start Date" data-parsley-required="true" data-parsley-trigger="keyup" onchange="dateClear()" />
+
+                            </div>
+                            <div class="form-group col-md-6 pr-0">
+
+                                <select class="form-control form-custom" name="EstimatedBudget" title=""   data-placement="bottom" id="EstimatedBudget" required data-parsley-required-message="You Must Select Estimated Budget">
+                                    <option value="">Select Estimated Budget</option>
+                                    <option value="$100 - $500">$100 - $500</option>
+                                    <option value="$500 - $1,000">$500 - $1,000</option>
+                                    <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                    <option value="$5,000 - $20,000">$5,000 - $20,000</option>
+                                    <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+                                    <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                    <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                                    <option value="$250,000 - $500,000">$250,000 - $500,000</option>
+                                    <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                                    <option value="$1,000,000">$1,000,000</option>
+                                    <option value="Uncertain">Uncertain</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6 pl-0">
+                                <select class="form-control form-custom" name="ProvinceIDAdd"  title=""  data-placement="bottom"  id="ProvinceIDAdd" required data-parsley-required-message="You Must Select Province">
+                                    <option value="" selected>Select Province</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 pr-0">
+                                <select class="form-control form-custom" name="CityIDAdd"  title=""  data-placement="bottom"  id="CityIDAdd" required data-parsley-required-message="You Must Select City">
+                                    <option value="" selected>Select City</option>
+
+                                </select>
+                            </div>
+                            @if (user != null)
+                            {
+                                <input value="@user.AccountTypeID" id="AcRACId" hidden />
+                                if (user.AccountTypeID == 4)
+                                {
+                                    <div class="form-group col-md-12 pl-0 pr-0">
+                                        <select class="form-control form-custom" name="HomeownerList"   title="" data-placement="bottom"  id="HomeownerList" required data-parsley-required-message="You must select User">
+                                            <option value="" selected>Select User</option>
+
+                                        </select>
+                                    </div>
+                                }
+                            }
+
+
+
+                            @*<div class="form-group col-md-6 pl-0 cstm-input">
+                                     <input class="btn-uploadfile" type="file" id="" name="filename">
+                                    <div class="wrap">
+                                        <div class="valign-middle">
+
+                                            <label for="file" class="sr-only"> Attach File(S)</label>
+                                           - @-*<input type="file" id="file">*-@
+                                            <input type="file" id="UpLoadFile" accept=".gif, .jpg, .png" multiple name="filename">
+
+                                        </div>
+                                    </div>
+
+                                </div>*@
+
+
+                            @if (user == null)
+                            {
+                                <div class="container cstm-tabss">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pro-details">
+                                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" id="SignUp-tab" data-toggle="tab" href="#SignUp" role="tab" aria-controls="SignUp" aria-selected="true">I am a new user</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="Login-tab" data-toggle="tab" href="#Login" role="tab" aria-controls="Login" aria-selected="false">I am a returning user</a>
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content cstms col-md-12" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="SignUp" role="tabpanel" aria-labelledby="SignUp-tab">
+                                        <div class="testimonials">
+                                            <div class="">
+                                                <div class="row m-0">
+                                                    <div class="col-lg-12 p-0 m-auto">
+                                                        <div class="mt-0">
+                                                            <div class="">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <h2 class="prjct_frm_title">I AM A NEW USER</h2>
+                                                                    </div>
+                                                                    @*<div class="col-4 text-right">
+                                        <h6 class="mt-3">Contractor</h6>
+                                        </div>*@
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="">
+                                                                <div class="form-row m-0">
+                                                                    <div class="form-group col-md-6 pl-md-0">
+                                                                        <input type="text" class="form-control form-custom" title="" data-placement="bottom" name="FirstName" id="FirstName" placeholder="First Name" data-parsley-required="true" data-parsley-required-message="First Name Required" data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="First Name should be without space">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pr-md-0">
+                                                                        <input type="text" class="form-control form-custom" title="" data-placement="bottom" name="LastName" id="LastName" placeholder="Last Name" data-parsley-required="true" data-parsley-required-message="Last Name Required" data-parsley-trigger="keyup" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Last Name should be without space">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pl-md-0">
+                                                                        @*<input type="text" class="form-control" data-parsley-pattern="^[A-Z0-9]{6}(?:List)?$" data-parsley-trigger="change" id="txtzipcode" data-parsley-minlength="6" data-parsley-maxlength="6" placeholder="Zip/Postal Code" required="">*@
+                                                                        @*<input type="text" class="form-control form-custom" id="PostalCode" placeholder="Postal Code" data-parsley-required="true" data-parsley-pattern="^[A-Z0-9]{6}(?:List)?$" data-parsley-trigger="keyup" data-parsley-required-message="3 Caps Alphabates and 3 Numeric" data-parsley-minlength="6" data-parsley-maxlength="6">*@
+
+                                                                        <input type="text" class="form-control form-custom" title="" data-placement="bottom" data-parsley-pattern="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$" data-parsley-pattern-message="Format : A1A1A1" data-parsley-trigger="keyup" name="PostalCode" id="PostalCode" placeholder="Postal Code" data-parsley-minlength="6" data-parsley-maxlength="6" required="" data-parsley-required-message="Invalid Postal code format" value="">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pr-md-0">
+                                                                        <input type="text" class="form-control form-custom" title="" data-placement="bottom" name="PhoneNumber" id="PhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" parsley-type="phone" data-parsley-trigger="keydown" required="Requireed Format: 111-111-1111" value="" placeholder="Phone Number" maxlength="12" data-parsley-required-message="This value is required." onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pl-md-0">
+                                                                        <input type="email" class="form-control form-custom" title="" data-placement="bottom" name="Email" id="Email" placeholder="Email" data-parsley-required="true" data-parsley-type="email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Email">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pr-md-0">
+                                                                        <input type="email" class="form-control form-custom" title="" data-placement="bottom" name="ConfirmEmail" id="ConfirmEmail" placeholder="Confirm Email" data-parsley-required="true" data-parsley-type="email" data-parsley-equalto="#Email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Confirm Email">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pl-md-0">
+                                                                        <input type="password" class="form-control form-custom" title="" data-placement="bottom" name="Password" id="Password" placeholder="Password" data-parsley-required="true" data-parsley-length="[8, 16]" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Password">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pr-md-0">
+                                                                        <input type="password" class="form-control form-custom" data-placement="bottom" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password" data-parsley-required="true" data-parsley-length="[8, 16]" data-parsley-equalto="#Password" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Confirm Password">
+                                                                    </div>
+
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- End card -->
+                                                    </div><!-- End col -->
+                                                </div><!-- End row -->
+                                            </div><!-- End container -->
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Login" role="tabpanel" aria-labelledby="Login-tab">
+                                        <div class="testimonials">
+                                            <div class="">
+                                                <div class="row m-0">
+                                                    <div class="col-lg-12 p-0 m-auto">
+                                                        <div class="mt-0">
+                                                            <div class="">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <h2 class="prjct_frm_title">I AM A RETURNING USER</h2>
+                                                                    </div>
+                                                                    @*<div class="col-4 text-right">
+                                                                                   <h6 class="mt-3">Contractor</h6>
+                                        I AM A RETURNING USER                                           </div>*@
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="">
+                                                                <div class="form-row m-0">
+
+                                                                    <div class="form-group col-md-6 pl-md-0">
+                                                                        <input type="email" class="form-control form-custom" title="" data-placement="bottom" name="emailLogin" id="emailLogin" placeholder="Email" data-parsley-required="false" data-parsley-type="email" data-parsley-trigger="keyup">
+                                                                    </div>
+                                                                    <div class="form-group col-md-6 pr-md-0">
+                                                                        <input type="password" class="form-control form-custom" title="" data-placement="bottom" name="passwordLogin" id="passwordLogin" placeholder="Password" data-parsley-required="false" data-parsley-trigger="keyup">
+                                                                    </div>
+                                                                    @*data-parsley-length="[8, 16]"*@
+                                                                    <div class="col-md-6">
+
+                                                                    </div>
+                                                                    <div class="col-md-6 text-right">
+                                                                        <a class="frgt-link" href="/Login/ForgotPassword">Forgot Password</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End card -->
+                                                    </div>
+                                                    <!-- End col -->
+                                                </div>
+                                                <!-- End row -->
+                                            </div>
+                                            <!-- End container -->
+                                        </div>
+                                        <!--FOOTER START-->
+                                    </div>
+
+                                    <div id="termpolicy">
+                                        <div class="col-md-12 pl-md-0 pr-md-0 ">
+                                            <div class="form-check checkbox-change cstm_required_error">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Terms and Conditions">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    I AGREE I have read and agree to Homii <a href="https://homii.ca/terms-conditions/" class="login-member-anchr cstm_txt_color">Terms and Conditions</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pl-md-0 pr-md-0">
+                                            <div class="form-check checkbox-change cstm_required_error">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck1" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Privacy Policy">
+                                                <label class="form-check-label mt-2" for="gridCheck1">
+                                                    I AGREE I have read and agree to Homii <a href="https://homii.ca/Privacy-Policy/" class="login-member-anchr cstm_txt_color">Privacy Policy</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pl-md-0 pr-md-0">
+                                            <div class="form-check checkbox-change cstm_required_error">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck2" data-parsley-required="true" data-parsley-trigger="click" data-parsley-required-message="Please Check Review Guidelines">
+                                                <label class="form-check-label mt-2" for="gridCheck2">
+                                                    I AGREE I have read and agree to Homii <a href="https://homii.ca/Review%20Guidlines/" class="login-member-anchr cstm_txt_color">Review Guidelines</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            }
+                            <div class="col-md-12 pl-md-0 pr-md-0 mb-3">
+                                @*<div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6LdcXOcUAAAAACrmT3qYDM0-A9Yc0pwIVS8uhCwz"> </div>*@
+                                <div id="captcha" class="g-recaptcha" data-expired-callback="expiredReCaptcha" data-callback="verifyReCaptcha" lang="en" data-sitekey="6Lex2K4ZAAAAAE1YAuuZhV3LwEBH_rCOT_mHvIhG"> </div>
+                                <span id="error" style="color: red; font-size: 16px;">please verify  your are not a bot..</span>
+                            </div>
+                            <div class="form-group col-lg-4 pl-0 cstm-input">
+                                <!-- <input class="btn-uploadfile" type="file" id="" name="filename"> -->
+                                <div class="wrap attach_file_custom">
+                                    <div class="valign-middle multilefileselect">
+
+                                        <label for="file" class="sr-only"> Attach File(S)</label>
+                                        @*<input type="file" id="file">*@
+                                        @*<input type="file" id="UpLoadFile" multiple name="filename"
+                                            onchange="javascript:updateList()">*@
+                                        <input type="file" id="UpLoadFile" name="filename" accept=".png,.gif,.jpeg,.doc,.pdf,.xlsx" multiple="multiple" onchange="javascript:updateList()">
+                                        @*// <p style="color:red" id="filemsg">Upload Limit 20 Files</p>*@
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md pr-0 justify-content-end">
+                                @if (user == null)
+                                {
+                                    <button type="button" id="btnSave" class="btn btn-primary btn-custom">
+                                        CREATE FREE ACCOUNT & POST MY PROJECT
+                                        @*<img src="~/Content/assets/img/right-arrow.png" alt="" class="cstm-icon-right">*@
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button type="button" id="btnSave" class="btn btn-primary btn-custom smbtnpost">
+                                        POST MY PROJECT
+                                        @*<img src="~/Content/assets/img/right-arrow.png" alt="" class="cstm-icon-right">*@
+                                    </button>
+                                }
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <div id="fileList" class="file_attachedllist">
+                                    <ul></ul>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-lg-4 sctext">
+                <div class="bg-uploader text-bluebg" id="sidebar">
+                    <div>
+                        @*<h1>
+                            Tell us about your Project
+
+                        </h1>
+                        <p>
+                            Post your home improvement project and receive quick responses from local contractors. For peace of mind, review profile credentials, work history, previous customer reviews, and much more!
+
+                        </p>
+                        <p>
+                            Try our project posting tool risk free! It’s easy to use and you’re under NO OBLIGATION to hire.
+
+
+                        </p>*@
+                        <h1>What is a project?</h1>
+                        <p>
+                            A project can be any home improvement that you need done to your property. From a small repair to a complete remodel or build, Homii has got you covered!
+                        </p>
+                        <h1>1. Describe Your Project.</h1>
+                        <p>
+                            You will select a project category that best matches your home improvement needs.  You’ll be asked a few important questions to ensure we match you to the right contractors. Homii strongly suggest that you post one project at a time, even if you have multiple projects that you need contractors for.  By doing so, our algorithm will find the best contractors for the specific jobs you need done. It might take a few extra minutes, but we’re here to help get the job(s) done right the first time.
+                            
+                            Homii strongly suggest that you post one project at a time, even if you have multiple projects that you need contractors for.  By doing so, our algorithm will find the best contractors for the specific jobs you need done. It might take a few extra minutes, but we’re here to help get the job(s) done right the first time. We’re committed to connecting homeowners to the most reliable contractors all across Canada.
+
+                        </p>
+                        <p>
+                            Fill out the form on this page. Please describe your project in detail, as this will generate more interest from local service professionals. Try to include sizes (exact or rough), preferred materials, specific skills required, as well as any images or documents. Please only submit serious requests.
+
+                        </p>
+                        <h1>
+                            2. Educate Yourself
+                        </h1>
+                        <p>
+                            Once you post your project, our unique algorithm will ensure that it is instantly sent to local contractors.  You will immediately receive a list showing the same contractor’s profiles. You can compare the contractors who have received your project posting by viewing their profiles, work history, qualifications, customer reviews, and more!
+                        </p>
+                        <p>
+                            Shortly after receiving your service request, contractors can privately contact you to discuss the project further.  Be courteous to busy contractors by replying to each response you may receive. Using your free <a href="https://homii.ca/tips-homeonwer" class=""> HomiiTips</a> (within your profile), feel confident knowing that you are selecting the best contractor for your project.
+
+                        </p>
+                        <h1>
+                            3. Award the business
+                        </h1>
+                        <p>
+                            Since you’ve already posted your home project and you’ve assessed contractor reviews and past work, it’s time to make a decision.  Remember, this is your project and selecting a contractor is your choice.
+                        
+                        </p>
+                        <p>
+                            Before you select any contractor, make sure to read the<a href="https://homii.ca/tips-homeonwer" class=""> HomiiTips</a> section in your profile.
+                        </p>
+
+
+
+
+
+
+
+
+                        @*<div class="uploader-ul">
+                            <ul>
+                                <li>Family-friendly</li>
+                                <li>Non-copyrighted images</li>
+                                <li>Non-commercial</li>
+                                <li>Virus-free</li>
+                                <li>In .gif, .jpg, or .png format</li>
+                                <li>No more than 20 photos per upload</li>
+                                <li>Lorem ipsum</li>
+                                <li>Dummy Text</li>
+                                <li>Text place holder</li>
+                                <li>More place holder...</li>
+                            </ul>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Video Modal -->
+<div class="modal fade modal-videos" id="VideomodalPro" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">
+                    Homeowner Features
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                @*<video controls id="video1" style="width: 100%; height: auto; margin:0 auto;">
+            <source src="https://www.youtube.com/embed/XXOSpQ-nPwQ" type="video/mp4">
+            Your browser doesn't support HTML5 video tag.
+        </video>*@
+                @*<iframe controls id="video1" style="width: 100%; height: 400px; margin:0 auto;"
+                        src="~/Content/assets/videos/HOMEOWNER%20FINAL.mp4" type="video/mp4"></iframe>*@
+                <video class="video-fluid z-depth-1" controls>
+                    <source src="~/Content/assets/videos/HOMEOWNER%20FINAL.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                @*<button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--success Modal -->
+<div class="modal fade" id="successModal" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Congrats! Your job has successfully been posted</h4>
+                <button type="button" class="close succsessModal" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="hidProjectID" />
+                <p> View your contractor matches </p><button id="btnViewContractorMatches" class="btn btn-primary btn-custom" type="button">VIEW NOW</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default succsessModal" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Contractor Matches Modal -->
+<div class="modal fade" id="ContractorMatchesmodal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Contractor Matches</h5>
+                <button type="button" class="close succsessModal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review ">
+                <div class="row Matchesmodal">
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom succsessModal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--FOOTER END-->
+<!-- ================== Scripting ================== -->
+@section FooterScripts{
+    <script>
+        $('.loader').css("display", "none");
+
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/scripts/PageJS/Project.js"></script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var user = HomiiSession.CurrentUser;
+        //var userdet = (List<CCI_Homii.Models.User>)TempData["userdetail"];
+    }
+
+
+
+    <div class="bg-banner project-banner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="banner-heading">
+                    <h1>Post My Project</h1>
+                    <p>The first step towards finding a great contractor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="project-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="pro-Heading">
+                        <h1>Tell us about your project</h1>
+                        <p>Post a project and get quick responses from local, reputable contractors. Review credentials, previous customer feedback and more for peace of mind.</p>
+                    </div>
+                    <div class="pro-details bg-gray">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 pl-0">
+                                    <input type="text" class="form-control form-custom" id="JobTitle" placeholder="Job Title" onkeyup="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <select class="form-control form-custom" id="CategoryIDAdd" onchange="ClearBorder()">
+                                        <option value="0" selected>Select Category</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-12 pl-0 pr-0">
+                                    <textarea rows="5" placeholder="Job Discription" id="JobDescription" class="form-control form-custom" onkeyup="ClearBorder()"></textarea>
+                                </div>
+                                <div class="form-group col-md-6 pl-0">
+                                    <input type="text" class="form-control form-custom datepicker" readonly  id="EstimatedStartDate" placeholder="Estimated start date" onkeyup="ClearBorder()">
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <input type="number" class="form-control form-custom"  id="EstimatedBudget" min=0 oninput="validity.valid||(value='');" placeholder="Estimated Budget" onchange="ClearBorder()">
+                                </div>
+
+                                <div class="form-group col-md-6 pl-0">
+                                    <select class="form-control form-custom" id="ProvinceIDAdd" onchange="ClearBorder()">
+                                        <option value="0" selected>Province</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <select class="form-control form-custom" id="CityIDAdd" onchange="ClearBorder()">
+                                        <option value="0" selected>City</option>
+
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group col-md-6 pl-0 cstm-input">
+                                    <!-- <input class="btn-uploadfile" type="file" id="" name="filename"> -->
+                                    <div class="wrap">
+                                        <div class="valign-middle">
+
+                                            @*<label for="file" class="sr-only checkonly">Attach File(S)</label>*-@
+                                            @*<input type="file" id="file">*-@
+                                            <input type="file" class="newcheck" id="UpLoadFile" accept=".gif, .jpg, .png" multiple name="filename">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="form-group col-md-6 pr-0 justify-content-end">
+                                    <button type="submit" id="btnSave" class="btn btn-primary btn-custom">Next <img src="~/Content/assets/img/right-arrow.png" alt="" class="cstm-icon-right"></button>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-uploader">
+                        <h1>Upload images related to the project.</h1>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                        <h1>All photos must be</h1>
+                        <div class="uploader-ul">
+                            <ul>
+                                <li>Family-friendly</li>
+                                <li>Non-copyrighted images</li>
+                                <li>Non-commercial</li>
+                                <li>Virus-free</li>
+                                <li>In .gif, .jpg, or .png format</li>
+                                <li>No more than 20 photos per upload</li>
+                                <li>Lorem ipsum</li>
+                                <li>Dummy Text</li>
+                                <li>Text place holder</li>
+                                <li>More place holder...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    @*<div class="project-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="pro-Heading">
+                        <h1>Tell us about your project</h1>
+                        <p>Post a project and get quick responses from local, reputable contractors. Review credentials, previous customer feedback and more for peace of mind.</p>
+                    </div>
+                    <div class="pro-details bg-gray">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 pl-0">
+                                    <input type="text" class="form-control form-custom" id="JobTitle" placeholder="Job Title">
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <select class="form-control form-custom" id="CategoryIDAdd">
+                                        <option selected>Select Category</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-12 pl-0 pr-0">
+                                    <textarea rows="5" placeholder="Job Discription" id="JobDescription" class="form-control form-custom"></textarea>
+                                </div>
+                                <div class="form-group col-md-6 pl-0">
+                                    <input type="text" class="form-control form-custom datepicker" id="EstimatedStartDate" placeholder="Estimated start date">
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <input type="number" class="form-control form-custom" id="EstimatedBudget" placeholder="Estimated Budget">
+                                </div>
+
+                                <div class="form-group col-md-6 pl-0">
+                                    <select class="form-control form-custom" id="ProvinceIDAdd">
+                                        <option selected>Province</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <select class="form-control form-custom" id="CityIDAdd">
+                                        <option selected>City</option>
+
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group col-md-6 pl-0 cstm-input">
+                                     <input class="btn-uploadfile" type="file" id="" name="filename">
+                                    <div class="wrap">
+                                        <div class="valign-middle">
+
+                                            <label for="file" class="sr-only">Attach File(S)</label>
+                                            @*<input type="file" id="file">*-@
+                                            <input type="file" id="UpLoadFile" multiple name="filename">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="form-group col-md-6 pr-0 justify-content-end">
+                                    <button type="submit" id="btnSave" class="btn btn-primary btn-custom">Next <img src="~/Content/assets/img/right-arrow.png" alt="" class="cstm-icon-right"></button>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-uploader">
+                        <h1>Upload images related to the project.</h1>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                        <h1>All photos must be</h1>
+                        <div class="uploader-ul">
+                            <ul>
+                                <li>Family-friendly</li>
+                                <li>Non-copyrighted images</li>
+                                <li>Non-commercial</li>
+                                <li>Virus-free</li>
+                                <li>In .gif, .jpg, or .png format</li>
+                                <li>No more than 20 photos per upload</li>
+                                <li>Lorem ipsum</li>
+                                <li>Dummy Text</li>
+                                <li>Text place holder</li>
+                                <li>More place holder...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*-@
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--FOOTER END-->
+    <!-- ================== Scripting ================== -->
+    @section FooterScripts{
+        <script>
+            $('.loader').css("display", "none");
+        </script>
+        <script src="~/scripts/PageJS/Project.js"></script>
+
+    }*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var user = HomiiSession.CurrentUser;
+        //var userdet = (List<CCI_Homii.Models.User>)TempData["userdetail"];
+    }
+
+    <div class="bg-banner project-banner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="banner-heading">
+                    <h1>Post My Project</h1>
+                    <p>The first step towards finding a great contractor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="pro-Heading">
+                        <h1>Tell us about your project</h1>
+                        <p>Post a project and get quick responses from local, reputable contractors. Review credentials, previous customer feedback and more for peace of mind.</p>
+                    </div>
+                    <div class="pro-details bg-gray">
+                        <form id="Project-Form">
+                            <div class="form-row">
+                                <div class="form-group col-md-6 pl-0">
+                                    <input type="text" class="form-control form-custom" data-parsley-pattern="/^[a-zA-Z \W ]*$/" id="JobTitle" placeholder="Job Title" required data-parsley-trigger="keyup">
+
+
+                                </div>
+                                @if (user != null)
+                                {
+                                    <input type="hidden" value="@user.Id" id="hddUser" />
+                                }
+                                else
+                                {
+                                    <input type="hidden" value="Undefined" id="hddUser" />
+                                }
+                                <div class="form-group col-md-6 pr-0">
+                                    <select class="form-control form-custom" id="CategoryIDAdd" data-parsley-min="1" data-parsley-required-message="You Must Select Category">
+                                        <option value="0" selected>Select Category</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-12 pl-0 pr-0">
+                                    <textarea rows="5" placeholder="Job Description" id="JobDescription" class="form-control form-custom" required data-parsley-trigger="keyup" data-parsley-required-message="JobDescription Required"></textarea>
+                                </div>
+                                <div class="form-group col-md-6 pl-0">
+                                    <input type="text" class="form-control form-custom datepicker" readonly id="EstimatedStartDate" placeholder="Estimated Start Date" data-parsley-required-message="Estimated Start Date Required" data-parsley-required="true" data-parsley-trigger="keyup" onchange="dateClear()">
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+
+                                    <select class="form-control form-custom" id="EstimatedBudget" required data-parsley-required-message="You must select EstimatedBudget">
+                                        <option value="">Select Estimated Budget</option>
+                                        <option value="$100 - $500">$100 - $500</option>
+                                        <option value="$500 - $1,000">$500 - $1,000</option>
+                                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                        <option value="$5,000 - $20,000">$5,000 - $20,000</option>
+                                        <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+                                        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                        <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                                        <option value="$250,000 - $500,000">$250,000 - $500,000</option>
+                                        <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                                        <option value="$1,000,000">$1,000,000</option>
+                                        <option value="Uncertain">Uncertain</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-6 pl-0">
+                                    <select class="form-control form-custom" id="ProvinceIDAdd" data-parsley-min="1" data-parsley-required-message="You must select Province">
+                                        <option value="0" selected>Select Province</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6 pr-0">
+                                    <select class="form-control form-custom" id="CityIDAdd" data-parsley-min="1" data-parsley-required-message="You must select City">
+                                        <option value="0" selected>Select City</option>
+
+                                    </select>
+                                </div>
+                                @if (user != null)
+                                {
+                                    <input value="@user.AccountTypeID" id="AcRACId" hidden />
+                                    if (user.AccountTypeID == 4)
+                                    {
+                                        <div class="form-group col-md-12 pl-0 pr-0">
+                                            <select class="form-control form-custom" id="HomeownerList">
+                                                <option value="0" selected>Select User</option>
+
+                                            </select>
+                                        </div>
+                                    }
+                                }
+
+
+
+                                @*<div class="form-group col-md-6 pl-0 cstm-input">
+                                         <input class="btn-uploadfile" type="file" id="" name="filename">
+                                        <div class="wrap">
+                                            <div class="valign-middle">
+
+                                                <label for="file" class="sr-only"> Attach File(S)</label>
+                                               - @-*<input type="file" id="file">*-@
+                                                <input type="file" id="UpLoadFile" accept=".gif, .jpg, .png" multiple name="filename">
+
+                                            </div>
+                                        </div>
+
+                                    </div>*-@
+
+
+                                @if (user == null)
+                                {
+                                    <div class="container cstm-tabss">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="pro-details">
+                                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active" id="SignUp-tab" data-toggle="tab" href="#SignUp" role="tab" aria-controls="SignUp" aria-selected="true">I AM A NEW USER</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="Login-tab" data-toggle="tab" href="#Login" role="tab" aria-controls="Login" aria-selected="false">I AM A RETURNING USER</a>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-content cstms col-md-12" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="SignUp" role="tabpanel" aria-labelledby="SignUp-tab">
+                                            <div class="testimonials">
+                                                <div class="">
+                                                    <div class="row m-0">
+                                                        <div class="col-lg-12 p-0 m-auto">
+                                                            <div class="card bg-gray mt-0">
+                                                                <div class="card-header">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h2>I AM A NEW USER</h2>
+                                                                        </div>
+                                                                        @*<div class="col-4 text-right">
+                                                                            <h6 class="mt-3">Contractor</h6>
+                                                                            </div>*-@
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="card-body">
+                                                                    <div class="form-row m-0">
+                                                                        <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                                                            <input type="text" class="form-control form-custom" id="FirstName" placeholder="First Name" data-parsley-pattern="/^[a-zA-Z \W ]*$/" data-parsley-required="true" data-parsley-trigger="keyup">
+                                                                        </div>
+                                                                        <div class="form-group col-md-12 pl-md-0 pr-md-0">
+                                                                            @*<input type="text" class="form-control" data-parsley-pattern="^[A-Z0-9]{6}(?:List)?$" data-parsley-trigger="change" id="txtzipcode" data-parsley-minlength="6" data-parsley-maxlength="6" placeholder="Zip/Postal Code" required="">*-@
+                                                                            <input type="text" class="form-control form-custom" id="PostalCode" placeholder="Postal Code" data-parsley-required="true" data-parsley-pattern="^[A-Z0-9]{6}(?:List)?$" data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-maxlength="6">
+                                                                        </div>
+                                                                        <div class="form-group col-md-6 pl-md-0">
+                                                                            <input type="email" class="form-control form-custom" id="Email" placeholder="Email" data-parsley-required="true" data-parsley-type="email" data-parsley-trigger="keyup">
+                                                                        </div>
+                                                                        <div class="form-group col-md-6 pr-md-0">
+                                                                            <input type="email" class="form-control form-custom" id="ConfirmEmail" placeholder="Confirm Email" data-parsley-required="true" data-parsley-type="email" data-parsley-equalto="#Email" data-parsley-trigger="keyup">
+                                                                        </div>
+                                                                        <div class="form-group col-md-6 pl-md-0">
+                                                                            <input type="password" class="form-control form-custom" id="Password" placeholder="Password" data-parsley-required="true" data-parsley-length="[8, 16]" data-parsley-trigger="keyup">
+                                                                        </div>
+                                                                        <div class="form-group col-md-6 pr-md-0">
+                                                                            <input type="password" class="form-control form-custom" id="ConfirmPassword" placeholder="ConfirmPassword" data-parsley-required="true" data-parsley-length="[8, 16]" data-parsley-equalto="#Password" data-parsley-trigger="keyup">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!-- End card -->
+                                                        </div><!-- End col -->
+                                                    </div><!-- End row -->
+                                                </div><!-- End container -->
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="Login" role="tabpanel" aria-labelledby="Login-tab">
+                                            <div class="testimonials">
+                                                <div class="">
+                                                    <div class="row m-0">
+                                                        <div class="col-lg-12 p-0 m-auto">
+                                                            <div class="card bg-gray mt-0">
+                                                                <div class="card-header">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h2>I AM A RETURNING USER</h2>
+                                                                        </div>
+                                                                        @*<div class="col-4 text-right">
+                                                                            <h6 class="mt-3">Contractor</h6>
+                                                                            </div>*-@
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="card-body">
+                                                                    <div class="form-row m-0">
+
+                                                                        <div class="form-group col-md-12 pl-0 pr-0">
+                                                                            <input type="email" class="form-control form-custom" name="emailLogin" id="emailLogin" placeholder="Confirm Email" data-parsley-required="false" data-parsley-type="email" data-parsley-trigger="keyup">
+                                                                        </div>
+                                                                        <div class="form-group col-md-12 pl-0 pr-0">
+                                                                            <input type="password" class="form-control form-custom" name="passwordLogin" id="passwordLogin" placeholder="Password" data-parsley-required="false" data-parsley-length="[8, 16]" data-parsley-trigger="keyup">
+                                                                        </div>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End card -->
+                                                        </div>
+                                                        <!-- End col -->
+                                                    </div>
+                                                    <!-- End row -->
+                                                </div>
+                                                <!-- End container -->
+                                            </div>
+                                            <!--FOOTER START-->
+                                        </div>
+
+
+                                    </div>
+                                }
+
+                                <div class="form-group col-md-6 pl-0 cstm-input">
+                                    <!-- <input class="btn-uploadfile" type="file" id="" name="filename"> -->
+                                    <div class="wrap">
+                                        <div class="valign-middle multilefileselect">
+
+                                            <label for="file" class="sr-only"> Attach File(S)</label>
+                                            @*<input type="file" id="file">*@
+@*<input type="file" id="UpLoadFile" multiple name="filename"
+                                                onchange="javascript:updateList()">*-@
+                                            <input type="file" id="UpLoadFile" name="filename" accept=".png,.gif,.jpeg,.doc,.pdf,.xlsx" multiple="multiple" onchange="javascript:updateList()">
+                                            @* <p style="color:red" id="filemsg">Please Select File</p>*-@
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group col-md-6 pr-0 justify-content-end">
+                                    <button type="button" id="btnSave" class="btn btn-primary btn-custom">Submit <img src="~/Content/assets/img/right-arrow.png" alt="" class="cstm-icon-right"></button>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div id="fileList" class="file_attachedllist"></div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-uploader">
+                        <h1>Upload images related to the project.</h1>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                        <h1>All photos must be</h1>
+                        <div class="uploader-ul">
+                            <ul>
+                                <li>Family-friendly</li>
+                                <li>Non-copyrighted images</li>
+                                <li>Non-commercial</li>
+                                <li>Virus-free</li>
+                                <li>In .gif, .jpg, or .png format</li>
+                                <li>No more than 20 photos per upload</li>
+                                <li>Lorem ipsum</li>
+                                <li>Dummy Text</li>
+                                <li>Text place holder</li>
+                                <li>More place holder...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Video Modal -->
+    <div class="modal fade" id="VideomodalPro" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">Video</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <video controls id="video1" style="width: 100%; height: auto; margin:0 auto; frameborder:0;">
+                        <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4">
+                        Your browser doesn't support HTML5 video tag.
+                    </video>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                    @*<button type="button" data-dismiss="modal" id="DeleteId" class="btn btn-primary btn-custom">Yes</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">No</button>*-@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--success Modal -->
+    <div class="modal fade" id="successModal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Congrats! Your job has successfully been posted</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="hidProjectID" />
+                    <p> View your contractor matches </p><button id="btnViewContractorMatches" class="btn btn-primary btn-custom" type="button">VIEW NOW</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Contractor Matches Modal -->
+    <div class="modal fade" id="ContractorMatchesmodal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Contractor Matches</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review ">
+                    <div class="row Matchesmodal">
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--FOOTER END-->
+    <!-- ================== Scripting ================== -->
+    @section FooterScripts{
+        <script>
+            $('.loader').css("display", "none");
+        </script>
+        <script src="~/scripts/PageJS/Project.js"></script>
+
+    }*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

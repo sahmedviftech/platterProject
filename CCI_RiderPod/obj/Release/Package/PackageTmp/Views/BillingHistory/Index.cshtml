@@ -1,0 +1,477 @@
+﻿@*@model CCI_Homii.Models.DAL.UserDetail*@
+@model CCI_Homii.Models.DAL.PllentyTransaction
+@{
+    ViewBag.Title = "Billing-History - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var userlogin = HomiiSession.CurrentUser;
+
+}
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="main-HD">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Subscription</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-cstm btn-orange btn_srvcs pull-right" id="profileMr" href="/Login/selectServiceArea" aria-selected="false" target="_blank">Add Services & Service Area</a>
+                </div>
+            </div>
+
+            <input type="hidden" id="Email" value="@ViewBag.Email" />
+            <input type="hidden" id="UserID" value="@ViewBag.UserID" />
+            @*<input type="hidden" id="hdSubscriptionID" value="@ViewBag.subsdetail.id" />
+            <input type="hidden" id="hdSubscriptionStatus" value="@ViewBag.subsdetail.Status" />*@
+            @*<button type="button" id="btnCancelSubscription" class="btn btn-cstm btn-orange">Cancel Subscription</button>*@
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    @*<h3 class="hdngbilngdtail">Subscription Details</h3>*@
+    @*<div class="sec-bildetail bg-gray">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Subscription ID:</label>
+            </div>
+            <div class="col-md-5">
+                <label>"@ViewBag.subsdetail.id</label>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-3">
+                    <label class="lblfield">Plane Name:</label>
+                </div>
+                <div class="col-md-5">
+                    <label>@ViewBag.subsdetail.planename</label>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Status:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.subsdetail.Status</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Merchant Account:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.tmpData[0].MerchantAccountId</label>
+            </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Subscription Price:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.subsdetail.price</label>
+            </div>
+        </div>
+    </div>
+    </div>*@
+        <br />
+
+    <h3 class="hdngbilngdtail">Billing Details</h3>
+
+    <div class="sec-bildetail bg-gray">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Customer Id:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.CustomerId  </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Customer Email:</label>
+            </div>
+            <div class="col-md-5">
+
+                <label> @ViewBag.Email </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Interval:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.Interval </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Start Date</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.sdate</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Next Billing Date</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.enddate</label>
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Balance:</label>
+            </div>
+            <div class="col-md-5">
+                @*<label>@ViewBag.tmpData[0].Balance</label>
+            </div>
+        </div>*@
+        <div class="row">
+            @*<div class="col-md-3">
+                <label class="lblfield">Next Bill Date:</label>
+            </div>
+            <div class="col-md-5">
+                <label> @ViewBag.subsdetail.Peroidend</label>
+            </div>*@
+        </div>
+        @*<div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Total Amount:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.Amount</label>
+            </div>
+        </div>*@
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Next Billing Period Amount:</label>
+            </div>
+            <div class="col-md-5">
+
+
+                <label>@ViewBag.Amount</label>
+
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Number of billing cycles:</label>
+            </div>
+            <div class="col-md-5">
+                @*<label>@ViewBag.tmpData[0].NumberOfBillingCycles</label>
+            </div>
+        </div>*@
+    </div>
+
+
+
+
+
+
+    <h3 class="hdngbilngdtail">Transactions</h3>
+    <div class="sec-bildetail custom-table">
+        <div class="table-responsive-lg">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Transactions Date</th>
+                        @*<th>Type</th>*@
+                        <th>Status</th>
+                        <th>ID</th>
+                        @*<th>Payment Method Token</th>*@
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in @ViewBag.TransactionDtl)
+                    {
+                    <tr>
+                        @{
+                            var temp = item.CreateDate.ToString("d");
+
+                        }
+                        <td>@temp</td>
+                        @*   <td>@item.Status</td>*@
+                        <td>@item.Status</td>
+
+                        <td>@item.TransactionID</td>
+                        @*<td>@item.Status</td>*@
+                        <td>@item.Amount</td>
+                    </tr>
+                    }
+
+                </tbody>
+                @*<tbody>
+            @foreach (var item in @ViewBag.billdetail)
+            {
+                <tr>
+                    <td>@item.Created</td>
+                    <td>@item.BillingReason</td>
+                    <td>@item.Status</td>
+                    <td>@item.Id</td>
+                    <td>@item.PaymentIntentId</td>
+                    <td>@item.AmountPaid</td>
+                </tr>
+            }
+
+        </tbody>*@
+
+            </table>
+            @*@foreach (var item in Models)
+            {
+                
+                    <div>@item.Amount</div>
+                    <div>@item.BillingReason</div>
+                    <div>@item.Status</div>
+                    <div>@item.TransactionID</div>
+                    <div>@item.PaymentIntentId</div>
+                    <div>@item.AmountPaid</div>
+                
+            }*@
+        </div>
+    </div>
+
+</div>
+@section FooterScripts{
+
+
+    <script src="~/scripts/PageJS/BillingHistory.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 18 Dec 2020 *@
+@*@model CCI_Homii.Models.DAL.UserDetail
+@{
+    ViewBag.Title = "Billing-History - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var userlogin = HomiiSession.CurrentUser;
+
+}
+
+
+
+
+
+<div class="testimonials">
+    <div class="container">
+        <div class="main-HD">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Subscription</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a class="btn btn-cstm btn-black btn_srvcs pull-right" id="profileMr" href="/Login/selectServiceArea" aria-selected="false" target="_blank">Add Services & Service Area</a>
+                </div>
+            </div>
+
+            <input type="hidden" id="Email" value="@ViewBag.Email" />
+            <input type="hidden" id="UserID" value="@ViewBag.UserID" />
+            <input type="hidden" id="hdSubscriptionID" value="@ViewBag.subsdetail.id" />
+            <input type="hidden" id="hdSubscriptionStatus" value="@ViewBag.subsdetail.Status" />
+            <button type="button" id="btnCancelSubscription" class="btn btn-cstm btn-orange">Cancel Subscription</button>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="hdngbilngdtail">Subscription Details</h3>
+    <div class="sec-bildetail bg-gray">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Subscription ID:</label>
+            </div>
+            <div class="col-md-5">
+                <label>"@ViewBag.subsdetail.id</label>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Status:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.subsdetail.Status</label>
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Subscription Price:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.subsdetail.price</label>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <h3 class="hdngbilngdtail">Billing Details</h3>
+
+    <div class="sec-bildetail bg-gray">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">First Bill Date:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.billdetail[0].Created  </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Current Billing Period:</label>
+            </div>
+            <div class="col-md-5">
+                <label>@ViewBag.subsdetail.Peroidstart - @ViewBag.subsdetail.Peroidend</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Paid Through Date:</label>
+            </div>
+            <div class="col-md-5">
+                @ViewBag.subsdetail.Peroidend
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Next Bill Date:</label>
+            </div>
+            <div class="col-md-5">
+                <label> @ViewBag.subsdetail.Peroidend</label>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="lblfield">Next Billing Period Amount:</label>
+            </div>
+            <div class="col-md-5">
+                @{
+
+                    var total = 0;
+                    foreach (var item in @ViewBag.billdetail)
+                    {
+
+                        total += item.AmountPaid;
+                    }
+
+                    <label>@ViewBag.subsdetail.price</label>
+
+                }
+            </div>
+        </div>
+        
+    </div>
+
+    <h3 class="hdngbilngdtail">Transactions</h3>
+    <div class="sec-bildetail custom-table">
+        <div class="table-responsive-lg">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Transactions Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>ID</th>
+                        <th>Payment Method Token</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in @ViewBag.billdetail)
+                    {
+                        <tr>
+                            <td>@item.Created</td>
+                            <td>@item.BillingReason</td>
+                            <td>@item.Status</td>
+                            <td>@item.Id</td>
+                            <td>@item.PaymentIntentId</td>
+                            <td>@item.AmountPaid</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+@section FooterScripts{
+
+
+    <script src="~/scripts/PageJS/BillingHistory.js"></script>
+}*@
+

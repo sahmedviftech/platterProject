@@ -1,0 +1,1619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HomiiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HomiiEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="HomiiModel.Category" />
+    <EntitySet Name="Cities" EntityType="HomiiModel.City" />
+    <EntitySet Name="ContractorCategories" EntityType="HomiiModel.ContractorCategory" />
+    <EntitySet Name="ContractorCities" EntityType="HomiiModel.ContractorCity" />
+    <EntitySet Name="ContractorOpenProjectVisiteds" EntityType="HomiiModel.ContractorOpenProjectVisited" />
+    <EntitySet Name="ContractorProjectStatus" EntityType="HomiiModel.ContractorProjectStatu" />
+    <EntitySet Name="ContractorsReports" EntityType="HomiiModel.ContractorsReport" />
+    <EntitySet Name="EmailSettings" EntityType="HomiiModel.EmailSetting" />
+    <EntitySet Name="EmailTemplates" EntityType="HomiiModel.EmailTemplate" />
+    <EntitySet Name="ErrorLogs" EntityType="HomiiModel.ErrorLog" />
+    <EntitySet Name="FavouriteContractors" EntityType="HomiiModel.FavouriteContractor" />
+    <EntitySet Name="FileAttaches" EntityType="HomiiModel.FileAttach" />
+    <EntitySet Name="GalleryImages" EntityType="HomiiModel.GalleryImage" />
+    <EntitySet Name="LastSeens" EntityType="HomiiModel.LastSeen" />
+    <EntitySet Name="Payments" EntityType="HomiiModel.Payment" />
+    <EntitySet Name="ProfileImages" EntityType="HomiiModel.ProfileImage" />
+    <EntitySet Name="Projects" EntityType="HomiiModel.Project" />
+    <EntitySet Name="Provinces" EntityType="HomiiModel.Province" />
+    <EntitySet Name="RedeemNows" EntityType="HomiiModel.RedeemNow" />
+    <EntitySet Name="ReferCharges" EntityType="HomiiModel.ReferCharge" />
+    <EntitySet Name="ReferralPayments" EntityType="HomiiModel.ReferralPayment" />
+    <EntitySet Name="Reviews" EntityType="HomiiModel.Review" />
+    <EntitySet Name="Roles" EntityType="HomiiModel.Role" />
+    <EntitySet Name="settings" EntityType="HomiiModel.setting" />
+    <EntitySet Name="sysdiagrams" EntityType="HomiiModel.sysdiagram" />
+    <EntitySet Name="Reports" EntityType="HomiiModel.Report" />
+    <EntitySet Name="UserDetails" EntityType="HomiiModel.UserDetail" />
+    <FunctionImport Name="SaveErrorLogs">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="exception" Mode="In" Type="String" />
+      <Parameter Name="createDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_AddHomeownerIdInReview">
+      <Parameter Name="SessionID" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_AddUserIdInProject">
+      <Parameter Name="SessionID" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CategoryProjectListDelete">
+      <Parameter Name="CatId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CitiesAndProjectListDelete">
+      <Parameter Name="CityId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_CountOfNewProject" ReturnType="Collection(HomiiModel.Sp_CountOfNewProject_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_CountOfNewReview" ReturnType="Collection(HomiiModel.Sp_CountOfNewReview_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetAllCitiesjoinbySp" ReturnType="Collection(HomiiModel.Sp_GetAllCitiesjoinbySp_Result)" />
+    <FunctionImport Name="Sp_GetAllNotificationAndCount" ReturnType="Collection(HomiiModel.Sp_GetAllNotificationAndCount_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetAllPendingCategory" ReturnType="Collection(HomiiModel.SP_GetAllPendingCategory_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetAllPendingCities" ReturnType="Collection(HomiiModel.SP_GetAllPendingCities_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetAllPendingSelectedCategory" ReturnType="Collection(HomiiModel.SP_GetAllPendingSelectedCategory_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetAllPendingSelectedCities" ReturnType="Collection(HomiiModel.SP_GetAllPendingSelectedCities_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetAllProjects" ReturnType="Collection(HomiiModel.sp_GetAllProjects_Result)">
+      <Parameter Name="HomeOwnerStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetAllProjectsByUserId" ReturnType="Collection(HomiiModel.sp_GetAllProjectsByUserId_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="HomeOwnerStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetAllProvinceAndCity" ReturnType="Collection(HomiiModel.SP_GetAllProvinceAndCity_Result)" />
+    <FunctionImport Name="sp_GetAllReportListContractor" ReturnType="Collection(HomiiModel.sp_GetAllReportListContractor_Result)" />
+    <FunctionImport Name="sp_GetAllReportListHomeowner" ReturnType="Collection(HomiiModel.sp_GetAllReportListHomeowner_Result)" />
+    <FunctionImport Name="SP_GetAllSelectedCategory" ReturnType="Collection(HomiiModel.SP_GetAllSelectedCategory_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetAllSelectedCities" ReturnType="Collection(HomiiModel.SP_GetAllSelectedCities_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getallusers" ReturnType="Collection(HomiiModel.sp_getallusers_Result)" />
+    <FunctionImport Name="sp_getallusers_Backup" ReturnType="Collection(HomiiModel.sp_getallusers_Backup_Result)" />
+    <FunctionImport Name="Sp_GetCategoriesList" ReturnType="Collection(HomiiModel.Sp_GetCategoriesList_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetCategoriesListByUserId" ReturnType="Collection(HomiiModel.Sp_GetCategoriesListByUserId_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetCities" ReturnType="Collection(HomiiModel.sp_GetCities_Result)">
+      <Parameter Name="provinceId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetCitiesByPageNumber" ReturnType="Collection(HomiiModel.sp_GetCitiesByPageNumber_Result)">
+      <Parameter Name="pageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="pageCount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetCitiesByUserID" ReturnType="Collection(HomiiModel.sp_GetCitiesByUserID_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetCitiesList" ReturnType="Collection(HomiiModel.Sp_GetCitiesList_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetCitiesListByUserId" ReturnType="Collection(HomiiModel.Sp_GetCitiesListByUserId_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetCompleteProjectCount" ReturnType="Collection(Int32)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetConDetailWithRating" ReturnType="Collection(HomiiModel.sp_GetConDetailWithRating_Result)" />
+    <FunctionImport Name="sp_GetConDetailWithRatingForHiding" ReturnType="Collection(HomiiModel.sp_GetConDetailWithRatingForHiding_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CategoriesName" Mode="In" Type="Int32" />
+      <Parameter Name="CitiesName" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetConDetailWithRatingForHidingNEW" ReturnType="Collection(HomiiModel.sp_GetConDetailWithRatingForHidingNEW_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CategoriesName" Mode="In" Type="Int32" />
+      <Parameter Name="CitiesName" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetConDetailWithRatingForHidingPA" ReturnType="Collection(HomiiModel.sp_GetConDetailWithRatingForHidingPA_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CategoriesName" Mode="In" Type="Int32" />
+      <Parameter Name="CitiesName" Mode="In" Type="Int32" />
+      <Parameter Name="orderby" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageCount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetContractorCategories" ReturnType="Collection(HomiiModel.sp_GetContractorCategories_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetContractorCities" ReturnType="Collection(HomiiModel.sp_GetContractorCities_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetContractordetail" ReturnType="Collection(HomiiModel.sp_GetContractordetail_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetContractorProject" ReturnType="Collection(HomiiModel.sp_GetContractorProject_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="CityId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetContractorsEmails" ReturnType="Collection(HomiiModel.sp_GetContractorsEmails_Result)">
+      <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+      <Parameter Name="CityId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetCountMonthAndYear" ReturnType="Collection(HomiiModel.Sp_GetCountMonthAndYear_Result)" />
+    <FunctionImport Name="Sp_GetFavoriteContractorsList" ReturnType="Collection(HomiiModel.Sp_GetFavoriteContractorsList_Result)">
+      <Parameter Name="HomeownerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetFavoriteContractorsListNew" ReturnType="Collection(HomiiModel.Sp_GetFavoriteContractorsListNew_Result)">
+      <Parameter Name="HomeownerId" Mode="In" Type="Int32" />
+      <Parameter Name="orderby" Mode="In" Type="Int32" />
+      <Parameter Name="pageindex" Mode="In" Type="Int32" />
+      <Parameter Name="pagecount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetFavouriteContractors" ReturnType="Collection(HomiiModel.Sp_GetFavouriteContractors_Result)">
+      <Parameter Name="ContractorId" Mode="In" Type="Int32" />
+      <Parameter Name="HomeownerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetGalleryImages" ReturnType="Collection(HomiiModel.sp_GetGalleryImages_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetHomeOwnerReviewsById" ReturnType="Collection(HomiiModel.sp_GetHomeOwnerReviewsById_Result)">
+      <Parameter Name="ReviewId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetHomeOwnerReviewsList" ReturnType="Collection(HomiiModel.sp_GetHomeOwnerReviewsList_Result)" />
+    <FunctionImport Name="sp_GetHomeOwnerReviewsListNew" ReturnType="Collection(HomiiModel.sp_GetHomeOwnerReviewsListNew_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PAGECOUNT" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetKPIsInfo" ReturnType="Collection(HomiiModel.sp_GetKPIsInfo_Result)" />
+    <FunctionImport Name="sp_GetMyJobAndCompleted" ReturnType="Collection(HomiiModel.sp_GetMyJobAndCompleted_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ContractorStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetOpenProAndCompleteProCount" ReturnType="Collection(Int32)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="ProjectStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetProjectByID" ReturnType="Collection(HomiiModel.sp_GetProjectByID_Result)">
+      <Parameter Name="projectID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetProjectByProjectId" ReturnType="Collection(HomiiModel.sp_GetProjectByProjectId_Result)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetProjectWithId" ReturnType="Collection(HomiiModel.sp_GetProjectWithId_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetRecordOfWriteAReview" ReturnType="Collection(HomiiModel.Sp_GetRecordOfWriteAReview_Result)">
+      <Parameter Name="ContractorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetReferDetailList" ReturnType="Collection(HomiiModel.sp_GetReferDetailList_Result)">
+      <Parameter Name="ReferralId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetReview" ReturnType="Collection(HomiiModel.sp_GetReview_Result)">
+      <Parameter Name="HomeownerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetReviewByContIDWithName" ReturnType="Collection(HomiiModel.sp_GetReviewByContIDWithName_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetReviewPA" ReturnType="Collection(HomiiModel.sp_GetReviewPA_Result)">
+      <Parameter Name="HomeownerId" Mode="In" Type="Int32" />
+      <Parameter Name="ishighest" Mode="In" Type="Boolean" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PAGECOUNT" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetSelectedCategory" ReturnType="Collection(HomiiModel.SP_GetSelectedCategory_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetUnSelectedCategory" ReturnType="Collection(HomiiModel.SP_GetUnSelectedCategory_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetUnSelectedCities" ReturnType="Collection(HomiiModel.SP_GetUnSelectedCities_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserByID" ReturnType="Collection(HomiiModel.sp_GetUserByID_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserDetail" ReturnType="Collection(HomiiModel.sp_GetUserDetail_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getuserDetailByID" ReturnType="Collection(HomiiModel.sp_getuserDetailByID_Result)">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserDetailWithAmount" ReturnType="Collection(HomiiModel.sp_GetUserDetailWithAmount_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserWithMatchCityCategory" ReturnType="Collection(HomiiModel.sp_GetUserWithMatchCityCategory_Result)">
+      <Parameter Name="projectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HomiiModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HomiiModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_RevenueReferalKpi" ReturnType="Collection(HomiiModel.Sp_RevenueReferalKpi_Result)" />
+    <FunctionImport Name="SP_SaveErrorLogs">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="exception" Mode="In" Type="String" />
+      <Parameter Name="createDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_GetConDetailWithRatingForHidingPA_Test1" ReturnType="Collection(HomiiModel.sp_GetConDetailWithRatingForHidingPA_Test1_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CategoriesName" Mode="In" Type="Int32" />
+      <Parameter Name="CitiesName" Mode="In" Type="Int32" />
+      <Parameter Name="orderby" Mode="In" Type="Int32" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageCount" Mode="In" Type="Int32" />
+      <Parameter Name="ContractorName" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sp_GetOProAndCompProHCount" ReturnType="Collection(HomiiModel.Sp_GetOProAndCompProHCount_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ProjectStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Users" EntityType="HomiiModel.User" />
+    <EntitySet Name="SaveCancels" EntityType="HomiiModel.SaveCancel" />
+    <EntitySet Name="PllentyTransactions" EntityType="HomiiModel.PllentyTransaction" />
+    <EntitySet Name="PllentyPayments" EntityType="HomiiModel.PllentyPayment" />
+    <FunctionImport Name="sp_GetContractorProjectCheckNew" ReturnType="Collection(HomiiModel.sp_GetContractorProjectCheckNew_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Charges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Slug" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceId" Type="Int32" />
+    <Property Name="Charges" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Slug" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ContractorCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ContractorCity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ContractorOpenProjectVisited">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ContractorProjectStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="ConStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContractorsReport">
+    <Key>
+      <PropertyRef Name="ContractorReportId" />
+    </Key>
+    <Property Name="ContractorReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractorId" Type="Int32" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReportDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="EmailSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SmtpHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpPort" Type="Int32" />
+    <Property Name="SmtpEnableSsl" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="EmailTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Template" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="exceptionString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FavouriteContractor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeownerId" Type="Int32" />
+    <Property Name="ContractorId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FileAttach">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="BrowserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GalleryImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="GalImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="LastSeen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="Int32" />
+    <Property Name="Section" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SubscriptionID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PayPalPaymentID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Intent" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentType" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="BrainTransID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProfileImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="JobDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EstimatedStartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EstimatedBudget" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="ProvinceID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="SessionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HomeOwnerStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractorStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RedeemNow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="RequestedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ReferCharge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReferId" Type="Int32" />
+    <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ReferralPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+    </Key>
+    <Property Name="ReviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HomeownerId" Type="Int32" />
+    <Property Name="ContractorId" Type="Int32" />
+    <Property Name="QualityOfWork" Type="Int32" />
+    <Property Name="Timeliness" Type="Int32" />
+    <Property Name="StayedInBudget" Type="Int32" />
+    <Property Name="Communication" Type="Int32" />
+    <Property Name="Cleanliness" Type="Int32" />
+    <Property Name="Courteous" Type="Int32" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SessionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportId" />
+    </Key>
+    <Property Name="ReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReviewId" Type="Int32" />
+    <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ReviewDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessPhoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NumberOfEmployee" Type="Int32" />
+    <Property Name="LegalStructure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InBusinessSince" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Licenses" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Certificates" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Awards" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CommercialServices" Type="Boolean" />
+    <Property Name="IndustrialServices" Type="Boolean" />
+    <Property Name="Financing" Type="Boolean" />
+    <Property Name="EmergencyService" Type="Boolean" />
+    <Property Name="CompanyOverview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Products" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Brands" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Styles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Specialties" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMethods" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LiabilityInsurance" Type="Boolean" />
+    <Property Name="Diplomas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WrittenContract" Type="Boolean" />
+    <Property Name="ProjectMinimum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Warranty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InstagramUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FacebookUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TwitterUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="YoutubeUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="Sp_CountOfNewProject_Result">
+    <Property Type="Int32" Name="CountNewProject" Nullable="true" />
+    <Property Type="Int32" Name="ProStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProAct" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sp_CountOfNewReview_Result">
+    <Property Type="Int32" Name="CountNewReview" Nullable="true" />
+    <Property Type="Int32" Name="ProStatus" Nullable="false" />
+    <Property Type="Int32" Name="ProAct" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetAllCitiesjoinbySp_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProvinceId" Nullable="true" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Slug" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="PROiD" Nullable="true" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetAllNotificationAndCount_Result">
+    <Property Type="Int32" Name="CountNewProject" Nullable="true" />
+    <Property Type="Int32" Name="CountNewReview" Nullable="true" />
+    <Property Type="Int32" Name="CountNewReferral" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllPendingCategory_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllPendingCities_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllPendingSelectedCategory_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllPendingSelectedCities_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllProjects_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllProjectsByUserId_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllProvinceAndCity_Result">
+    <Property Type="Int32" Name="ProvinceID" Nullable="false" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllReportListContractor_Result">
+    <Property Type="Int32" Name="ReportId" Nullable="false" />
+    <Property Type="Int32" Name="ReviewId" Nullable="true" />
+    <Property Type="String" Name="Subject" Nullable="true" />
+    <Property Type="String" Name="ContactInfo" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_GetAllReportListHomeowner_Result">
+    <Property Type="Int32" Name="ContractorReportId" Nullable="false" />
+    <Property Type="Int32" Name="ContractorId" Nullable="false" />
+    <Property Type="String" Name="Subject" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ContactInfo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ReportDate" Nullable="true" />
+    <Property Type="String" Name="ContractorName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllSelectedCategory_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllSelectedCities_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_getallusers_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="String" Name="CreatedDate" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="IsSubscriptionDone" Nullable="true" />
+    <Property Type="Decimal" Name="ReferCreditTotal" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="ReferCreditPending" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="DueAmount" Nullable="false" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_getallusers_Backup_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="String" Name="CreatedDate" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="DueAmount" Nullable="false" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetCategoriesList_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Slug" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetCategoriesListByUserId_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Slug" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="ContracCated" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetCities_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProvinceId" Nullable="true" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Slug" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetCitiesByPageNumber_Result">
+    <Property Type="Int32" Name="Items" Nullable="true" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProvinceId" Nullable="true" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Slug" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetCitiesByUserID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetCitiesList_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProvinceId" Nullable="true" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Slug" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetCitiesListByUserId_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProvinceId" Nullable="true" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="ContracCityId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetConDetailWithRating_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_GetConDetailWithRatingForHiding_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="String" Name="HomeownerFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerEmail" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetConDetailWithRatingForHidingNEW_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="String" Name="HomeownerFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerEmail" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetConDetailWithRatingForHidingPA_Result">
+    <Property Type="Int32" Name="itemcount" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="Int32" Name="ratingSort" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="String" Name="HomeownerFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerEmail" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetContractorCategories_Result">
+    <Property Type="Int32" Name="CatId" Nullable="false" />
+    <Property Type="String" Name="cateName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetContractorCities_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetContractordetail_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="VerificationCode" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="ReferralCreditTotal" Nullable="true" />
+    <Property Type="Int32" Name="ReferralCreditPending" Nullable="true" />
+    <Property Type="String" Name="SessionID" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="IncentiveCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ReferralId" Nullable="true" />
+    <Property Type="Int32" Name="UserDetailId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="updateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Licenses" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Certificates" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Awards" Nullable="true" MaxLength="30" />
+    <Property Type="Boolean" Name="CommercialServices" Nullable="true" />
+    <Property Type="Boolean" Name="IndustrialServices" Nullable="true" />
+    <Property Type="Boolean" Name="Financing" Nullable="true" />
+    <Property Type="Boolean" Name="EmergencyService" Nullable="true" />
+    <Property Type="String" Name="CompanyOverview" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Products" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Brands" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Styles" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Specialties" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PaymentMethods" Nullable="true" MaxLength="30" />
+    <Property Type="Boolean" Name="LiabilityInsurance" Nullable="true" />
+    <Property Type="String" Name="Diplomas" Nullable="true" MaxLength="30" />
+    <Property Type="Boolean" Name="WrittenContract" Nullable="true" />
+    <Property Type="String" Name="ProjectMinimum" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Warranty" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InstagramUrl" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="WebsiteUrl" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="FacebookUrl" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TwitterUrl" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="YoutubeUrl" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="TotalRating" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetContractorProject_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ProjectCategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ProUserId" Nullable="true" />
+    <Property Type="Int32" Name="CatUserId" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ProProvinceId" Nullable="true" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="LastCreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HomeownerEmail" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorEmail" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorLastName" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_GetContractorsEmails_Result">
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetCountMonthAndYear_Result">
+    <Property Type="Int32" Name="MonthRecord" Nullable="true" />
+    <Property Type="Int32" Name="YearRecord" Nullable="true" />
+    <Property Type="Int32" Name="WeekRecord" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetFavoriteContractorsList_Result">
+    <Property Type="Int32" Name="FavId" Nullable="true" />
+    <Property Type="Int32" Name="userfaId" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CategoryName1" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="countFavoriteCon" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetFavoriteContractorsListNew_Result">
+    <Property Type="Int32" Name="FavId" Nullable="true" />
+    <Property Type="Int32" Name="userfaId" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="countFavoriteCon" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetFavouriteContractors_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetGalleryImages_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="GalImagePath" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetHomeOwnerReviewsById_Result">
+    <Property Type="Int32" Name="ReviewId" Nullable="true" />
+    <Property Type="Int32" Name="HomeOwnerId" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerName" Nullable="true" MaxLength="101" />
+    <Property Type="Int32" Name="ContractorId" Nullable="false" />
+    <Property Type="String" Name="ContractorName" Nullable="true" MaxLength="101" />
+    <Property Type="Int32" Name="QualityOfWork" Nullable="true" />
+    <Property Type="Int32" Name="Timeliness" Nullable="true" />
+    <Property Type="Int32" Name="StayedInBudget" Nullable="true" />
+    <Property Type="Int32" Name="Communication" Nullable="true" />
+    <Property Type="Int32" Name="Cleanliness" Nullable="true" />
+    <Property Type="Int32" Name="Courteous" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetHomeOwnerReviewsList_Result">
+    <Property Type="Int32" Name="ReviewId" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="QualityOfWork" Nullable="true" />
+    <Property Type="Int32" Name="Timeliness" Nullable="true" />
+    <Property Type="Int32" Name="StayedInBudget" Nullable="true" />
+    <Property Type="Int32" Name="Communication" Nullable="true" />
+    <Property Type="Int32" Name="Cleanliness" Nullable="true" />
+    <Property Type="Int32" Name="Courteous" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetHomeOwnerReviewsListNew_Result">
+    <Property Type="Int32" Name="ItemsCount" Nullable="true" />
+    <Property Type="Int32" Name="ReviewId" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="QualityOfWork" Nullable="true" />
+    <Property Type="Int32" Name="Timeliness" Nullable="true" />
+    <Property Type="Int32" Name="StayedInBudget" Nullable="true" />
+    <Property Type="Int32" Name="Communication" Nullable="true" />
+    <Property Type="Int32" Name="Cleanliness" Nullable="true" />
+    <Property Type="Int32" Name="Courteous" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetKPIsInfo_Result">
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="77" />
+    <Property Type="String" Name="Total" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_GetMyJobAndCompleted_Result">
+    <Property Type="Int32" Name="ConId" Nullable="false" />
+    <Property Type="Int32" Name="ProjectId" Nullable="true" />
+    <Property Type="Int32" Name="ConUserId" Nullable="true" />
+    <Property Type="String" Name="ConStatus" Nullable="true" />
+    <Property Type="Int32" Name="ProId" Nullable="true" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProjectCategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+    <Property Type="Int32" Name="ProUserId" Nullable="true" />
+    <Property Type="Int32" Name="CatUserId" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProProvinceId" Nullable="true" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_GetProjectByID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetProjectByProjectId_Result">
+    <Property Type="String" Name="FilePath" Nullable="true" />
+    <Property Type="Int32" Name="AttachementID" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="sp_GetProjectWithId_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+    <Property Type="String" Name="FilePath" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetRecordOfWriteAReview_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_GetReferDetailList_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="COMPANYNAME" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ProcessDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Amount" Nullable="false" MaxLength="21" />
+    <Property Type="DateTime" Name="LastCreatedDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetReview_Result">
+    <Property Type="Int32" Name="ReviewId" Nullable="false" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+    <Property Type="Int32" Name="QualityOfWork" Nullable="true" />
+    <Property Type="Int32" Name="Timeliness" Nullable="true" />
+    <Property Type="Int32" Name="StayedInBudget" Nullable="true" />
+    <Property Type="Int32" Name="Communication" Nullable="true" />
+    <Property Type="Int32" Name="Cleanliness" Nullable="true" />
+    <Property Type="Int32" Name="Courteous" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VerificationCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="350" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="ImagePath" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetReviewByContIDWithName_Result">
+    <Property Type="Int32" Name="ReviewId" Nullable="true" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+    <Property Type="Int32" Name="QualityOfWork" Nullable="true" />
+    <Property Type="Int32" Name="Timeliness" Nullable="true" />
+    <Property Type="Int32" Name="StayedInBudget" Nullable="true" />
+    <Property Type="Int32" Name="Communication" Nullable="true" />
+    <Property Type="Int32" Name="Cleanliness" Nullable="true" />
+    <Property Type="Int32" Name="Courteous" Nullable="true" />
+    <Property Type="Int32" Name="rating" Nullable="true" />
+    <Property Type="Int32" Name="ratingSingle" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetReviewPA_Result">
+    <Property Type="Int32" Name="itemcount" Nullable="true" />
+    <Property Type="Int32" Name="ReviewId" Nullable="true" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+    <Property Type="Int32" Name="QualityOfWork" Nullable="true" />
+    <Property Type="Int32" Name="Timeliness" Nullable="true" />
+    <Property Type="Int32" Name="StayedInBudget" Nullable="true" />
+    <Property Type="Int32" Name="Communication" Nullable="true" />
+    <Property Type="Int32" Name="Cleanliness" Nullable="true" />
+    <Property Type="Int32" Name="Courteous" Nullable="true" />
+    <Property Type="Int32" Name="rating" Nullable="true" />
+    <Property Type="Int32" Name="ratingSort" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="VerificationCode" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="ReferralCreditTotal" Nullable="true" />
+    <Property Type="Int32" Name="ReferralCreditPending" Nullable="true" />
+    <Property Type="String" Name="SessionID" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="SP_GetSelectedCategory_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_GetUnSelectedCategory_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SP_GetUnSelectedCities_Result">
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Charges" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_GetUserByID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VerificationCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="350" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Int32" Name="UserDeID" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" />
+    <Property Type="String" Name="PostalCode" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetUserDetail_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" />
+    <Property Type="String" Name="PostalCode" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" />
+    <Property Type="String" Name="Licenses" Nullable="true" />
+    <Property Type="String" Name="Certificates" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="Boolean" Name="CommercialServices" Nullable="true" />
+    <Property Type="Boolean" Name="IndustrialServices" Nullable="true" />
+    <Property Type="Boolean" Name="Financing" Nullable="true" />
+    <Property Type="Boolean" Name="EmergencyService" Nullable="true" />
+    <Property Type="String" Name="CompanyOverview" Nullable="true" />
+    <Property Type="String" Name="Products" Nullable="true" />
+    <Property Type="String" Name="Brands" Nullable="true" />
+    <Property Type="String" Name="Styles" Nullable="true" />
+    <Property Type="String" Name="Specialties" Nullable="true" />
+    <Property Type="String" Name="PaymentMethods" Nullable="true" />
+    <Property Type="Boolean" Name="LiabilityInsurance" Nullable="true" />
+    <Property Type="String" Name="Diplomas" Nullable="true" />
+    <Property Type="Boolean" Name="WrittenContract" Nullable="true" />
+    <Property Type="String" Name="ProjectMinimum" Nullable="true" />
+    <Property Type="String" Name="Warranty" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="ImagePath" Nullable="true" />
+    <Property Type="Int32" Name="settingId" Nullable="true" />
+    <Property Type="String" Name="Key" Nullable="true" />
+    <Property Type="String" Name="Value" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="InstagramUrl" Nullable="true" />
+    <Property Type="String" Name="WebsiteUrl" Nullable="true" />
+    <Property Type="String" Name="FacebookUrl" Nullable="true" />
+    <Property Type="String" Name="TwitterUrl" Nullable="true" />
+    <Property Type="String" Name="YoutubeUrl" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getuserDetailByID_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="City" Nullable="true" />
+    <Property Type="String" Name="CreatedDate" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferCreditTotal" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="ReferCreditPending" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="DueAmount" Nullable="false" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_GetUserDetailWithAmount_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="ReferralCreditTotal" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ReferralCreditPending" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="AmountDue" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="ReferralTotalAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IncentiveCode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetUserWithMatchCityCategory_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" />
+    <Property Type="String" Name="ImagePath" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Sp_RevenueReferalKpi_Result">
+    <Property Type="Double" Name="RevenueMonth" Nullable="true" />
+    <Property Type="Double" Name="RevenueYear" Nullable="true" />
+    <Property Type="Double" Name="ReferalMonth" Nullable="true" />
+    <Property Type="Double" Name="ReferalYear" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetConDetailWithRatingForHidingPA_Test1_Result">
+    <Property Type="Int32" Name="itemcount" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Rating" Nullable="true" />
+    <Property Type="Int32" Name="ratingSort" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessPhoneNumber" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="BusinessAddress" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="NumberOfEmployee" Nullable="true" />
+    <Property Type="String" Name="LegalStructure" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="InBusinessSince" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="HomeownerId" Nullable="true" />
+    <Property Type="String" Name="HomeownerFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerEmail" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ContractorId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Sp_GetOProAndCompProHCount_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountTypeID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ReferralCreditTotal" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ReferralCreditPending" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SessionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="IncentiveCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReferralId" Type="Int32" />
+    <Property Name="IsPaymentDone" Type="Boolean" />
+    <Property Name="LoginStatus" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsSubscriptionDone" Type="Boolean" />
+    <Property Name="Interval" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SaveCancel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="countCancel" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PllentyTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CardId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Interval_" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="PllentyPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CardId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="interval_" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriptionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="StartedDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <ComplexType Name="sp_GetContractorProjectCheckNew_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="JobTitle" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ProjectCategoryID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EstimatedStartDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EstimatedBudget" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="CityID" Nullable="true" />
+    <Property Type="Int32" Name="ProvinceID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SessionID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeOwnerStatus" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorStatus" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ProUserId" Nullable="true" />
+    <Property Type="Int32" Name="CatUserId" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ProProvinceId" Nullable="true" />
+    <Property Type="String" Name="ProvinceName" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="LastCreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HomeownerEmail" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="HomeownerLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorEmail" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorFirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorLastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ContractorCompanyName" Nullable="true" MaxLength="30" />
+  </ComplexType>
+</Schema>

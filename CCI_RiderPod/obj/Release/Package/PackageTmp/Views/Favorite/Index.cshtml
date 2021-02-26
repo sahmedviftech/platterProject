@@ -1,0 +1,232 @@
+﻿@model IEnumerable<CCI_Homii.Models.DAL.Sp_GetFavoriteContractorsListNew_Result>
+@{
+    ViewBag.Title = "Favorite Contractor - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var UserPro = HomiiSession.CurrentUser;
+
+    var CountFavoriteContractor = TempData["CountFavoriteContractor"];
+    
+
+}
+
+
+<div class="roofers-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="search-locations">
+                   @* <a name="locations" id="locations"></a>*@
+                   @* <div class="srch_video"><iframe width="380" height="215" src="https://www.youtube.com/embed/XXOSpQ-nPwQ" frameborder="0" allowfullscreen></iframe></div>*@
+                   
+                    <p>
+                        Welcome to your favourites page! This is your personal database of contractors who you hope to work with and/or have previously hired and want to keep for future reference.
+                    </p>
+                    <p>
+                        This page is completely for you and for those you choose to share it with. No contractor will ever see that you have favourited them, but if you want to share the kind gesture, we strongly recommend that you Write A Review on their profile!
+
+                    </p>
+                    <br />
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-sm-8 mb-3 mb-sm-0">
+                        <div class="main-HD">
+                            <h1><i class="fa fa-heart hrt"></i> Favorite Contractor (@CountFavoriteContractor)</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        @if (Model != null)
+                        {
+                            <div class="form-dropdown">
+                                <form class="d-flex">
+                                    <select id="selectHightLow" class="form-control select2">
+                                        <option selected>Sort by : Filters</option>
+                                        <option value="1">Sort by: Highest Rated</option>
+                                        <option value="0">Sort by : Lowest Rated</option>
+                                    </select>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray roofer-mainblock">
+
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="favi toronto-block">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <h1><a class="cstm_hvr_anchr" href="/Contractor/ContractorDetail?id=@item.userfaId"> @item.CompanyName</a></h1>
+                                    @*<input value="@item.FavId" id="FavidCont_@item.FavId" hidden />
+                                        <div class="favi-heart FavContractorDC" id="FavContractorD" title="Unfavorite" _ischecked="0" onclick="deletefav('favidcont_@item.FavId')" style="color:#0C2238;">
+
+                                            <i class="fa fa-heart hrt"></i>
+                                            Favorite
+
+                                        </div>
+                                    </div>
+                                    <div class="stars-rofr">
+                                        <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@item.Rating" data-rateit-step="1" data-readonly="true"></div>
+
+                                        <p class="str-rate CountReview">@item.Rating</p><span id="ReviewsCount_@item.userfaId"></span>
+                                    </div>*@
+                                    <input value="@item.userfaId" class="txtContractorID" id="favidcont_@item.userfaId" hidden />
+                                    <div class="favi-heart FavContractorDC CursorPointer" id="FavContractorD" title="Unfavorite" _ischecked="0" onclick="DeleteFav('favidcont_@item.FavId')" style="color:#0C2238;">
+
+                                        <i class="fa fa-heart hrt"></i>
+                                        Favorite
+
+                                    </div>
+                                </div>
+                                <div class="stars-rofr">
+                                    <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@item.Rating" data-rateit-step="1" data-readonly="true"></div>
+                                    @*<input id="input-1" name="input-1" class="rating rating-loading" value="@item.Rating" data-min="0" data-max="5" data-step="1" data-readonly="true" data-size="xs" data-show-clear="false" data-show-caption="false">*@
+                                    <p class="str-rate">@item.Rating</p><a href="/Contractor/ContractorDetail?id=@item.userfaId&res=1"><span class="CursorPointer" id="ReviewsCount_@item.userfaId"></span></a>
+                                    @* <p class="str-rate CountReview">@item.Rating</p><span id="reviewscount_@item.userfaid"></span>*@
+                                </div>
+                                <div class="p-txt">
+                                    <h4>@item.BusinessAddress </h4>
+                                    <h4 class="clr-gray">@item.CategoryName</h4>
+                                </div>
+                                <div class="p-txt">
+                                    @if (item.Description != null)
+                                    {
+                                        <p class="more clr-dark-gray">
+                                            <b class="clr-theme">Someone said:</b> @item.Description
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        @*<p class="more clr-dark-gray">
+                    <b class="clr-theme">Someone</b>
+                </p>*@
+                                    }
+
+
+                                </div>
+                                <div class="mesag-sec">
+                                    <p>@item.BusinessPhoneNumber </p>
+                                    @if (UserPro != null)
+                                    {
+                                        if (UserPro.AccountTypeID == 1)
+                                        {
+                                            if (item.AccountTypeID != UserPro.AccountTypeID)
+                                            {
+                                                @*<a onclick="CreateGroupChannel('@item.Email','@UserPro.Email','@item.FirstName @item.LastName','@UserPro.FirstName @UserPro.LastName')">Message</a>*@
+                                                <a onclick="CreateGroupChannel('@item.Email','@UserPro.Email','@item.CompanyName','@UserPro.FirstName @UserPro.LastName')">Message</a>
+                                                @*<a onclick="CreateGroupChannel('@item.Email','@UserPro.Email','@item.FirstName @item.LastName','@UserPro.FirstName @UserPro.LastName')">Message</a>*@
+                                                @*<a href="javascript:;"> Message </a>*@
+                                            }
+                                        }
+                                    }
+
+                                    <a href="/writeAReview/Index?id=@item.userfaId"> Review </a>
+                                    <a href="/Contractor/ContractorDetail?id=@item.userfaId"> View Profile </a>
+                                </div>
+
+                                @*<div class="mesag-sec">
+            <p>111-222-3344 </p>
+            <a href="javascript:;"> Ask Qoutation </a>
+            <a href="javascript:;"> Message </a>
+            <a href="javascript:;"> Review </a>
+        </div>*@
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="favi toronto-block-img">
+                                @if (item.ImagePath == null)
+                                {
+                                    <img src="/Content/assets/img/images.png" alt="" class="img-res">
+                                }
+                                else
+                                {
+
+                                    <img src="@item.ImagePath" alt="" class="img-res">
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                }
+            }
+            @if(Model.Count() == 0) {
+
+                <h1>No Favorite Contractor</h1>
+            }
+
+
+
+
+
+        </div>
+@if (@ViewBag.EndPage > 1)
+{
+    <ul class="pagination">
+        <!--If Current page is not the First Page, we will show Button/Link to go First or on Previous page-->
+        @if (@ViewBag.CurrentPage > 1)
+                {
+            <li>
+                <a href="~/Favorite/Index">First</a>
+            </li>
+                    <li>
+                        <a href="~/Favorite/Index?Pageindex=@(@ViewBag.CurrentPage - 1)">Previous</a>
+                    </li>
+        }
+        <!--Paging from StartPage to the end Page-->
+        @for (var page = @ViewBag.StartPage; page <= @ViewBag.EndPage; page++)
+                {
+            <li class="@(page == @ViewBag.CurrentPage ? "active" : "")">
+                <a href="~/Favorite/Index?Pageindex=@page">@page</a>
+            </li>
+        }
+        <!--If Current Page is not the Last Page then show Next and Last Button/link on Paging-->
+        @if (@ViewBag.CurrentPage < @ViewBag.TotalPages)
+                {
+            <li>
+                <a href="~/Favorite/Index?Pageindex=@(@ViewBag.CurrentPage + 1)">Next</a>
+            </li>
+                    <li>
+                        <a href="~/Favorite/Index?Pageindex=@(@ViewBag.TotalPages)">Last</a>
+                    </li>
+        }
+    </ul>
+}
+
+        @*<div class="row">
+            <div class="col-md-12">
+                <div class="get-info">
+                    <p><a href="javascript:;">Continue search for other contractor?</a></p>
+                </div>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+
+
+@section FooterScripts{
+@*<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>*@
+<script src="~/scripts/PageJS/SearchContractor.js"></script>
+
+    <script>
+
+        $('.loader').css("display", "none");      
+    </script>
+<script src="~/scripts/PageJS/FavoriteContractor.js"></script>
+    } 
+
+
+
+

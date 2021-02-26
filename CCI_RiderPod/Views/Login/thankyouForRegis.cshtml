@@ -1,0 +1,179 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "thank-you - Homii";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<link href="~/Content/assets/css/fontstylesheet.css" rel="stylesheet" />
+
+@*<div class="banerdesign text-center">
+    <div class="container">
+        <h1>Thanks For registering your business </h1>
+        <h5>Next Step : Confirm your email address</h5>
+        <p>
+            We have sent an email to your <b>“@ViewBag.Email”</b> with the subject <b>“Verification Code”</b><br>
+            Please Follow the Instructions in the email to activate your account
+        </p>
+    </div>
+</div>
+<div class="container">
+    <p class="text-center pt-3 pb-3">
+        Note : If you do not recieve the email from us shortly , please check your junk mail folder for email support@Homii.com confirming your posting.
+    </p>
+</div>*@
+
+
+@if (Convert.ToInt16(@ViewBag.AccountTypeID) == 2)
+{
+
+    @*<div class="banerdesign text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bx_thanks">
+                    <div class="thnks_cntnt">
+                        <h3>Thanks!</h3>
+                        <p>For Registration as Contractor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5 class="bg-orange-cntnt">Next Step : Confirm your email address</h5>
+                <p>
+                    We have sent an email to your <a href="javascript:;" class="color-orange">"@ViewBag.Email"</a> with the subject <a href="javascript:;" class="color-orange">“Verification Code”</a><br>
+                    Please Follow the Instructions in the email to activate your account
+                </p>
+
+                <p class="text-center pt-3 pb-3 mt-80">
+                    Note : If you do not recieve the email from us shortly , please check your junk mail folder for email <a class="color-orange" href="javascript:;">support @@Homii.com</a> confirming your posting.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-thankyou">
+                <img src="~/Content/assets/img/check-thanks.jpg" class="check-thanks" alt="check" />
+
+                <h1>Thank You</h1>
+                <p class="for-register">For registering as a Contractor</p>
+                @*<button class="btn color-white">Next Step : Confirm your email address</button>*@
+                <div class="inner-ptitle">
+                    <p>We have sent an email to your “@ViewBag.Email” with the subject “Verification Code” </p>
+                    <p> Please Follow the Instructions in the email to activate your account</p>
+                </div>
+                <p class="last-p">Note: If you do not recieve the email from us  within a few minutes, please check your junk mail folder for email <a href="mailto:admin@homii.ca" class="support"> admin@homii.ca </a> confirming your posting.</p>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+
+
+
+@if (Convert.ToInt16(@ViewBag.AccountTypeID) == 3)
+{
+
+    @*<div class="banerdesign text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bx_thanks">
+                    <div class="thnks_cntnt">
+                        <h3>Thanks!</h3>
+                        <p>For Registration as Referrer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5 class="bg-orange-cntnt">Next Step : Confirm your email address</h5>
+                <p>
+                    We have sent an email to your <a href="javascript:;" class="color-orange">"@ViewBag.Email"</a> with the subject <a href="javascript:;" class="color-orange">“Verification Code”</a><br>
+                    Please Follow the Instructions in the email to activate your account
+                </p>
+
+                <p class="text-center pt-3 pb-3 mt-80">
+                    Note : If you do not recieve the email from us shortly , please check your junk mail folder for email <a class="color-orange" href="javascript:;">support @@Homii.com</a> confirming your posting.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-thankyou">
+                <img src="~/Content/assets/img/check-thanks.jpg" class="check-thanks" alt="check" />
+
+                <h1>Thank You</h1>
+                <p class="for-register">For registering as a Referrer</p>
+                @*<button class="btn color-white">Next Step : Confirm your email address</button>*@
+                <div class="inner-ptitle">
+                    <p>We have sent an email to your “@ViewBag.Email” with the subject “Verification Code” </p>
+                    <p> Please Follow the Instructions in the email to activate your account</p>
+                </div>
+                <p class="last-p">Note: If you do not recieve the email from us  within a few minutes, please check your junk mail folder for email <a href="mailto:admin@homii.ca" class="support"> admin@homii.ca </a> confirming your posting.</p>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+
+
+
+
+
+
+@if (Convert.ToInt16(@ViewBag.AccountTypeID) == 1)
+{
+    @*<div class="banerdesign text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bx_thanks">
+                    <div class="thnks_cntnt">
+                        <h3>Thanks!</h3>
+                        <p>For Registration as HomeOwner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5 class="bg-orange-cntnt">Next Step : Confirm your email address</h5>
+                <p>
+                    We have sent an email to your <a href="javascript:;" class="color-orange">"@ViewBag.Email"</a> with the subject <a href="javascript:;" class="color-orange">“Verification Code”</a><br>
+                    Please Follow the Instructions in the email to activate your account
+                </p>
+
+                <p class="text-center pt-3 pb-3 mt-80">
+                    Note : If you do not recieve the email from us shortly , please check your junk mail folder for email <a class="color-orange" href="javascript:;">support @@Homii.com</a> confirming your posting.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-thankyou">
+                <img src="~/Content/assets/img/check-thanks.jpg" class="check-thanks" alt="check" />
+
+                <h1>Thank You</h1>
+                <p class="for-register">For registering as a HomeOwner</p>
+                @*<button class="btn color-white">Next Step : Confirm your email address</button>*@
+                <div class="inner-ptitle">
+                    <p>We have sent an email to your “@ViewBag.Email” with the subject “Verification Code” </p>
+                    <p> Please Follow the Instructions in the email to activate your account</p>
+                </div>
+                <p class="last-p">Note: If you do not recieve the email from us  within a few minutes, please check your junk mail folder for email <a href="mailto:admin@homii.ca" class="support"> admin@homii.ca </a> confirming your posting.</p>
+            </div>
+        </div>
+    </div>
+</div>
+}

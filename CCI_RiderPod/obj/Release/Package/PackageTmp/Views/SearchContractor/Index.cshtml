@@ -1,0 +1,785 @@
+﻿@*@model IEnumerable<CCI_Homii.Models.DAL.sp_GetConDetailWithRatingForHidingPA_Result>*@
+@model IEnumerable<CCI_Homii.Models.DAL.sp_GetConDetailWithRatingForHidingPA_Test1_Result>
+
+@{
+    ViewBag.Title = "Contractor List - Homii";
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var UserPro = HomiiSession.CurrentUser;
+
+    var CategoryName = Request["CategoryName"];
+    var CityNames = Request["CitieName"];
+    var CompanyName = Request["CompanyName"];
+
+}
+
+<div class="roofers-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-3 mb-lg-0">
+                <div class="main-HD">
+                    @if (CategoryName != null && CityNames != null && CompanyName == null)
+                    {
+                        if (CategoryName != "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1> Contractors specializing in  <span id="sreachbyCateg"> "@CategoryName" </span> In <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CategoryName == "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1> Contractors In   <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CategoryName != "" && CityNames == "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1> Contractors specializing in    <span id="sreachbyCateg"> "@CategoryName" </span> </h1>
+                                }
+                            }
+                        }
+
+                        else if (CompanyName != "" && CityNames == "" && CategoryName == "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Companies with the name <span id="sreachbyCateg"> "@CompanyName" </span> </h1>
+                                }
+                            }
+                        }
+                        else if (CategoryName != null)
+                        {
+                            if (CategoryName != "")
+                            {
+                                <h1> Contractors specializing in <span id="sreachbyidcont">"@CategoryName"</span></h1>
+                            }
+
+                        }
+                        else if (CityNames != null)
+                        {
+                            if (CityNames != "")
+                            {
+                                <h1>Contractors In <span id="sreachbyidcont">"@CityNames"</span></h1>
+                            }
+
+                        }
+                        else
+                        {
+                            <h1>Contractors specializing in <span id="sreachbyidcont">Contractors</span></h1>
+                        }
+                    }
+                    else if (CompanyName != null && CityNames != null && CategoryName == null)
+                    {
+                        if (CompanyName != "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Companies with the name <span id="sreachbyCateg"> "@CompanyName" </span> In <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CompanyName == "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Contractors In  <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CompanyName != "" && CityNames == "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Companies with the name <span id="sreachbyCateg"> "@CompanyName" </span> </h1>
+                                }
+                            }
+                        }
+
+                        else if (CompanyName != null)
+                        {
+                            if (CompanyName != "")
+                            {
+                                <h1>Companies with the name <span id="sreachbyidcont">"@CompanyName"</span></h1>
+                            }
+
+                        }
+                        else if (CategoryName != null)
+                        {
+                            if (CategoryName != "")
+                            {
+                                <h1> Contractors specializing in <span id="sreachbyidcont">"@CategoryName"</span></h1>
+                            }
+
+                        }
+                        else if (CityNames != null)
+                        {
+                            if (CityNames != "")
+                            {
+                                <h1>Contractors In <span id="sreachbyidcont">"@CityNames"</span></h1>
+                            }
+
+                        }
+                        else
+                        {
+                            <h1>Contractors specializing in <span id="sreachbyidcont">Contractors</span></h1>
+                        }
+                    }
+                    else if (CompanyName != null && CityNames != null && CategoryName == "")
+                    {
+                        if (CompanyName != "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Companies with the name <span id="sreachbyCateg"> "@CompanyName" </span> In <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CompanyName == "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Contractors In  <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CompanyName != "" && CityNames == "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Companies with the name <span id="sreachbyCateg"> "@CompanyName" </span> </h1>
+                                }
+                            }
+                        }
+
+                        else if (CompanyName != null)
+                        {
+                            if (CompanyName != "")
+                            {
+                                <h1>Companies with the name <span id="sreachbyidcont">"@CompanyName"</span></h1>
+                            }
+
+                        }
+                        else if (CategoryName != null)
+                        {
+                            if (CategoryName != "")
+                            {
+                                <h1> Contractors specializing in <span id="sreachbyidcont">"@CategoryName"</span></h1>
+                            }
+
+                        }
+                        else if (CityNames != null)
+                        {
+                            if (CityNames != "")
+                            {
+                                <h1>Contractors In <span id="sreachbyidcont">"@CityNames"</span></h1>
+                            }
+
+                        }
+                        else
+                        {
+                            <h1>Contractors specializing in <span id="sreachbyidcont">Contractors</span></h1>
+                        }
+                    }
+                    else if (CategoryName != null && CityNames != null && CompanyName == "")
+                    {
+                        if (CategoryName != "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1> Contractors specializing in  <span id="sreachbyCateg"> "@CategoryName" </span> In <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CategoryName == "" && CityNames != "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1> Contractors In   <span id="sreachbyCit"> "@CityNames" </span></h1>
+                                }
+                            }
+                        }
+                        else if (CategoryName != "" && CityNames == "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1> Contractors specializing in    <span id="sreachbyCateg"> "@CategoryName" </span> </h1>
+                                }
+                            }
+                        }
+
+                        else if (CompanyName != "" && CityNames == "" && CategoryName == "")
+                        {
+                            if (Model != null)
+                            {
+                                if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                {
+
+                                    <h1>Companies with the name <span id="sreachbyCateg"> "@CompanyName" </span> </h1>
+                                }
+                            }
+                        }
+                        else if (CategoryName != null)
+                        {
+                            if (CategoryName != "")
+                            {
+                                <h1> Contractors specializing in <span id="sreachbyidcont">"@CategoryName"</span></h1>
+                            }
+
+                        }
+                        else if (CityNames != null)
+                        {
+                            if (CityNames != "")
+                            {
+                                <h1>Contractors In <span id="sreachbyidcont">"@CityNames"</span></h1>
+                            }
+
+                        }
+                        else
+                        {
+                            <h1>Contractors specializing in <span id="sreachbyidcont">Contractors</span></h1>
+                        }
+                    }
+                    else if (CategoryName != null)
+                    {
+                        if (CategoryName != "")
+                        {
+                            <h1>Contractors specializing in <span id="sreachbyidcont">"@CategoryName"</span></h1>
+                        }
+
+                    }
+                    else if (CityNames != null)
+                    {
+                        if (CityNames != "")
+                        {
+                            <h1>Contractors In <span id="sreachbyidcont">"@CityNames"</span></h1>
+                        }
+
+                    }
+                    else if (CompanyName != null)
+                    {
+                        if (CompanyName != "")
+                        {
+                            <h1>Companies with the name <span id="sreachbyidcont">"@CompanyName"</span></h1>
+                        }
+
+                    }
+                    else
+                    {
+                        <h1>Contractors specializing in <span id="sreachbyidcont">Contractors</span></h1>
+                    }
+
+
+
+
+                </div>
+
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+
+                    @*<div class="col-md-5">
+                            <div class="text-right">
+                                <button type="button" class="btn btn-primary btn-custom">Get Free Estimates</button>
+                            </div>
+                        </div>*@
+
+                    @if (Model != null)
+                    {
+                        if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                        {
+
+                            @* 14 April 2020
+                                    <div class="col-md-4 mb-3 mb-md-0">
+                                    <div class="input-group fltrinput">
+                                        <input type="text" class="form-control custom-form-control" id="CompanyName" onblur="if(this.value == '') { this.value='Company Name'}" onfocus="if (this.value == 'Company Name') {this.value=''}" value="Company Name" autocomplete="off">
+                                        <div class="input-group-append" id="GetCompanyContractor">
+                                            <a class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3 mb-md-0">
+                                    <div class="input-group fltrinput">
+                                        <input type="text" class="form-control custom-form-control" id="CitiesListInner" onblur="if(this.value == '') { this.value='e.g. Toronto, ON'}" onfocus="if (this.value == 'e.g. Toronto, ON') {this.value=''}" value="e.g. Toronto, ON" autocomplete="off">
+                                        <div class="input-group-append" id="SearchContractorByCityInner">
+                                            <a class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <div class="input-group fltrinput">
+                                    <input type="text" class="form-control custom-form-control" id="CompanyName" placeholder="Business Name" onkeyup="ClearBorder()" autocomplete="off">
+                                    <div class="input-group-append" id="GetCompanyContractor">
+                                        <a class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="col-md-4 mb-3 mb-md-0">
+                                    <div class="input-group fltrinput">
+                                        <input type="text" class="form-control custom-form-control" id="ContractorName" placeholder="Contractor Name" onkeyup="ClearBorder()" autocomplete="off">
+                                        <div class="input-group-append" id="GetContractor">
+                                            <a class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <div class="input-group fltrinput">
+                                    <input type="text" class="form-control custom-form-control" id="CitiesListInner" placeholder="e.g. Toronto" onkeyup="ClearBorder()" autocomplete="off">
+                                    <div class="input-group-append" id="SearchContractorByCityInner">
+                                        <a class="input-group-text btn btn-primary btn-custom btn-search-icon"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-dropdown">
+
+                                    @*@if (Model != null)
+                                        {
+                                            if (Model.Select(x => new { x.FirstName }).Count() > 0)
+                                            {*@
+                                    <form class="d-flex">
+                                        <select id="searchHighlow" class="form-control select2">
+                                            <option selected>Sort by Filters :</option>
+
+                                            <option value="1">Sort by: Highest Rated</option>
+                                            <option value="0">Sort by:Lowest Rated</option>
+                                        </select>
+                                    </form>
+
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+        @if (Model != null)
+        {
+            if (Model.Select(x => new { x.FirstName }).Count() > 0)
+            {
+                <div class="bg-gray roofer-mainblock mainContainer">
+                    @foreach (var item in Model)
+                    {
+                        <div class="row RowDataField">
+                            <div class="col-lg-8">
+                                <div class="favi toronto-block">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                        <h1><a class="cstm_hvr_anchr" href="/Contractor/ContractorDetail?id=@item.ID"> @item.CompanyName</a></h1>
+
+
+                                        @if (@UserPro != null)
+                                        {
+                                            if (@UserPro.AccountTypeID != 4)
+                                            {
+                                                if (@UserPro.AccountTypeID == 1 && @UserPro.Id != item.HomeownerId)
+                                                {
+                                                    @*<input type="hidden" class="txtContractorID" id="txtContractorID" value="@item.ID" />
+                                                        <div class="favi-heart bg-transparent" id="favouritecontractor_@item.ID" title="Add To Favorite" _ischecked="1" onclick="FavouriteContractor(@item.ID)">
+                                                            <i class="fa fa-heart-o hrt"></i>
+                                                            Favourite
+                                                        </div>*@
+                                                    <input type="hidden" class="txtContractorID" id="txtContractorID" value="@item.ID" />
+                                                    <div class="favi-heart bg-transparent CursorPointer" id="FavouriteContractor_@item.ID" title="Add To Favorite" _ischecked="1" onclick="FavouriteContractor(@item.ID)">
+                                                        <i class="fa fa-heart-o hrt"></i>
+                                                        Favourite
+                                                    </div>
+                                                }
+                                                else if (@UserPro.AccountTypeID == 1)
+                                                {
+                                                    @*<div class="favi-heart CursorPointer bg-transparent" title="UnFavorite" id="FavouriteContractor">
+                                                            <i class="fa fa-heart-o hrt"></i>
+                                                            Favourites
+                                                        </div>*@
+                                                    <div class="favi-heart CursorPointer bg-transparent" title="UnFavorite" id="FavouriteContractor">
+                                                        <i class="fa fa-heart-o hrt"></i>
+                                                        Favourites
+                                                    </div>
+                                                }
+                                            }
+
+                                        }
+                                        @*<div class="favi-heart">
+                                                <i class="fa fa-heart hrt"></i>
+                                                Favorite
+                                            </div>*@
+                                    </div>
+                                    @*<div class="stars-rofr">
+                                            <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@item.Rating" data-rateit-step="1"></div>
+                                            @*<p class="str-rate">@item.Rating</p><span>27 reviews</span>*-@
+                                            <p class="str-rate">@item.Rating</p><span id="ReviewsCount_@item.ID"></span>
+                                        </div>*@
+                                    <div class="stars-rofr">
+                                        <div class="rateit" data-rateit-mode="font" data-rateit-readonly="true" data-rateit-value="@item.Rating" data-rateit-step="1"></div>
+                                        @*<p class="str-rate">@item.Rating</p><span>27 reviews</span>*@
+                                        <p class="str-rate">@item.Rating</p><a href="/Contractor/ContractorDetail?id=@item.ID&res=1"><span class="CursorPointer" id="ReviewsCount_@item.ID"></span></a>
+                                    </div>
+                                    <div class="p-txt">
+                                        <h4>@item.BusinessAddress | @item.Title</h4>
+                                        <h4 class="clr-gray">@item.CategoryName</h4>
+                                    </div>
+                                    <div class="p-txt">
+                                        @if (item.Description != null)
+                                        {
+                                            <p class="more clr-dark-gray">
+                                                <b class="clr-theme">@item.HomeownerFirstName <span class="splitlastname">@item.HomeownerLastName[0]</span>  said:</b> @item.Description
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            @*<p class="more clr-dark-gray">
+                                                    <b class="clr-theme">Someone</b>
+                                                </p>*@
+                                        }
+
+                                    </div>
+                                    <div class="mesag-sec">
+
+                                        @if (item.BusinessPhoneNumber == "" || item.BusinessPhoneNumber == null)
+                                        {
+                                            <p> </p>
+
+                                        }
+                                        else
+                                        {
+                                            <p>@item.BusinessPhoneNumber </p>
+
+                                        }
+                                        @if (UserPro != null)
+                                        {
+                                            if (UserPro.AccountTypeID == 1)
+                                            {
+                                                if (item.AccountTypeID != UserPro.AccountTypeID)
+                                                {
+                                                    @*<a onclick="CreateGroupChannel('@item.Email','@UserPro.Email','@item.FirstName @item.LastName','@UserPro.FirstName @UserPro.LastName')">Message</a>*@
+                                                    <a onclick="CreateGroupChannel('@item.Email','@UserPro.Email','@item.CompanyName','@UserPro.FirstName @UserPro.LastName')">Message</a>
+                                                    @*<a href="javascript:;"> Message </a>*@
+                                                }
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <a onclick="ShowAlertWithoutLogin()">Message</a>
+
+                                        }
+                                        @if (UserPro != null)
+                                        {
+                                            if (UserPro.AccountTypeID == 1)
+                                            {
+                                                <a href="/writeAReview/Index?id=@item.ID"> Review </a>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <a href="/writeAReview/Index?id=@item.ID"> Review </a>
+                                        }
+                                        <a href="/Contractor/ContractorDetail?id=@item.ID"> View Profile </a>
+                                    </div>
+
+                                    @*<div class="mesag-sec">
+                                            <p>111-222-3344 </p>
+                                            <a href="javascript:;"> Message </a>
+                                            <a href="javascript:;"> Review </a>
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="toronto-block-img">
+                                    @if (item.ImagePath == null)
+                                    {
+                                        <img src="/Content/assets/img/images.png" alt="" class="img-res">
+                                    }
+                                    else
+                                    {
+
+                                        <img src="@item.ImagePath" alt="" class="img-res">
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            }
+            else
+            {
+                @*<h1>No Contractor available on your selected location</h1>*@
+
+                <div class="banerdesign text-center" style="height: 460px; background-image: url('../../Content/assets/img/Not-Available.jpg');">
+                    <div class="container">
+                        @*<h1>Cabinetry  and built - ins to Oshawa</h1>*@
+                        @if (CategoryName != null && CityNames != null)
+                        {
+                            if (CategoryName != "" && CityNames != "")
+                            {
+                                <h1><span id="sreachbyCateg"> @CategoryName </span> To <span id="sreachbyCit"> @CityNames </span></h1>
+                            }
+                            else
+                            {
+                                <h1><span id="sreachbyidcont">Contractors</span></h1>
+                            }
+                        }
+                        <h1>No Contractor available on your selected location</h1>
+                       </div>
+                </div>
+            }
+        }
+        else
+        {
+            @*<h1>No Contractor available on your selected location</h1>*@
+
+            <div class="banerdesign text-center" style="height: 460px; background-image: url('../../Content/assets/img/Not-Available.jpg')">
+                <div class="container">
+                    @*<h1>Cabinetry  and built - ins to Oshawa</h1>*@
+                    @if (CategoryName != null && CityNames != null)
+                    {
+                        if (CategoryName != "" && CityNames != "")
+                        {
+                            <h1><span id="sreachbyCateg"> @CategoryName </span> To <span id="sreachbyCit"> @CityNames </span></h1>
+                        }
+                        else
+                        {
+                            <h1><span id="sreachbyidcont">Contractors</span></h1>
+                        }
+                    }
+                    <h1>No Contractor available on your selected location</h1>
+                </div>
+            </div>
+        }
+
+
+
+
+        @*<div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="get-info">
+                        @* List your business here for free? *-@
+                        <p> <a href="https://homii.ca/tipscontractors/">Get info</a></p>
+                    </div>
+                </div>
+            </div>*@
+        @if (@ViewBag.EndPage > 1)
+        {
+            <ul class="pagination">
+                <!--If Current page is not the First Page, we will show Button/Link to go First or on Previous page-->
+                @if (@ViewBag.CurrentPage > 1)
+                {
+                    <li>
+                        <a href="~/SearchContractor/Index?CategoryName=@ViewBag.CatgoryName&CitieName=@ViewBag.CityName&ContractorName=@ViewBag.ContractorName&CompanyName=@ViewBag.CompanyName">First</a>
+                    </li>
+                    <li>
+                        <a href="~/SearchContractor/Index?CategoryName=@ViewBag.CatgoryName&CitieName=@ViewBag.CityName&ContractorName=@ViewBag.ContractorName&CompanyName=@ViewBag.CompanyName&Pageindex=@(@ViewBag.CurrentPage - 1)">Previous</a>
+                    </li>
+                }
+                <!--Paging from StartPage to the end Page-->
+                @for (var page = @ViewBag.StartPage; page <= @ViewBag.EndPage; page++)
+                {
+                    <li class="@(page == @ViewBag.CurrentPage ? "active" : "")">
+                        <a href="~/SearchContractor/Index?CategoryName=@ViewBag.CatgoryName&CitieName=@ViewBag.CityName&ContractorName=@ViewBag.ContractorName&CompanyName=@ViewBag.CompanyName&Pageindex=@page">@page</a>
+                    </li>
+                }
+                <!--If Current Page is not the Last Page then show Next and Last Button/link on Paging-->
+                @if (@ViewBag.CurrentPage < @ViewBag.TotalPages)
+                {
+                    <li>
+                        <a href="~/SearchContractor/Index?CategoryName=@ViewBag.CatgoryName&CitieName=@ViewBag.CityName&ContractorName=@ViewBag.ContractorName&CompanyName=@ViewBag.CompanyName&Pageindex=@(@ViewBag.CurrentPage + 1)">Next</a>
+                    </li>
+                    <li>
+                        <a href="~/SearchContractor/Index?CategoryName=@ViewBag.CatgoryName&CitieName=@ViewBag.CityName&ContractorName=@ViewBag.ContractorName&CompanyName=@ViewBag.CompanyName&Pageindex=@(@ViewBag.TotalPages)">Last</a>
+                    </li>
+                }
+            </ul>
+        }
+        <input type="text" value="@ViewBag.CatgoryName" id="CatgoryName" hidden />
+        <input type="text" value="@ViewBag.CityName" id="CityName" hidden />
+        <input type="text" value="@ViewBag.ContractorName" id="ContractorName" hidden />
+        <input type="text" value="@ViewBag.CompanyName" id="CompanyNameview" hidden />
+    </div>
+</div>
+
+
+@section FooterScripts{
+
+    <script>
+        //$(document).ready(
+        //         function () {
+
+        //             $('#searchHighlow').select2({
+        //             }).on('change', function (e) {
+        //                 var data;//= false;
+        //
+        //                 data = $("#searchHighlow option:selected").val();
+
+        //                 var CatgoryName = $("#CatgoryName").val();
+        //                 var CityName = $("#CityName").val();
+        //                 var ContractorName = $("#ContractorName").val();
+
+        //                 window.location.href = '/SearchContractor/Index?CategoryName='+CatgoryName+'&CitieName='+CityName+'&ContractorName='+ContractorName+'&orderby=' + data;
+
+        //             });
+        //         }
+        //         );
+    </script>
+    <script src="~/scripts/PageJS/FavoriteContractor.js"></script>
+
+    <script src="~/scripts/PageJS/SearchContractor.js"></script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

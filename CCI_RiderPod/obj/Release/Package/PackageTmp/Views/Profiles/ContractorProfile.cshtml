@@ -1,0 +1,1590 @@
+﻿@model CCI_Homii.Models.PartialClasses.PC_UserProfile
+@{
+    ViewBag.Title = "ContractorProfile - Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var UserDetail = Model.User;
+    var UserGallery = Model.UserGallery;
+    var user = HomiiSession.CurrentUser;
+}
+
+
+
+
+<p id="checkcontractorid" hidden>@user.AccountTypeID</p>
+<div class="container cstm-tabss">
+    <div class="row">
+        <div class="col-lg-9 m-auto">
+            <div class="pro-details pro-profilesCon">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Private Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Company Information</a>
+                    </li>
+                    @if (user.AccountTypeID == 4)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" id="profileMr" data-toggle="tab" href="#selectcategory" role="tab" aria-controls="profile" aria-selected="false">Select Category & City</a>
+                        </li>
+                    }
+
+
+
+                </ul>
+
+            </div>
+            @if (user.AccountTypeID == 2)
+            {
+                
+                    <a class="btn btn-cstm btn-orange btn_srvcs pull-right" id="profileMr" href="/Login/selectServiceArea" aria-selected="false" target="_blank">Add Services & Service Area</a>
+               
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tab-content cstms" id="myTabContent">
+    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 m-auto">
+                        <div class="card bg-gray mt-0">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm-12">
+                                        <h2>Edit Personal profile</h2>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <!-- <h6 class="mt-3">Contractor</h6> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+
+                                @*<div class="contractor-dp">
+                                        @if (@UserDetail.ImagePath == null)
+                                        {
+                                            <img id="blah" src="~/Content/Images/images.png" alt="Profile image" />
+                                            <input type='file' id="profile-img" />
+                                        }else
+                                        {
+                                            <img id="blah" src="@UserDetail.ImagePath" alt="Profile image" />
+                                            <input type='file' id="profile-img" />
+                                        }
+
+                                    </div>*@
+
+
+                                <div class="row editprofile m_-10 cstm_edit_profile_field_border">
+                                    <input type="text" value="@UserDetail.Id" id="Id" hidden>
+                                    <input type="text" value="@UserDetail.AccountTypeID" id="AccountTypeID" hidden>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>First Name*</label>
+                                            <input type="text" value="@UserDetail.FirstName"  data-placement="bottom"  class="form-control" id="FirstName" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="First Name should be without space" data-parsley-trigger="keyup" required="" data-parsley-required-message="FirstName Required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Last Name*</label>
+                                            <input type="text" class="form-control"  data-placement="bottom"  id="LastName"  value="@UserDetail.LastName" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Last Name should be without space" data-parsley-trigger="keyup" required="" data-parsley-required-message="LastName Required">
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Phone Number*</label>
+                                            <input type="tel" class="form-control" id="PhoneNumber" value="@UserDetail.PhoneNumber" data-parsley-pattern="^[0-9]{10}(?:List)?$" data-parsley-trigger="keyup" required="" data-parsley-required-message="Phone number should be 10 digits" placeholder="Phone Number">
+                                        </div>
+                                    </div>*@
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Postal Code</label>
+                                            <input type="text" class="form-control"  data-placement="bottom"   id="PostalCode" value="@UserDetail.PostalCode" data-parsley-pattern="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$" data-parsley-minlength="6" data-parsley-maxlength="6" required="" data-parsley-required-message="Invalid Postal code format" data-parsley-trigger="keyup">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Email Address*</label>
+                                            <input type="email" class="form-control disabled"  data-placement="bottom"   value="@UserDetail.Email" id="Email" required data-parsley-type="email" data-parsley-trigger="keyup" data-parsley-required-message="Invalid Email" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Password*</label>
+                                            <div class="input-group">
+                                                @*<input type="button" value="Change Password" class="form-control InputValidation" id="Password" data-toggle="modal" data-target="#myModal">*@
+                                                <input type="password" class="form-control" value="" id="Password" disabled  data-placement="bottom"  >
+                                                @*<a href="javascript:;" data-toggle="modal" data-target="#changepswrd" class="input-group-append" >*@
+                                                <a class="input-group-append" onclick="showMOdal()">
+                                                    <span class="input-group-text">Change password</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @if (user.AccountTypeID == 4)
+                                    {
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group isactives">
+                                                <label>Is Active</label>
+                                                @*<input type="checkbox" class="form-control InputValidation" id="IsActive">*@
+                                                @if (UserDetail.IsActive == true)
+                                                {
+                                                    <input type="checkbox" id="IsActive" checked>
+                                                }
+                                                else
+                                                {
+                                                    <input type="checkbox" id="IsActive">
+                                                }
+
+                                                <label for="IsActive"></label>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        if (UserDetail.IsActive == true)
+                                        {
+                                            <input type="checkbox" id="IsActive" checked hidden>
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" id="IsActive" hidden>
+                                        }
+                                    }
+                                    <hr>
+
+                                </div>
+
+
+                                @*<div class="upload_gallery mb-4">
+                                    <input type="file" multiple id="gallery-photo-add" accept='.jpg, .png, .gif'>
+                                    <span class="txt">5MB Max - .jpg, .png, .gif</span>
+                                    <div class="gallery" id="GalleryImgSection">
+                                        @for (int i = 0; i < UserGallery.Count; i++)
+                                        {
+                                            <img src="@UserGallery[i].GalImagePath" id="profile-img-tag" />
+                                            @*<a onclick="bindDeleteGalImage(@UserGallery[i].Id)">Delete</a>       MY_FIRST_PROFICIENCY_TEST.jpg*@
+                                @*<h6 class="mt-3">Uploaded</h6>*-@
+                                                <span class="img_nam mr-3"></span><i class="fa fa-trash" onclick="bindDeleteGalImage(@UserGallery[i].Id)"></i>
+
+                                            }
+                                        </div>
+
+                                    </div> End upload_gallery*@
+
+
+
+
+
+                                <div class="card-footer text-right">
+                                    <button class="btn btn-primary btn-custom" id="next-btn">Next</button>
+                                </div>
+                            </div>
+                        </div><!-- End card -->
+                    </div><!-- End col -->
+                </div><!-- End row -->
+            </div><!-- End container -->
+        </div>
+    </div>
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 m-auto">
+                        <div class="card bg-gray mt-0">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm-12">
+                                        <h2>Edit Company Info</h2>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <!-- <h6 class="mt-3">Contractor</h6> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+
+
+                                @*<div class="">*@
+                                        @*<label> Upload image/click</label>*@
+                                <div class="contractor-dp">
+                                    @if (@UserDetail.ImagePath == null)
+                                    {
+                                        <img id="blah" src="~/Content/Images/uploadimage.jpg" />
+                                        <input type='file' id="profile-img" accept='.jpg, .png, .JPG, .PNG,.jpeg, .JPEG'/>
+
+                                       
+                                        @*<input type="file" id="profile-img" name="filename" >*@
+                                        
+                                    }
+                                    else
+                                    {
+                                        @*<label> Upload image/click</label>*@
+                                        <img id="blah" src="@UserDetail.ImagePath" />
+                                        <input type='file' id="profile-img" accept='.jpg, .png, .JPG, .PNG,.jpeg, .JPEG'/>
+                                       
+                                        @*<input type="file" id="profile-img" name="filename" >*@
+                                    }
+
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>Company</h4>
+                                    </div>
+                                </div>
+                                <div class="row editprofile m_-10 cstm_edit_profile_field_border">
+
+
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Company Name*</label>
+                                            <input type="text" class="form-control" data-parsley-minlength="3" data-parsley-maxlength="50" data-placement="bottom" value="@UserDetail.CompanyName" id="CompanyName" data-parsley-required-message="CompanyName Required" data-parsley-trigger="keyup" autocomplete="off" required>
+                                            @*title="Enter Your Company Name" data-toggle="tooltip"*@
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Business Address</label>
+                                            <input type="text" class="form-control"  data-placement="bottom" value="@UserDetail.BusinessAddress" id="BusinessAddress" data-parsley-required-message="BusinessAddress Required" data-parsley-trigger="keyup" autocomplete="off" required>
+                                            @*title="Enter Your Business Address"*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Business Phone Number</label>
+                                            @*<input type="text" class="form-control login-custm-form"  id="BusinessPhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" data-parsley-trigger="keyup" value="@UserDetail.BusinessPhoneNumber" placeholder="Business Phone Number" required="Requireed Format: 111-111-1111">*@
+                                            <input type="text" class="form-control login-custm-form" data-placement="bottom"  id="BusinessPhoneNumber" data-parsley-pattern="^\d{3}-\d{3}-\d{4}$" parsley-type="phone" data-parsley-trigger="keydown" required="Requireed Format: 111-111-1111" value="@UserDetail.BusinessPhoneNumber" autocomplete="off" placeholder="Business Phone Number" maxlength="12" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Number of Employee</label>
+
+                                            <input type="text" class="form-control"  data-placement="bottom"   value="@UserDetail.NumberOfEmployee" id="NumberOfEmployee" data-parsley-pattern="^(([0-9]*)|(([0-9]*)\.([0-9]*)))$" data-parsley-trigger="keyup" onkeypress="return event.charCode >= 48 && event.charCode <= 57" autocomplete="off" required data-parsley-required-message="Number Of Employee should be In digits">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>In Business Since</label>
+                                            <input type="text" class="form-control yearpicker"  data-placement="bottom"   value="@UserDetail.InBusinessSince" id="InBusinessSince" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Legal Structure</label>
+                                            <input type="text" class="form-control" autocomplete="off"  data-placement="bottom" data-parsley-minlength="3" data-parsley-maxlength="50" value="@UserDetail.LegalStructure" id="LegalStructure" data-parsley-trigger="keyup">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Licenses</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-placement="bottom" value="@UserDetail.Licenses" data-parsley-minlength="50" data-parsley-maxlength="400" id="Licenses" data-parsley-trigger="keyup">
+                                            @*Rofing 2016, Master of Electricians, something else*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Certificates</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-placement="bottom" value="@UserDetail.Certificates" data-parsley-minlength="50" data-parsley-maxlength="400" id="Certificates" data-parsley-trigger="keyup">
+                                            @*Voted best in Toronto 2015, 2013, and 2012!*@
+                                        </div>
+                                    </div>
+                                    <hr class="cstm-hr" />
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Awards</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="50" data-parsley-maxlength="400"   data-placement="bottom"  value="@UserDetail.Awards" id="Awards" data-parsley-trigger="keyup">
+                                            @*Houzz Mania 2012, HomeStarts Best Roofing Company 2014*@
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Do you offer commercial services?</label>
+                                            @if (UserDetail.CommercialServices == true)
+                                            {
+                                                <input type="hidden" id="CommercialServices_hf" value="1" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" id="CommercialServices_hf" value="0" />
+                                            }
+                                            <select type="text" class="form-control"   data-placement="bottom"   id="CommercialServices">
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Do you offer industrial services?</label>
+                                            @if (UserDetail.IndustrialServices == true)
+                                            {
+                                                <input type="hidden" id="IndustrialServices_hf" value="1" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" id="IndustrialServices_hf" value="0" />
+                                            }
+                                            <select type="text" class="form-control"   data-placement="bottom"  id="IndustrialServices">
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Do you offer financing?</label>
+                                            @if (UserDetail.Financing == true)
+                                            {
+                                                <input type="hidden" id="Financing_hf" value="1" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" id="Financing_hf" value="0" />
+                                            }
+                                            <select type="text" class="form-control"   data-placement="bottom"   id="Financing">
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Do you offer emergency service?</label>
+                                            @if (UserDetail.EmergencyService == true)
+                                            {
+                                                <input type="hidden" id="EmergencyService_hf" value="1" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" id="EmergencyService_hf" value="0" />
+                                            }
+                                            <select type="text" class="form-control"   data-placement="bottom"   id="EmergencyService">
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Company Overview</label>
+                                            @*<input type="text" class="form-control" value="@UserDetail.CompanyOverview" id="CompanyOverview" data-parsley-trigger="keyup">*@
+                                            <textarea class="form-control" autocomplete="off"  data-placement="bottom"   id="CompanyOverview" data-parsley-minlength="100" data-parsley-maxlength="4000"
+                                                      rows="4" data-parsley-minlength-message="Company overview must be at least 100 characters"
+                                                      data-parsley-maxlength-message="Company overview must be between 100-4000 characters" data-parsley-trigger="keyup">@UserDetail.CompanyOverview</textarea>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Products</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="3" data-parsley-maxlength="50"   data-placement="bottom" data-parsley-trigger="keyup"  value="@UserDetail.Products" id="Products">
+
+                                            @*We sell so many things. reach out to ask*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Brands</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="3" data-parsley-maxlength="50"  data-placement="bottom" data-parsley-trigger="keyup"  value="@UserDetail.Brands" id="Brands">
+                                            @*We only use the best!*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Styles</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="3" data-parsley-maxlength="50"  data-placement="bottom" data-parsley-trigger="keyup"  value="@UserDetail.Styles" id="Styles">
+                                            @*Our style is called Professional ;)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Specialties</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="3" data-parsley-maxlength="50"  data-placement="bottom" data-parsley-trigger="keyup"  value="@UserDetail.Specialties" id="Specialties">
+                                            @*We specialize in roofing during the cold;*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Payment methods</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="3" data-parsley-maxlength="50"  data-placement="bottom" data-parsley-trigger="keyup"  value="@UserDetail.PaymentMethods" id="PaymentMethods">
+
+                                            @* Cash, Visa, MasterCard, Paypal, Cheque *@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Liability Insurance</label>
+                                            @if (UserDetail.LiabilityInsurance == true)
+                                            {
+                                                <input type="hidden" id="LiabilityInsurance_hf" value="1" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" id="LiabilityInsurance_hf" value="0" />
+                                            }
+                                            <select type="text" class="form-control"  data-placement="bottom"  id="LiabilityInsurance" data-parsley-trigger="keyup">
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Diplomas</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="50" data-parsley-maxlength="400"  data-placement="bottom"  data-parsley-trigger="keyup" value="@UserDetail.Diplomas" id="Diplomas">
+                                            @* Available upon request *@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Written Contract</label>
+                                            @if (UserDetail.WrittenContract == true)
+                                            {
+                                                <input type="hidden" id="WrittenContract_hf" value="1" />
+                                            }
+                                            else
+                                            {
+                                                <input type="hidden" id="WrittenContract_hf" value="0" />
+                                            }
+                                            <select type="text" class="form-control"  data-placement="bottom"  id="WrittenContract">
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Project Minimum</label>
+                                            <input type="hidden"  data-placement="bottom"   id="ProjectMinimum_hf" value="@UserDetail.ProjectMinimum" />
+                                            <select type="text" class="form-control" id="ProjectMinimum">
+                                                <option value="">Select Project Minimum</option>
+                                                <option value="$100 - $500">$100 - $500</option>
+                                                <option value="$500 - $1,000">$500 - $1,000</option>
+                                                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                                <option value="$5,000 - $20,000">$5,000 - $20,000</option>
+                                                <option value="$20,000 - $50,000">$20,000 - $50,000</option>
+                                                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                                <option value="$100,000 - $250,000">$100,000 - $250,000</option>
+                                                <option value="$250,000 - $500,000">$250,000 - $500,000</option>
+                                                <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                                                <option value="$1,000,000">$1,000,000</option>
+                                                <option value="Uncertain">Uncertain</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr class="cstm-hr" />
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Warranty</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-parsley-minlength="50" data-parsley-maxlength="400"  data-placement="bottom"  value="@UserDetail.Warranty" id="Warranty" data-parsley-trigger="keyup">
+                                            @*It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking at its layout.*@
+                                        </div>
+                                    </div>
+                                    <hr class="cstm-hr" />
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Website URL</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-placement="bottom"   value="@UserDetail.WebsiteUrl" id="WebsiteUrl" data-parsley-trigger="keyup">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Instagram URL</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-placement="bottom"   value="@UserDetail.InstagramUrl" id="InstagramUrl" data-parsley-trigger="keyup">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Facebook URL</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-placement="bottom"  value="@UserDetail.FacebookUrl" id="FacebookUrl" data-parsley-trigger="keyup">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p_10">
+                                        <div class="form-group">
+                                            <label>Twitter URL</label>
+                                            <input type="text" class="form-control" autocomplete="off" data-placement="bottom"   value="@UserDetail.TwitterUrl" id="TwitterUrl" data-parsley-trigger="keyup">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Youtube URL</label>
+                                            <input type="text" class="form-control" autocomplete="off"  data-placement="bottom"   value="@UserDetail.YoutubeUrl" id="YoutubeUrl" data-parsley-trigger="keyup">
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <hr>
+                                    <div class="col-md-12 p_10">
+                                        <div class="upload_gallery mb-4">
+                                            <input type="file" multiple id="gallery-photo-add" accept='.jpg, .png, .gif,.JPG, .PNG,.jpeg, .JPEG'>
+                                            <span class="position-absolute cstm_upload_img bg-white border_dashed">Upload Gallery Images</span>
+                                            <span class="txt">5MB Max - .jpg, .png,.jpeg, .gif</span>
+                                            @*<div class="gallery" id="GalleryImgSection">
+                @for (int i = 0; i < UserGallery.Count; i++)
+                {
+                    <img src="@UserGallery[i].GalImagePath" id="profile-img-tag" />
+                    @*<a onclick="bindDeleteGalImage(@UserGallery[i].Id)">Delete</a>       MY_FIRST_PROFICIENCY_TEST.jpg*@
+                                            @*<h6 class="mt-3">Uploaded</h6>*-@
+                        <span class="img_nam mr-3"></span><i class="fa fa-trash" onclick="bindDeleteGalImage(@UserGallery[i].Id)"></i>
+
+                    }
+                </div>*@
+                                            <div class="gallery" id="GalleryImgSection">
+                                                @for (int i = 0; i < UserGallery.Count; i++)
+                                                {
+                                                    <img src="@UserGallery[i].GalImagePath" id="profile-img-tag" />
+                                                    <span class="img_nam mr-3"></span><i class="fa fa-trash btnDeleteImage"></i>
+                                                    <input type="hidden" class="hiddenIds" value="@UserGallery[i].Id" />
+                                                    <label class="hiddenImgUrls" style="display:none;">@UserGallery[i].GalImagePath</label>
+                                                }
+                                            </div>
+                                        </div><!-- End upload_gallery -->
+                                    </div>
+                                    <hr>
+                                </div>
+
+                                <!-- End upload_gallery -->
+
+
+                                <div class="card-footer text-right">
+                                    <button class="btn btn-primary btn-custom" id="btnSave">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End card -->
+                    </div>
+                    <!-- End col -->
+                </div>
+                <!-- End row -->
+            </div>
+            <!-- End container -->
+        </div>
+        <!--FOOTER START-->
+    </div>
+
+    @if (user.AccountTypeID == 4)
+    {
+        <div class="tab-pane fade" id="selectcategory" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container">
+                <div class="row align-items-end ContractorAccRole">
+                    <div class="col-lg-6">
+                        <div class="main-HD">
+                            <h1>Categories</h1>
+                            <button type="button" class="btn btn-primary city-btn" data-toggle="modal" data-target="#addmodalCategories">Add Categories</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row ContractorAccRole">
+                    <div class="col-sm-12">
+                        <div class="custom-table">
+                            <div class="table-responsive">
+                                <table class="table" id="example">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Charges</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col" class="th-width-3">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="AdminAddCateg"></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-end ContractorAccRole">
+
+                    <div class="col-md-6">
+                        <div class="main-HD">
+                            <h1>Cities </h1>
+                            <button type="button" class="btn btn-primary city-btn" data-toggle="modal" data-target="#addmodalCities">Add Cities</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ContractorAccRole">
+                    <div class="col-sm-12">
+                        <div class="custom-table">
+                            <div class="table-responsive">
+                                <table class="table" id="example1">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">Charges</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col" class="th-width-3">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="AdminAddCit"></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-custom" onclick='window.location = "@Url.Action("Index", "UsersDetails")";'>Back</button>
+
+
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="changepswrd" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Change Your Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row m_-10 editprofile">
+                            <div class="col-md-12 p_10">
+                                <div class="form-group">
+                                    <label>Current Pasword*</label>
+                                    <input type="password" class="form-control" id="Currentpassword" onchange="CheckCurrentPass()" onkeyup="hideData('pasmsg')">
+                                    <span id="pasmsg" style="color:red;">Invalid Password</span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 p_10">
+                                <div class="form-group">
+                                    <label>New Pasword*</label>
+                                    <input type="password" class="form-control" id="password">
+                                </div>
+                            </div>
+                            <div class="col-md-12 p_10">
+                                <div class="form-group">
+                                    <label>Confirm Pasword*</label>
+                                    <input type="password" class="form-control" id="confirm_password">
+                                </div>
+
+                            </div>
+                            <div class="registrationFormAlert" id="message">
+                            </div>
+                            @*<div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>Enter Current Pasword*</label>
+                                        <input type="password" class="form-control" value="asdfasdf">
+                                    </div>
+                                </div>*@
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-custom" id="passUpdate" disabled>Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Categories Modal -->
+<div class="modal fade" id="addmodalCategories" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Add Categories</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        @*<div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="form-control" value="" id="CategoryName" onkeyup="ClearBorder()">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Charges</label>
+                                <input type="number" class="form-control" value="" id="CategoryCharges" min=0 oninput="validity.valid || (value = '');" onchange="ClearBorder()">
+                            </div>*@
+
+                        @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>*@
+
+                        <div class="form-group">
+                            <select class="form-control form-custom" id="CategoryAdd">
+                                <option value="0" selected>Select Category</option>
+
+                            </select>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSaveCategories">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Cities Modal -->
+<div class="modal fade" id="addmodalCities" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel">Add Cities</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        @*<div class="form-group">
+                                <label>Category Name</label>
+                                <input type="text" class="form-control" value="" id="CategoryName" onkeyup="ClearBorder()">
+                            </div>
+                            <div class="form-group">
+                                <label>Category Charges</label>
+                                <input type="number" class="form-control" value="" id="CategoryCharges" min=0 oninput="validity.valid || (value = '');" onchange="ClearBorder()">
+                            </div>*@
+
+                        @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                             col-md-6 pr-0
+                            </div>*@
+
+                        <div class="form-group">
+                            <select class="form-control form-custom" id="CityAdd">
+                                <option value="0" selected>Select City</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSaveCities">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Pending Categories Modal -->
+<div class="modal fade" id="PendingmodalCategories" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel"><span id="ApprovedCategories"></span> Approved Request</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        @*<div class="form-group isactives checkbox-change">
+                               <label>Is Active</label>
+                                <input type="checkbox" id="IsActiveCetagories">
+                                <label for="IsActiveCetagories"></label>
+                            </div>*@
+                        <h4>Are You Sure?</h4>
+                        @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSaveApprovedCate">Approved</button>
+                <button type="button" data-dismiss="modal" class="btn btn-danger btn-custom" id="btnSaveAppRejectedCate">Rejected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pending Cities Modal -->
+<div class="modal fade" id="PendingmodalCities" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel"><span id="PendingCities"></span> Approved Request</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        @*<div class="form-group isactives checkbox-change">
+
+                                    @*<label>Is Active</label>
+                                    @*<input type="checkbox" class="form-control InputValidation" id="IsActive">*-@
+                                    <input type="checkbox" id="IsActiveCities">
+                                    <label for="IsActiveCities"></label>*-@
+
+                            </div>*@
+                        <h4>Are You Sure?</h4>
+
+
+                        @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>*@
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSaveApprovedCity">Approved</button>
+                <button type="button" data-dismiss="modal" class="btn btn-danger btn-custom" id="btnSavePenRejectedCity">Rejected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Approved Categories Modal -->
+<div class="modal fade" id="ApprovedmodalCategories" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel"><span id="PendingCategories"></span> Pending Request</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        @*<div class="form-group isactives checkbox-change">
+                                <label>Is Active</label>
+                                <input type="checkbox" id="IsActiveCetagories">
+                                <label for="IsActiveCetagories"></label>
+                            </div>*@
+                        <h4>Are You Sure?</h4>
+                        @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSavePendingCate">Pending</button>
+                <button type="button" data-dismiss="modal" class="btn btn-danger btn-custom" id="btnSavePenRejectedCate">Rejected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Approved Cities Modal -->
+<div class="modal fade" id="ApprovedmodalCities" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content modal-content-review">
+            <div class="modal-header">
+                <h5 class="modal-title" id="write-a-reviewLabel"><span id="ApprovedCities"></span> Pending Request</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-review">
+                <div class="row m_-10 editprofile">
+                    <div class="col-md-6 p_10">
+                        @*<div class="form-group isactives checkbox-change">
+
+                                <label>Is Active</label>
+                                @-*<input type="checkbox" class="form-control InputValidation" id="IsActive">*-@
+                                <input type="checkbox" id="IsActiveCities">
+                                <label for="IsActiveCities"></label>
+
+                            </div>*@
+                        <h4>Are You Sure?</h4>
+
+
+                        @*<div class="form-group">
+                                <label>Slugs</label>
+                                <input type="text" class="form-control" id="SlugsAdd">
+                            </div>*@
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary btn-custom" id="btnSavePendingCity">Pending</button>
+                <button type="button" data-dismiss="modal" class="btn btn-danger btn-custom" id="btnSaveAppRejectedCity">Rejected</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section FooterScripts{
+    <script>
+        var MaxUploadLimit = @UserDetail.Value;
+        var imgcount = $("#GalleryImgSection img").length;
+
+    </script>
+    <script src="~/scripts/PageJS/UserProfile.js"></script>
+    <script src="~/scripts/PageJS/SearchContractor.js"></script>
+
+
+    @*<script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(function() {
+            // Multiple images preview in browser
+            $('.yearpicker').yearpicker();
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+
+            };
+
+            $('#gallery-photo-add').on('change', function() {
+                imagesPreview(this, 'div.gallery');
+            });
+        });
+        </script>*@
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="tab-content cstms" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="testimonials">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 m-auto">
+                            <div class="card bg-gray mt-0">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h2>Edit Personal profile</h2>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <!-- <h6 class="mt-3">Contractor</h6> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="contractor-dp">
+                                        <img id="blah" src="@UserDetail.ImagePath" alt="Profile image" />
+                                        <input type='file' id="profile-img" />
+                                    </div>
+
+
+                                    <div class="row editprofile m_-10">
+                                        <input type="text" value="@UserDetail.Id" id="Id" hidden>
+                                        <input type="text" value="@UserDetail.AccountTypeID" id="AccountTypeID" hidden>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>First Name*</label>
+                                                <input type="text" value="@UserDetail.FirstName" class="form-control" id="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Last Name*</label>
+                                                <input type="text" class="form-control" id="LastName" value="@UserDetail.LastName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Phone Number*</label>
+                                                <input type="tel" class="form-control" id="PhoneNumber" value="@UserDetail.PhoneNumber">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Postal Code</label>
+                                                <input type="text" class="form-control" id="PostalCode" value="@UserDetail.PostalCode">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Email Address*</label>
+                                                <input type="email" class="form-control" value="@UserDetail.Email" id="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Password*</label>
+                                                <div class="input-group">
+                                                    @*<input type="button" value="Change Password" class="form-control InputValidation" id="Password" data-toggle="modal" data-target="#myModal">*-@
+                                                    <input type="password" class="form-control" value="" id="Password">
+                                                    <a href="javascript:;" data-toggle="modal" data-target="#changepswrd" class="input-group-append">
+                                                        <span class="input-group-text">Change password</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                    </div>
+
+
+                                    <div class="upload_gallery mb-4">
+                                        <input type="file" multiple id="gallery-photo-add">
+                                        <span class="txt">5MB Max - .jpg, .png, .gif</span>
+                                        <div class="gallery" id="GalleryImgSection">
+                                            @for (int i = 0; i < UserGallery.Count; i++)
+                                            {
+                                                <img src="@UserGallery[i].GalImagePath" id="profile-img-tag" />
+                                                @*<a onclick="bindDeleteGalImage(@UserGallery[i].Id)">Delete</a>       MY_FIRST_PROFICIENCY_TEST.jpg*-@
+                                                @*<h6 class="mt-3">Uploaded</h6>*-@
+                                                <span class="img_nam mr-3"></span><i class="fa fa-trash" onclick="bindDeleteGalImage(@UserGallery[i].Id)"></i>
+
+                                            }
+                                        </div>
+
+                                    </div><!-- End upload_gallery -->
+
+
+
+
+
+                                    <div class="card-footer text-right">
+                                        <button class="btn btn-primary btn-custom" id="next-btn">Next</button>
+                                    </div>
+                                </div>
+                            </div><!-- End card -->
+                        </div><!-- End col -->
+                    </div><!-- End row -->
+                </div><!-- End container -->
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="testimonials">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 m-auto">
+                            <div class="card bg-gray mt-0">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h2>Edit Company Info</h2>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <!-- <h6 class="mt-3">Contractor</h6> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4>Company</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row editprofile m_-10">
+
+
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Company Name*</label>
+                                                <input type="text" class="form-control" value="@UserDetail.CompanyName" id="CompanyName">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Business Address</label>
+                                                <input type="text" class="form-control" value="@UserDetail.BusinessAddress" id="BusinessAddress">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Business Phone Number</label>
+                                                <input type="text" class="form-control" value="@UserDetail.BusinessPhoneNumber" id="BusinessPhoneNumber">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Number of Employee</label>
+                                                <input type="text" class="form-control" value="@UserDetail.NumberOfEmployee" id="NumberOfEmployee">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>In Business Since</label>
+                                                <input type="text" class="form-control" value="@UserDetail.InBusinessSince" id="InBusinessSince">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Legal Structure</label>
+                                                <input type="text" class="form-control" value="@UserDetail.LegalStructure" id="LegalStructure">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Licenses</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Licenses" id="Licenses">
+                                                @*Rofing 2016, Master of Electricians, something else*-@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Certificates</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Certificates" id="Certificates">
+                                                @*Voted best in Toronto 2015, 2013, and 2012!*-@
+                                            </div>
+                                        </div>
+                                        <hr class="cstm-hr" />
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Awards</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Awards" id="Awards">
+                                                @*Houzz Mania 2012, HomeStarts Best Roofing Company 2014*-@
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Do you offer commercial services?</label>
+                                                <select type="text" class="form-control" id="CommercialServices">
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Do you offer industrial services?</label>
+                                                <select type="text" class="form-control" id="IndustrialServices">
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Do you offer financing?</label>
+                                                <select type="text" class="form-control" id="Financing">
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Do you offer emergency service?</label>
+                                                <select type="text" class="form-control" id="EmergencyService">
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Company Overview</label>
+                                                <input type="text" class="form-control" value="@UserDetail.CompanyOverview" id="CompanyOverview">
+                                                @*It is a long established fact that a reader will be distracted by the readable content of a page when
+                                                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                                                    of letters, as opposed to using It is a long established fact that a reader will be distracted by the
+                                                    readable content of a page when looking at its layout.*-@
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Products</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Products" id="Products">
+
+                                                @*We sell so many things. reach out to ask*-@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Brands</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Brands" id="Brands">
+                                                @*We only use the best!*-@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Styles</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Styles" id="Styles">
+                                                @*Our style is called Professional ;)*-@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Specialties</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Specialties" id="Specialties">
+                                                @*We specialize in roofing during the cold;*-@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Payment methods</label>
+                                                <input type="text" class="form-control" value="@UserDetail.PaymentMethods" id="PaymentMethods">
+                                                @* Cash, Visa, MasterCard, Paypal, Cheque *-@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Liability Insurance</label>
+                                                <select type="text" class="form-control" id="LiabilityInsurance">
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Diplomas</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Diplomas" id="Diplomas">
+                                                @* Available upon request *-@
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Written Contract</label>
+                                                <select type="text" class="form-control" id="WrittenContract">
+                                                    <option value="1">Yes</option>
+                                                    <option value="0">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p_10">
+                                            <div class="form-group">
+                                                <label>Project Minimum</label>
+                                                <select type="text" class="form-control" id="ProjectMinimum">
+                                                    <option value="300">300</option>
+                                                    <option value="400">400</option>
+                                                    <option value="500">500</option>
+                                                    <option value="600">600</option>
+                                                    <option value="700">700</option>
+                                                    <option value="800">800</option>
+                                                    <option value="900">900</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr class="cstm-hr" />
+                                        <div class="col-md-12 p_10">
+                                            <div class="form-group">
+                                                <label>Warranty</label>
+                                                <input type="text" class="form-control" value="@UserDetail.Warranty" id="Warranty">
+                                                @*It is a long established fact that a reader will be distracted by the readable content of a page when
+                                                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                                                    of letters, as opposed to using It is a long established fact that a reader will be distracted by the
+                                                    readable content of a page when looking at its layout.*-@
+                                            </div>
+                                        </div>
+
+
+                                        <hr>
+
+                                    </div>
+
+                                    <!-- End upload_gallery -->
+
+
+                                    <div class="card-footer text-right">
+                                        <button class="btn btn-primary btn-custom" id="btnSave">Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End card -->
+                        </div>
+                        <!-- End col -->
+                    </div>
+                    <!-- End row -->
+                </div>
+                <!-- End container -->
+            </div>
+            <!--FOOTER START-->
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="changepswrd" tabindex="-1" role="dialog" aria-labelledby="write-a-reviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content modal-content-review">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="write-a-reviewLabel">Add More Services</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-review">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row m_-10 editprofile">
+                                <div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>New Pasword*</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 p_10">
+                                    <div class="form-group">
+                                        <label>Confirm Pasword*</label>
+                                        <input type="password" class="form-control" id="confirm_password">
+                                    </div>
+
+                                </div>
+                                <div class="registrationFormAlert" id="message">
+                                </div>
+                                @*<div class="col-md-12 p_10">
+                                        <div class="form-group">
+                                            <label>Enter Current Pasword*</label>
+                                            <input type="password" class="form-control" value="asdfasdf">
+                                        </div>
+                                    </div>*-@
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-custom" id="passUpdate">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    @section FooterScripts{
+        <script>
+            var MaxUploadLimit = @UserDetail.Value;
+            var imgcount = $("#GalleryImgSection img").length;
+
+        </script>
+        <script src="~/scripts/PageJS/UserProfile.js"></script>
+        <script src="~/scripts/PageJS/SearchContractor.js"></script>
+
+
+        <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $(function() {
+            // Multiple images preview in browser
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                if (input.files) {
+                    var filesAmount = input.files.length;
+
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+
+            };
+
+            $('#gallery-photo-add').on('change', function() {
+                imagesPreview(this, 'div.gallery');
+            });
+        });
+        </script>
+
+
+    }*@

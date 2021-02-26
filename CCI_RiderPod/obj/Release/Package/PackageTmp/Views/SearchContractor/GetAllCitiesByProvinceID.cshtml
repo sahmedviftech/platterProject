@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CCI_Homii.Models.DAL.City>
+@{
+    ViewBag.Title = "GetAllCitiesByProvinceID";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <h2>Cities</h2>
+    <div class="row">
+        <h2 class="btn btn-cstm btn-block btn-orange">@ViewBag.ProvinceName</h2>
+        <ul class="ul_licities">
+            @foreach (var item in Model)
+            {
+                <li><a href="~/SearchContractor/Index?CitieName=@item.CityName">@item.CityName</a></li>
+            }
+        </ul>
+    </div>
+</div>
